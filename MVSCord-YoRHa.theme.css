@@ -3008,8 +3008,8 @@ html.density-default .item_caf372 {
 /* Both legacy tokens (oldcord) and the tokens used in the supplied refresh CSS.
    Repeated on theme boundaries so dialogs do not inherit Discord's dark colors. */
 html:root,
-html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
-html #app-mount {
+html #app-mount,
+html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
   --background-primary: var(--yorha-paper);
   --background-base-low: var(--yorha-paper);
   --background-surface-high: var(--yorha-paper);
@@ -3218,7 +3218,7 @@ html #app-mount .hljs-deletion { background-color: #e3c6b9; color: #793c32; }
 */
 html.visual-refresh:is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
 html #app-mount,
-html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight) {
+html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
 
   --background-primary: var(--yorha-paper) !important;
   --background-base-low: var(--yorha-paper) !important;
@@ -4095,4 +4095,16 @@ html body #app-mount :is(.root__49fc1, [data-mana-component="modal"], [data-mana
   border: 0 !important;
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* Palette coverage includes nested application themes, except custom profile
+   roots and their descendants. Native profile contrast is preserved there. */
+
+/* Settings scroll fade: match the sidebar surface, not Discord's primary-630.
+   This is local to settings; Nitro profile theme boundaries stay native. */
+html body #app-mount .sidebar__409aa .fixedContent__409aa::after,
+html body #app-mount .fixedContent__409aa::after {
+  background: linear-gradient(to bottom, var(--yorha-paper-deep), transparent) !important;
+  box-shadow: none !important;
+  pointer-events: none;
 }
