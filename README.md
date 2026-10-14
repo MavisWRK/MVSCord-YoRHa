@@ -20,6 +20,8 @@ A classic Discord layout with modern Discord profile customization, styled after
 3. Copy the CSS file into that folder and enable it under Local Themes.
 4. Disable other copies of this theme to avoid conflicting rules.
 
+`https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/MVSCord-YoRHa.theme.css`
+
 To update, replace the file and toggle the theme off and on.
 
 ## Compatibility
