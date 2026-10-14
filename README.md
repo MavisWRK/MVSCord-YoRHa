@@ -19,8 +19,8 @@ A classic Discord layout with modern Discord profile customization, styled after
 2. Open Discord Settings → Vencord → Themes and open the themes folder.
 3. Copy the CSS file into that folder and enable it under Local Themes.
 4. Disable other copies of this theme to avoid conflicting rules.
-
-`https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/MVSCord-YoRHa.theme.css`
+5. You can use this theme as a online preset, just copy `https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/MVSCord-YoRHa.theme.css`.
+6. Go to Online Themes on vencord and paste right there.
 
 To update, replace the file and toggle the theme off and on.
 
