@@ -1828,7 +1828,9 @@ html.visual-refresh {
     }
   }
   /* go live modal v2 */
-  .container__8a031.size-xl__8a031:not(
+  /* Only the streaming dialog needs the legacy compact width.
+     Shop bundles and other XL dialogs retain Discord's native dimensions. */
+  .container__8a031.size-xl__8a031:has(.root_a55fdc):not(
       :has(.confirmStep_a55fdc, .gameProfileModal__8e830)
     ) {
     width: 400px;
