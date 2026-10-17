@@ -1,0 +1,4327 @@
+/**
+ * @name MVSCord YoRHa Dark
+ * @description Version 1.2.5 — Dark edition. A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.
+ * @version 1.2.5
+ * @author MavisWRK
+ */
+/* Color Used on Nitro to Match Catppuccin: #2B2B49 */
+@import url("https://milbits.github.io/oldcord/src/components/vars.css");
+html.platform-web {
+  .base__5e434 {
+    grid-template-areas: "titleBar titleBar titleBar" "notice notice notice" "guildsList channelsList page";
+    grid-template-rows: [top] 0px [titlebarEnd] min-content [page] 0px [end] !important;
+  }
+  .bar_c38106 {
+    height: 0;
+  }
+  .bar_c38106 .title_c38106 {
+    display: none;
+  }
+  .bar_c38106 .trailing_c38106 {
+    top: 30px !important;
+  }
+  .scroller_ef3116 {
+    padding-top: 12px !important;
+  }
+  .notice__6e2b9,
+  #bd-notices {
+    margin-top: 0px !important;
+  }
+  .base__5e434:has(.notice__6e2b9, .bd-notice) .bar_c38106 .trailing_c38106 {
+    top: 69px !important;
+  }
+}
+
+code,
+pre {
+  font-family: "EnvyCodeR Nerd Font Mono", monospace !important;
+}
+
+html.platform-osx .base__5e434 {
+  grid-template-areas:
+    "titleBar titleBar titleBar"
+    "notice notice notice"
+    "guildsList channelsList page";
+  grid-template-rows: [top] 0px [titlebarEnd] min-content [page] 0px [end] !important;
+  .sidebar__5e434 > .guilds__5e434 {
+    margin-top: 32px;
+  }
+  .title_c38106,
+  .leading_c38106 {
+    pointer-events: none;
+  }
+  .bar_c38106 .trailing_c38106 {
+    top: 32px;
+  }
+  .notice__6e2b9,
+  #bd-notices {
+    margin-top: 0;
+    margin-bottom: -38px;
+  }
+  &:has(.notice__6e2b9, .bd-notice) .trailing_c38106 {
+    top: 70px !important;
+  }
+  &:has(.notice__6e2b9, .bd-notice) :is(.sidebarList__5e434, .page__5e434) {
+    margin-top: 38px !important;
+  }
+}
+html.platform-osx .systemBar_c38106 {
+  background: none;
+}
+:is(html.platform-linux, html.platform-win) .sidebarListRounded__5e434 {
+  border-top-left-radius: 8px !important;
+}
+:is(html.platform-linux, html.platform-win)
+  .container__5e434:has(.notice__6e2b9, .bd-notice)
+  .sidebarListRounded__5e434 {
+  border-top-left-radius: unset !important;
+}
+html.platform-osx .title_c38106 {
+  display: none !important;
+}
+:is(html.platform-linux, html.platform-win) .trailing_c38106 {
+  margin-top: 6px !important;
+}
+
+#app-mount .h5_b717a1.eyebrow_b717a1 {
+  text-transform: uppercase !important;
+}
+/*codeblock*/
+
+html.theme-dark .hljs-addition {
+  background-color: #033a16;
+  color: #aff5b4;
+}
+html.theme-dark .hljs-deletion {
+  background-color: #67060c;
+  color: #ffdcd7;
+}
+html.theme-dark
+  :is(
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id,
+    .hljs-variable
+  ) {
+  color: #79c0ff;
+}
+html.theme-light
+  :is(
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-literal,
+    .hljs-meta,
+    .hljs-number,
+    .hljs-operator,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id,
+    .hljs-variable
+  ) {
+  color: #005cc5;
+}
+html.theme-dark
+  :is(
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_
+  ) {
+  color: #d2a8ff;
+}
+html.theme-light
+  :is(
+    .hljs-title,
+    .hljs-title.class_,
+    .hljs-title.class_.inherited__,
+    .hljs-title.function_
+  ) {
+  color: #6f42c1;
+}
+html.theme-dark :is(.hljs-code, .hljs-comment, .hljs-formula) {
+  color: #8b949e;
+}
+html.theme-light :is(.hljs-code, .hljs-comment, .hljs-formula) {
+  color: #6a737d;
+}
+html.theme-dark :is(.hljs-built_in, .hljs-symbol) {
+  color: #ffa657;
+}
+html.theme-light :is(.hljs-built_in, .hljs-symbol) {
+  color: #e36209;
+}
+html.theme-dark
+  :is(.hljs-name, .hljs-quote, .hljs-selector-pseudo, .hljs-selector-tag) {
+  color: #7ee787;
+}
+html.theme-light
+  :is(.hljs-name, .hljs-quote, .hljs-selector-pseudo, .hljs-selector-tag) {
+  color: #22863a;
+}
+html.theme-dark :is(.hljs-meta .hljs-string, .hljs-regexp, .hljs-string) {
+  color: #a5d6ff;
+}
+html.theme-light :is(.hljs-meta .hljs-string, .hljs-regexp, .hljs-string) {
+  color: #032f62;
+}
+
+html.visual-refresh {
+  /*servers and channels*/
+  .childWrapperNoHoverBg__6e9f8 {
+    background-color: var(--background-mod-strong);
+  }
+  .sidebarListRounded__5e434 {
+    border-top-left-radius: unset;
+  }
+  /*weird line on the bottom*/
+  .sidebar__5e434:after {
+    display: none;
+  }
+
+  .panels__5e434 {
+    max-width: calc(
+      var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)
+    );
+    min-width: 240px;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border: none;
+    border-radius: 0;
+    background: var(--background-gradient-lower, var(--primary-660));
+  }
+
+  .menu_c1e9c4 {
+    box-shadow: var(--shadow-high);
+    border-radius: 4px;
+    border: none;
+  }
+
+  &:not(html:is(.density-cozy, .density-compact))
+    :is(.scroller_c1e9c4, .labelContainer_c1e9c4) {
+    padding: 6px 8px;
+  }
+  .wrapper_f563df {
+    gap: unset;
+    padding: 4px 0 6px 2px;
+    .button_f563df {
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      padding: 4px;
+    }
+  }
+  html:not(.density-cozy, .density-compact) .item_c1e9c4 {
+    margin: 2px 0;
+  }
+  .sidebar__23e6b:not(.selected_aa8da2, :hover) {
+    color: var(--interactive-text-normal);
+  }
+  &.theme-dark .colorDefault_c1e9c4:not(.colorBrand_c1e9c4) .label_c1e9c4 {
+    color: unset;
+  }
+  .colorBrand_c1e9c4 .label_c1e9c4 {
+    color: var(--blurple);
+  }
+  .colorDefault_c1e9c4:active:not(.hideInteraction_c1e9c4) {
+    background-color: var(--menu-item-default-active-bg);
+  }
+  .colorDefault_c1e9c4 {
+    border-radius: 2px;
+  }
+  .colorDanger_c1e9c4,
+  .colorDanger_c1e9c4 .checkbox__09aca,
+  .colorDanger_c1e9c4 .radioSelection_c1e9c4 {
+    color: var(--status-danger);
+  }
+  .colorDanger_c1e9c4.focused_c1e9c4 {
+    color: white;
+  }
+
+  .iconContainer_c1e9c4 {
+    width: 18px;
+    height: 18px;
+  }
+  .separator_c1e9c4 {
+    margin: 4px;
+  }
+  .iconContainer_c1e9c4 {
+    svg.radioIcon_c1e9c4 {
+      width: 16px;
+      height: 16px;
+      margin-top: 2px;
+    }
+    .refreshIconFill__001a7 {
+      fill: transparent;
+      stroke: white;
+      stroke-width: 2;
+      r: 10;
+    }
+    .refreshIconStroke__001a7 {
+      stroke-width: 0;
+    }
+    .refreshIcon__001a7 {
+      fill: var(--blurple);
+      r: 6;
+    }
+  }
+  .icon__9293f {
+    height: 24px;
+    width: 24px;
+    padding: unset;
+  }
+  .caret_c1e9c4 {
+    width: 16px;
+    height: 16px;
+  }
+  .buttons__37e49 {
+    gap: 1px;
+    .buttonChevron__37e49 {
+      margin: 0;
+    }
+    /*hide arrows when there's an extra button (like a game activity toggle plugin)*/
+    &:has(> :nth-child(6)) .buttonChevron__37e49 {
+      display: none;
+    }
+  }
+
+  .wrapper_cc5dd2,
+  .childWrapper__6e9f8,
+  .icon__6e9f8 {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .wrapper_cc5dd2 > .svg_cc5dd2 {
+    inset: auto;
+    contain: none;
+  }
+  .wrapper_cc5dd2 > .svg_cc5dd2 foreignObject {
+    mask: none;
+    overflow: visible;
+    x: -4;
+    y: -4;
+  }
+  .wrapper_cc5dd2 > .svg_cc5dd2 foreignObject[width="48"] {
+    x: 0;
+    y: 0;
+  }
+  .wrapper_cc5dd2 .wrapper__6e9f8 {
+    width: 48px;
+    height: 48px;
+    border-radius: 25px;
+    overflow: hidden;
+    transition: border-radius 0.2s ease;
+  }
+  .wrapper__6e9f8.selected__6e9f8 {
+    border-radius: 15px !important;
+  }
+  .outer_bf1984 {
+    background: var(--primary-700);
+  }
+  .outer_bf1984.interactive_bf1984:hover {
+    background-color: var(--background-floating);
+  }
+  .container_f37cb1:not(.hasBanner_f37cb1) .header_f37cb1 {
+    border: unset;
+    box-shadow: var(--shadow-ledge);
+  }
+  .header_f37cb1 {
+    padding: unset;
+  }
+  .bannerVisible_f37cb1 .header_f37cb1 {
+    border-bottom-color: transparent;
+  }
+  .headerGlass_f37cb1 {
+    display: none;
+  }
+  .container__9293f {
+    border: unset;
+    box-shadow: var(--shadow-ledge);
+  }
+  .headerContent_f37cb1 {
+    gap: unset;
+    justify-content: unset;
+    height: 100%;
+    span {
+      display: none;
+    }
+    .guildDropdown_f37cb1 {
+      gap: unset;
+      width: 100%;
+      padding: var(--space-xs) var(--space-md);
+      border-radius: 0;
+    }
+  }
+  .title_f75fb0:has(.wrapper__44b0c) {
+    &:not(.gdm_f75fb0) {
+      .children__9293f .titleWrapper__9293f {
+        order: -1;
+      }
+      .children__9293f:before {
+        content: "";
+        min-width: 24px;
+        height: 24px;
+        margin-right: 8px;
+        background-image: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-01.svg");
+        order: -1;
+      }
+      .avatar_f75fb0 foreignObject {
+        display: none;
+      }
+      .avatar_f75fb0 rect {
+        width: 10px;
+        height: 10px;
+        x: 0;
+        y: 6;
+      }
+    }
+    &.gdm_f75fb0 {
+      .children__9293f:before {
+        content: "";
+        min-width: 24px;
+        height: 21px;
+        margin-left: 8px;
+        background-image: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-02.svg");
+      }
+      .gdmIcon__754bd {
+        display: none;
+      }
+    }
+  }
+  .lookLink__201d5.colorPrimary__201d5 {
+    color: var(--text-default);
+  }
+  /* Emojis/GIF Picker */
+  .drawerSizingWrapper__08434 {
+    right: 0px !important;
+  }
+  .contentWrapper__08434 {
+    background-color: var(--primary-630);
+    border-radius: 8px;
+    box-shadow: var(--shadow-border), var(--shadow-high);
+    border: unset;
+  }
+  .header_fed6d3,
+  .soundboardHeader__08434 {
+    background-color: var(--primary-630);
+    box-shadow: var(--shadow-ledge);
+    border-bottom: unset;
+  }
+  .emojiPicker_c0e32c {
+    background-color: var(--primary-630);
+    box-shadow: var(--shadow-border), var(--shadow-high);
+    border-bottom-right-radius: var(--custom-emoji-picker-border-radius);
+    border-bottom-left-radius: var(--custom-emoji-picker-border-radius);
+    grid-template-columns: 48px auto;
+    grid-template-rows: auto 1fr auto;
+    height: var(--custom-emoji-picker-constants-emoji-picker-height);
+    width: var(--custom-emoji-picker-constants-min-emoji-picker-width);
+    .headerLabel__14245 {
+      text-transform: uppercase;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-top: 3px;
+    }
+  }
+  .emojiPickerHasTabWrapper_c0e32c .emojiPicker_c0e32c {
+    background-color: transparent;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+    flex: 1 1 auto;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    width: auto;
+  }
+  .categoryList_c0e32c {
+    top: 58px;
+  }
+  .expressionPickerCategoryList_a1e0e0 {
+    top: 50px;
+  }
+  .inspector_aeaaeb {
+    background-color: var(--primary-660);
+    border-top: unset;
+  }
+  .emojiPickerHasTabWrapper_c0e32c .categoryList_c0e32c {
+    top: 50px;
+  }
+  .unicodeShortcut_b9ee0c {
+    box-sizing: unset;
+    border-top: unset;
+  }
+  .wrapper__14245 {
+    background-color: var(--primary-630);
+  }
+  .wrapper__4e6ce {
+    background-color: var(--primary-700);
+  }
+  .header_c0e32c {
+    background-color: var(--primary-630);
+    box-shadow: var(--shadow-low);
+    margin: 0 -1px;
+    padding: 12px;
+    border-bottom: unset;
+    .sizeMedium__201d5 {
+      display: none;
+    }
+  }
+  .header_d5f3cd {
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+  .infoIcon_ae2544 {
+    margin-bottom: -3px;
+    margin-left: 5px;
+  }
+
+  .clickable__9293f .icon__9293f {
+    color: var(--interactive-text-normal);
+  }
+  .popoutContainer__0f481 {
+    background-color: var(--background-surface-higher);
+    box-shadow: var(--elevation-low);
+    -webkit-backdrop-filter: unset;
+    backdrop-filter: unset;
+  }
+  /* channel menus */
+  .header_e8b59c {
+    background: var(--primary-700);
+    border-bottom: 2px solid var(--background-modifier-accent);
+  }
+  .messagesPopoutWrap_e8b59c {
+    background-color: var(--primary-630);
+    border-radius: 8px;
+    max-height: 91vh !important;
+  }
+
+  .root__49fc1 {
+    border: none;
+    outline: none;
+  }
+  .rootWithShadow__49fc1 {
+    box-shadow: var(--legacy-elevation-border), var(--legacy-elevation-high);
+  }
+  .channelName__754bd div,
+  .channelName__754bd input {
+    font-weight: 600;
+  }
+  .input__4f074 {
+    border-radius: 3px;
+  }
+  .outer__4f074:hover .input__4f074 {
+    background-color: unset;
+    outline: unset;
+    box-shadow: inset 0 0 0 1px var(--primary-700);
+  }
+  .input__4f074:focus,
+  .outer__4f074:hover .input__4f074:focus {
+    background-color: var(--input-background);
+    box-shadow: inset 0 0 0 1px var(--primary-700);
+    outline: none;
+  }
+
+  /* tab bars */
+  .item_aa8da2 {
+    position: relative;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    font-weight: 500;
+  }
+  .tab_f8303a {
+    display: flex;
+    flex-shrink: 1;
+    align-items: center;
+    gap: var(--spacing-8);
+    padding-bottom: var(--spacing-12);
+  }
+  .brand_aa8da2.item_aa8da2:hover,
+  .themed_aa8da2.item_aa8da2:hover {
+    color: var(--interactive-text-hover);
+  }
+  .top_aa8da2 .item_aa8da2 {
+    margin-bottom: unset;
+  }
+  .top_aa8da2 .item_aa8da2.selected_aa8da2 {
+    cursor: default;
+    color: var(--interactive-text-active);
+  }
+  .top_aa8da2 .item_aa8da2.selected_aa8da2:after,
+  .top_aa8da2 .item_aa8da2:hover:after {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+    margin-top: -3px;
+  }
+  .topPill_aa8da2 .themed_aa8da2.selected_aa8da2.item_aa8da2 {
+    background-color: var(--background-mod-strong);
+  }
+  .side_aa8da2
+    .themed_aa8da2.selected_aa8da2.item_aa8da2:hover:not(.disabled_aa8da2),
+  .topPill_aa8da2
+    .themed_aa8da2.selected_aa8da2.item_aa8da2:hover:not(.disabled_aa8da2) {
+    background-color: var(--background-mod-strong);
+    color: var(--text-primary);
+  }
+  .side_aa8da2 .themed_aa8da2.item_aa8da2:hover:not(.disabled_aa8da2),
+  .topPill_aa8da2 .themed_aa8da2.item_aa8da2:hover:not(.disabled_aa8da2) {
+    background-color: var(--background-mod-subtle);
+  }
+
+  /* header text in DMs */
+  .titleWrapper__9293f > .defaultColor__5345c.text-md\/medium_cf4812 {
+    text-transform: unset !important;
+  }
+  .topic__6ec1a {
+    color: var(--header-secondary);
+  }
+  /* call background */
+  .root_bfe55a {
+    background: unset;
+  }
+
+  /*buttons*/
+  .button__201d5:is(.bannerColor_fb7f94) {
+    border: unset;
+  }
+  .item_aa8da2 {
+    transition: none !important;
+  }
+  :is(.sidebar__23e6b) .selected_aa8da2.item_aa8da2 {
+    background: var(--background-mod-strong) !important;
+  }
+  :is(.sidebar__23e6b)
+    .side_aa8da2
+    .themed_aa8da2.item_aa8da2:hover:not(.disabled_aa8da2) {
+    background-color: var(--background-mod-subtle);
+  }
+  :is(.sidebar__23e6b)
+    .side_aa8da2
+    .themed_aa8da2.item_aa8da2:active:not(.disabled_aa8da2) {
+    background-color: var(--background-mod-muted);
+    color: var(--text-primary);
+  }
+  :is(.sidebar__23e6b) .selected_aa8da2.item_aa8da2:hover {
+    color: var(--text-primary);
+  }
+  .topPill_aa8da2 .item_aa8da2 {
+    border-radius: 4px;
+    margin: 0 8px;
+    padding: 2px 8px;
+    min-height: unset;
+  }
+  .searchBar_e6b769 {
+    border-bottom: unset;
+    box-shadow: var(--elevation-low);
+  }
+  .searchBar_e6b769 .button_a22cb0 {
+    width: 100%;
+    height: 28px;
+    min-height: 28px;
+    overflow: hidden;
+    border-radius: 4px;
+    background: var(--background-gradient-lowest, var(--primary-700));
+    box-shadow: none;
+    &:hover {
+      background: var(--background-gradient-lowest, var(--primary-700));
+    }
+    .buttonChildrenWrapper_a22cb0 {
+      justify-content: start;
+      margin-left: -20px;
+      color: var(--text-muted);
+    }
+  }
+  .wrapper_f7ecac:not(.popover_c97e55) {
+    box-shadow: var(--elevation-stroke);
+  }
+  .toolbar__9293f {
+    gap: unset;
+    padding-left: unset;
+  }
+  .iconBadgeBottom__9293f {
+    right: 2px;
+    bottom: 0;
+    --custom-icon-offset: unset;
+  }
+  .navButton__08434 {
+    border-radius: 4px;
+    color: var(--interactive-text-normal);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 2px 8px;
+    transition:
+      background-color 0.1s ease-in-out,
+      color 0.1s ease-in-out;
+  }
+  .navButtonActive__08434 {
+    color: var(--interactive-text-active);
+    background-color: var(--background-mod-strong);
+  }
+  .navButton__08434:hover {
+    color: var(--interactive-text-hover);
+    background-color: var(--background-mod-subtle);
+  }
+  button.button__67645.enabled__67645:hover {
+    background-color: var(--background-mod-strong);
+  }
+
+  button.button__67645,
+  .visual-refresh span.button__67645 {
+    transition: none;
+  }
+  /* mic button */
+  .micButtonParent__37e49:hover > button {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
+  /* search bar(s) */
+  .medium_a45028 {
+    height: unset;
+    .inner_a45028 {
+      padding: 1px;
+      .input_a45028 {
+        padding: 0 8px;
+        line-height: 32px;
+        margin: 1px;
+      }
+      .iconLayout_a45028 {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  }
+  .container_a45028 {
+    border: none;
+    background-color: var(--primary-700);
+  }
+  .search__49676 {
+    margin: 0 8px;
+  }
+  .searchBar_c322aa {
+    background: var(--background-gradient-low, var(--primary-700));
+    padding: 0 2px;
+    height: 24px;
+    width: 144px;
+    border-radius: 4px;
+    border: none;
+    .DraftEditor-root {
+      padding: 2px 0;
+      line-height: 20px;
+    }
+    svg path {
+      fill: var(--text-muted);
+    }
+  }
+  .search_c322aa:is(.open_c322aa) .searchBar_c322aa {
+    width: 240px;
+  }
+  .container__55c99,
+  .container__16eb0 {
+    box-shadow: var(--shadow-border), var(--shadow-high);
+    border-radius: 3px;
+    border: none;
+    background: var(--background-gradient-low, var(--background-primary));
+    width: 335px;
+    margin-left: 20px;
+    .queryContainer__55c99 {
+      background: var(--primary-700);
+    }
+    .groupWrapper__971b5 {
+      .itemContainer__971b5 {
+        height: 34px;
+        align-content: center;
+        border-radius: 4px;
+        line-height: 1.25;
+      }
+      [data-text-variant="text-sm/medium"]:first-of-type {
+        display: none;
+      }
+      [data-text-variant="text-sm/semibold"]:first-of-type {
+        color: var(--interactive-text-normal) !important;
+        font-size: 16px;
+        font-weight: 500;
+      }
+      [data-text-variant="text-sm/medium"] {
+        font-size: 16px;
+      }
+    }
+    .groupWrapper__971b5[aria-labelledby="Message Contains-header"] {
+      [data-text-variant="text-sm/medium"]:first-of-type {
+        display: flex;
+      }
+    }
+    svg:not(
+      .clearSearchHistoryIcon__971b5,
+      .svg__44b0c,
+      .channelNameIcon__971b5
+    ) {
+      display: none;
+    }
+    .itemContainer__971b5:hover {
+      background: var(--primary-700);
+      [data-text-variant="text-sm/medium"] {
+        color: var(--interactive-text-hover) !important;
+      }
+    }
+    .divider__971b5 {
+      margin: var(--space-4) var(--space-8);
+    }
+    > .divider__971b5 {
+      margin-top: 6px;
+      margin-bottom: 10px;
+    }
+    > .itemContainer__971b5 {
+      [data-text-variant="text-sm/medium"] {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 12px;
+        color: var(--text-default) !important;
+        strong {
+          margin-bottom: 3px;
+          text-transform: none;
+        }
+      }
+      &:nth-of-type(2) {
+        [data-text-variant="text-sm/medium"]:after {
+          content: "ENTER";
+          margin-left: 130px;
+          background-color: var(--background-mod-subtle);
+          color: var(--text-subtle);
+          border: 1px solid var(--border-subtle);
+          box-shadow: inset 0 -4px 0 var(--background-mod-muted);
+          border-radius: 4px;
+          padding: 3px 6px 4px;
+          font-weight: 600;
+        }
+      }
+    }
+    > .itemContainer__971b5:before {
+      position: fixed;
+      margin-left: -8px;
+      margin-top: -12px;
+      width: 315px;
+      height: 20px;
+      padding: 10px;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      background: var(--primary-700);
+      content: "";
+    }
+    > .itemContainer__971b5:nth-of-type(2):before {
+      margin-top: -7px;
+      height: 20px;
+    }
+    .item__971b5 > svg + div:has(.labelWithElements__971b5) {
+      display: grid;
+      grid-template-areas: "category user tag";
+      .filterSublabelTextContainer__971b5 {
+        display: contents;
+      }
+      .labelWithElements__971b5 {
+        grid-area: user;
+        margin-left: 5px;
+        .wrapper__44b0c,
+        .wrapper__44b0c svg {
+          height: 20px !important;
+        }
+        [data-text-variant="text-sm/semibold"] {
+          font-weight: 500;
+          font-size: 16px;
+          margin: 0 5px;
+        }
+      }
+      .filterSublabelTextContainer__971b5
+        > [data-text-variant="text-sm/semibold"] {
+        grid-area: category;
+        font-weight: 400;
+        color: var(--text-muted) !important;
+      }
+      [data-text-variant="text-sm/medium"] {
+        display: grid;
+        grid-area: tag;
+        color: var(--text-muted) !important;
+      }
+    }
+    .groupWrapper__971b5:is([aria-labelledby="In Channel-header"])
+      .item__971b5 {
+      svg {
+        color: var(--text-muted);
+        width: 16px;
+        height: 16px;
+      }
+      [data-text-variant="text-sm/medium"] {
+        grid-area: category !important;
+      }
+    }
+  }
+  .container_fea832 {
+    background-color: var(--primary-700);
+    border-radius: 4px;
+    border: none;
+  }
+  .searchResult__02a39 {
+    border: solid 1px var(--primary-700);
+  }
+  /* dropdowns */
+  .lookFilled__3f413.select__3f413 {
+    background-color: var(--input-background);
+    border-color: var(--input-background);
+    padding: 8px 8px 8px 12px;
+  }
+  /* border radius 9 list of offenders */
+  .root__49fc1,
+  .container_e45859,
+  .container__60fa3,
+  .searchBar__5ec2f,
+  .link__2ea32,
+  .container_a45028,
+  .container__91a9d,
+  .option__16eb0,
+  .wrapper_d5f3cd,
+  .guildInviteContainer__083ae,
+  .section__00943,
+  .container__0be77,
+  .content__07f91 {
+    border-radius: 4px;
+  }
+  :is(.button__201d5, .button_a22cb0, .expressiveRive_a22cb0):not(.cta_a3a802) {
+    border-radius: 3px;
+    &:not(
+      .card__39ec2 .button_fb7f94,
+      .secondary_a22cb0,
+      .critical-secondary_a22cb0,
+      .customButton__39ec2,
+      .themeColor_fb7f94,
+      .actionButtons_e8b59c button
+    ) {
+      border: none !important;
+    }
+    .panels__5e434 & {
+      background: none;
+      &.buttonColor_e131a9:hover {
+        background: var(--button-secondary) !important;
+      }
+      &.buttonActive_e131a9 {
+        background: var(--green) !important;
+        color: white;
+        &:hover {
+          background: var(--green-hover) !important;
+        }
+        &:active {
+          background: var(--green-active) !important;
+        }
+      }
+      &.fauxDisabled_e131a9 {
+        display: none;
+      }
+    }
+  }
+  .button_a22cb0 {
+    padding: 2px 16px;
+    .buttonChildrenWrapper_a22cb0 {
+      min-width: unset;
+      min-height: unset;
+      padding: unset;
+    }
+    .buttonChildrenWrapper_a22cb0,
+    .buttonChildren_a22cb0 {
+      overflow: visible;
+    }
+  }
+  .button__7d7f7 {
+    border-radius: 999% !important;
+    [data-text-variant="text-xs/normal"] {
+      display: none;
+    }
+  }
+  .sm_a22cb0 {
+    height: var(--custom-button-button-sm-height);
+    min-height: var(--custom-button-button-sm-height);
+    border: none;
+    transition: ease 0.17s;
+  }
+  .sizeSmall__201d5:not(.lookBlank__201d5, .disabledButtonWrapper__201d5) {
+    padding: 2px 16px;
+  }
+  .md_a22cb0:not(.icon-only_a22cb0) {
+    width: auto;
+    height: 38px;
+    min-width: 96px;
+    min-height: 38px;
+  }
+  .buttonChildren_a22cb0 .text-md\/medium_cf4812 {
+    font-size: 14px;
+  }
+  .secondary_a22cb0 {
+    background-color: var(--button-secondary);
+    &:hover {
+      background: var(--button-secondary-hover);
+    }
+  }
+  .select__3f413 {
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    grid-gap: 8px;
+    border-radius: 4px;
+    min-height: unset;
+  }
+  .container_f89b2c {
+    background-color: var(--opacity-black-8);
+    border-color: var(--opacity-black-28);
+    min-height: unset;
+    border-radius: 3px;
+  }
+  /* modal footers */
+  .footer__49fc1 {
+    border-radius: 0 0 5px 5px;
+    background-color: var(--modal-footer-background);
+  }
+  .footerSeparator__49fc1 {
+    box-shadow: inset 0 1px 0 hsl(220 calc(1 * 6.522%) 18.039% /0.6);
+  }
+  .footer__5be3e,
+  .inputWrapper {
+    .channelTextArea__74017 {
+      box-sizing: border-box;
+      width: 100%;
+      height: 40px;
+      border-radius: 3px;
+      background-color: var(--deprecated-text-input-bg);
+      border: 1px solid var(--deprecated-text-input-border);
+      -webkit-transition: border-color 0.2s ease-in-out;
+      transition: border-color 0.2s ease-in-out;
+      .scrollableContainer__74017 {
+        height: 50px;
+      }
+    }
+  }
+  .inputWrapper {
+    .textArea__74017 {
+      height: 24px !important;
+      min-height: 24px;
+      max-height: 24px;
+      .slateTextArea_ec4baf {
+        padding: 8px 0;
+      }
+    }
+    .emojiButton__74017 {
+      min-height: 30px;
+      max-height: 30px;
+      .spriteContainer__04eed {
+        height: 30px;
+      }
+    }
+  }
+
+  .member__5d473 {
+    max-width: 224px;
+  }
+  .barButtonAlt__0f481 {
+    background: none;
+    &:hover {
+      background: none;
+    }
+  }
+  .custom-theme-background .container_a99829 {
+    border: unset;
+  }
+  .inlineContainer__74017 {
+    box-shadow: inherit;
+    background: unset;
+    border-color: transparent;
+  }
+  .inner_a99829 {
+    border-radius: 3px;
+  }
+  .buttons__74017 {
+    margin-right: -6px !important;
+  }
+  .button__74017 {
+    padding: 4px;
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+
+  .toolbar__9293f.toolbar__9293f {
+    gap: 0;
+    margin-left: 10px;
+    margin-right: calc(40px * var(--trailingCounter));
+    padding: 0;
+  }
+  .base__5e434 {
+    grid-template-areas:
+      "titleBar titleBar titleBar"
+      "notice notice notice"
+      "guildsList channelsList page";
+    grid-template-rows: [top] 0px [titlebarEnd] min-content [page] 22px [end];
+    --trailingCounter: 1;
+    &:has(.trailing_c38106 > :nth-child(2 of :not(span, .winButtons_c38106))) {
+      --trailingCounter: 2;
+    }
+    &:has(.trailing_c38106 > :nth-child(3 of :not(span, .winButtons_c38106))) {
+      --trailingCounter: 3;
+    }
+    &:has(.trailing_c38106 > :nth-child(4 of :not(span, .winButtons_c38106))) {
+      --trailingCounter: 4;
+    }
+    &:has(.trailing_c38106 > :nth-child(5 of :not(span, .winButtons_c38106))) {
+      --trailingCounter: 5;
+    }
+    &:has(.trailing_c38106 > :nth-child(6 of :not(span, .winButtons_c38106))) {
+      --trailingCounter: 6;
+    }
+  }
+  .base__5e434 .sidebar__5e434 {
+    display: grid;
+    grid-template-areas: "guilds sidebar" "guilds panels";
+    grid-template-columns: [start] min-content [sidebarStart] unset [end];
+    grid-template-rows: [start] 1fr [panelsStart] min-content [end];
+    border-radius: 0;
+  }
+  &:not(.theme-midnight) .chat_f75fb0,
+  &:not(.theme-midnight) .container__133bf,
+  &:not(.theme-midnight)
+    :is(
+      .content_f75fb0,
+      .subtitleContainer_f75fb0,
+      .sidebarList__5e434,
+      .container_c8ffbb
+    ) {
+    border: none !important;
+  }
+  .base__5e434 .sidebar__5e434 > .guilds__5e434 {
+    grid-area: guilds;
+    margin-bottom: -13.5px;
+  }
+  .base__5e434 .sidebar__5e434 > .sidebarList__5e434 {
+    grid-area: sidebar;
+    min-width: 240px;
+    max-width: none;
+    --custom-app-panels-height: 0;
+  }
+
+  /*Betterfolders (vencord)*/
+  .base__5e434.vc-betterFolders-sidebar-grid {
+    grid-template-columns: [start] 100px [guilds-end] min-content [betterFoldersSidebar-end] auto [channelsEnd] 1fr [end];
+    grid-template-areas: "titleBar titleBar titleBar titleBar" "guildsList betterFoldersSidebar notice notice" "guildsList betterFoldersSidebar channelsList page";
+  }
+  .base__5e434.vc-betterFolders-sidebar-grid .sidebar__5e434 {
+    grid-template-columns: [start] 70px [guilds-end] min-content [betterFoldersSidebar-end] 240px [end];
+    grid-template-areas: "guilds betterFoldersSidebar sidebar" "guilds betterFoldersSidebar panels";
+    width: auto !important;
+  }
+  /* ServerFolders (betterdiscord) */
+  .folderContentIsOpen_ac0584 .base__5e434 {
+    grid-template-areas:
+      "titleBar titleBar titleBar titleBar"
+      "notice notice notice notice"
+      "guildsList guildsList channelsList page";
+    grid-template-columns: [start] min-content [guildsEnd] min-content [guildsEnd] min-content [channelsEnd] 1fr [end];
+  }
+  .folderContentIsOpen_ac0584 .base__5e434 .sidebar__5e434 {
+    grid-template-areas:
+      "guilds guildsFolderList sidebar"
+      "guilds guildsFolderList panels";
+  }
+  /* user panel */
+  .base__5e434 .sidebar__5e434 > .panels__5e434 {
+    grid-area: panels;
+    position: static;
+    inset: auto;
+    .avatar__37e49.wrapper__44b0c {
+      width: 32px !important;
+      height: 32px !important;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  .toolbar__9293f .clickable_c99c29 svg {
+    height: 24px !important;
+    width: 24px;
+  }
+  .toolbar__9293f > .iconWrapper__9293f {
+    height: 24px !important;
+    width: auto !important;
+    margin: 0 8px;
+    svg {
+      width: 24px;
+      height: 24px;
+      svg:has(
+        [d="M19.38 11.38a3 3 0 0 0 4.24 0l.03-.03a.5.5 0 0 0 0-.7L13.35.35a.5.5 0 0 0-.7 0l-.03.03a3 3 0 0 0 0 4.24L13 5l-2.92 2.92-3.65-.34a2 2 0 0 0-1.6.58l-.62.63a1 1 0 0 0 0 1.42l9.58 9.58a1 1 0 0 0 1.42 0l.63-.63a2 2 0 0 0 .58-1.6l-.34-3.64L19 11l.38.38ZM9.07 17.07a.5.5 0 0 1-.08.77l-5.15 3.43a.5.5 0 0 1-.63-.06l-.42-.42a.5.5 0 0 1-.06-.63L6.16 15a.5.5 0 0 1 .77-.08l2.14 2.14Z"]
+      ) {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .iconBadgeBottom__9293f {
+      bottom: 1px;
+    }
+  }
+  .accountPopoutButtonWrapper__37e49 {
+    padding-left: 2px;
+    border-radius: 4px;
+    transition: none;
+    &:hover {
+      background-color: unset;
+      color: var(--interactive-text-hover);
+    }
+  }
+  .accountPopoutButtonWrapper__37e49 .nameTag__37e49 {
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-right: 0;
+    & .title_b6c092 {
+      font-size: 14px;
+    }
+  }
+  .container__37e49 {
+    padding: 12px 3px 12px 12px;
+  }
+  .nameTag__37e49 {
+    margin-right: 4px;
+  }
+
+  /* style dms correctly (refresh edition) */
+  .channel__972a0 {
+    .highlighted__20a53 .subtext__972a0 {
+      color: var(--interactive-text-active);
+    }
+    .interactive_bf202d:hover {
+      color: var(--interactive-text-hover) !important;
+    }
+    .interactiveSelected__972a0 .name__20a53,
+    .interactiveSelected__972a0
+      .subText__20a53
+      [data-text-variant="text-xs\/medium"],
+    .interactiveSelected__972a0
+      .subText__20a53
+      .textWithIconContainer_c9d15c:before,
+    .interactiveSelected__972a0 .subtext__972a0 {
+      color: var(--interactive-text-active) !important;
+    }
+    &:hover:not(:has(.interactiveSelected__972a0))
+      .subText__20a53
+      [data-text-variant="text-xs\/medium"] {
+      color: var(--interactive-text-hover) !important;
+    }
+    & .subText__20a53 [data-text-variant="text-xs\/medium"] {
+      color: var(--channels-default) !important;
+    }
+    &:hover:has(.interactiveSelected__972a0) .interactive_bf202d {
+      background: var(--background-mod-strong) !important;
+    }
+    .interactive__972a0:focus-within {
+      background: var(--background-mod-strong);
+    }
+  }
+  /* style friends list correctly */
+  .peopleListItem_cc6179 {
+    transition: unset !important;
+  }
+  .peopleListItem_cc6179.active_cc6179 {
+    background-color: var(--background-mod-subtle);
+  }
+
+  .base__5e434
+    .text-sm\/medium__13cf1:not(
+      .title_b6c092,
+      .text_c9d15c,
+      .applicationSublabel_e1ecd3 .text-sm\/medium__13cf1 .lineClamp1__4bd52,
+      .searchFilter_bd8186,
+      .searchAnswer_bd8186
+    ),
+  .text-xs\/bold_cf4812 {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+  .header__16eb0,
+  .groupHeader__971b5 [data-text-variant="text-xs/semibold"] {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--text-default) !important;
+  }
+
+  .eyebrow_b717a1,
+	.container__5a838[data-layout="vertical"] .label__5a838,
+	.fieldTitle__1fed1,
+	legend /*of zelda*/ {
+    font-family: var(--font-display);
+    font-size: 12px;
+    line-height: 1.3333333333333333;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--header-secondary, var(--header-primary)) !important;
+  }
+  /* turn dot between "friends" and a"online"  into a line*/
+  .dot__9293f {
+    width: 1px;
+    height: 24px;
+    margin: 0 8px;
+    flex: 0 0 auto;
+    background: var(--background-modifier-accent);
+  }
+
+  .sectionDivider_e6b769 {
+    display: none;
+  }
+  .privateChannelsHeaderContainer__99e7c {
+    display: flex;
+    padding: 18px 8px 4px 18px !important;
+    height: 40px !important;
+  }
+
+  .typeThread__2ea32 .name__2ea32 {
+    font-size: 16px;
+  }
+
+  /* markdown things */
+  .markup__75297 code {
+    line-height: 1.125rem;
+    text-indent: 0;
+    background: var(--primary-630) !important;
+  }
+  .markup__75297 > code {
+    border: unset;
+    color: var(--text-strong);
+  }
+  .markup__75297 code.inline {
+    font-family: var(--font-code) !important;
+  }
+  .embedFull__623de code.inline {
+    background: var(--primary-700) !important;
+  }
+  .markup__75297 blockquote {
+    color: var(--text-default);
+  }
+
+  /* discord logo */
+  .childWrapper__6e9f8 svg {
+    height: 30px !important;
+    width: 30px !important;
+  }
+
+  /* sliders & bars */
+  .slider_a562c8 {
+    --grabber-size: 16px !important;
+    --bar-size: 4px !important;
+  }
+  .slider_a562c8 .barFill_a562c8 {
+    background-color: var(--background-brand);
+  }
+  .grabber_a562c8 {
+    top: 9px;
+    width: 10px;
+    height: 24px;
+    margin-left: -5px;
+    border-radius: 3px;
+    background-color: var(--white);
+    border: 1px solid var(--border-strong);
+    box-shadow: var(--shadow-border), var(--shadow-ledge), var(--shadow-low);
+  }
+  .slider_a562c8:is(.hasMarks_a562c8) .grabber_a562c8 {
+    margin-top: 16px;
+  }
+  :is(#user-context-user-volume, .column__7072d, .categorySubGroup__9f327)
+    .slider_a562c8
+    .grabber_a562c8 {
+    margin-top: -7px;
+  }
+  .sliderBar_ac7648.speaking_ac7648 {
+    background-color: rgb(105, 196, 154);
+  }
+  .bar_a562c8 {
+    height: 8px;
+  }
+  /*
+		.radioBar__1bda4 .radioIndicatorGroup__001a7:before {
+			content: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-03.svg");
+			position: relative
+		}
+	*/
+  /* chat box */
+  .scrollerSpacer__36d07 {
+    height: 30px;
+  }
+  .chatGradientBase__36d07 {
+    display: none;
+  }
+  .formWithLoadedChatInput_f75fb0 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-top: -12px;
+    .channelTextArea__74017 {
+      border: none;
+    }
+    .buttons__74017 {
+      margin-right: -6px !important;
+      gap: unset;
+    }
+    .button__74017 {
+      padding: 4px;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+    .buttonContainer_e6e74f.app-launcher-entrypoint {
+      width: 32px;
+      height: 32px;
+      margin-left: 4px;
+      margin-right: 4px;
+      --background-mod-strong: transparent;
+    }
+    .spriteContainer__04eed {
+      --custom-emoji-sprite-size: 24px !important;
+    }
+    .lottieIcon__5eb9b {
+      height: 24px !important;
+      width: 24px !important;
+      .channelAppLauncher_e6e74f & {
+        width: 24px !important;
+      }
+    }
+    .stackedBars__74017 {
+      background: var(--primary-630);
+      &:first-child,
+      &.floatingBars__74017:empty + .stackedBars__74017:nth-child(2) {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      &:not(:last-child) {
+        border: none;
+      }
+    }
+    .channelTextArea_f75fb0 {
+      --custom-chat-input-margin-bottom: 24px;
+    }
+    .upload_aa605f {
+      background-color: unset;
+      background: var(--background-gradient-higher, var(--primary-630));
+      border: unset;
+      border-radius: 4px;
+      box-shadow: unset;
+      .media__41ea0 {
+        border-radius: 4px;
+      }
+    }
+    .spoilerContainer__54ab5.attachmentContainer__54ab5 .media__41ea0 {
+      border-radius: 3px;
+    }
+
+    .attachWrapper__0923f {
+      padding: 6px 0px 6px 6px;
+      position: relative;
+      bottom: 2px;
+    }
+    .button__24af7:not(.noHover__24af7) {
+      transition: unset;
+    }
+    .button__24af7:not(.noHover__24af7):hover {
+      background-color: unset;
+    }
+    .buttonWrapper__24af7:hover {
+      color: var(--interactive-text-hover);
+    }
+    .attachButtonInner__0923f {
+      transition: unset;
+      svg {
+        width: 24px;
+        height: 24px;
+        path {
+          d: path(
+            "M12 23a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0-17a1 1 0 0 1 1 1v4h4a1 1 0 1 1 0 2h-4v4a1 1 0 1 1-2 0v-4H7a1 1 0 1 1 0-2h4V7a1 1 0 0 1 1-1Z"
+          );
+        }
+      }
+      &:hover {
+        background: unset;
+      }
+    }
+  }
+  .channelTextArea__74017 {
+    border: unset;
+    border-radius: 8px;
+  }
+  .separator__49fc1 {
+    box-shadow:
+      0 1px 0 0 hsl(240 calc(1 * 5.263%) 7.451% /0.3),
+      0 1px 2px 0 hsl(240 calc(1 * 5.263%) 7.451% /0.3);
+  }
+  .header__49fc1 {
+    padding: var(--modal-vertical-padding) var(--modal-horizontal-padding);
+  }
+  .autocompleteAttached__6b0e0 {
+    left: 0;
+    right: 0;
+  }
+  .cooldownText_b21699 {
+    color: var(--font-primary) !important;
+  }
+  .base_b88801 {
+    left: 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    bottom: 1px !important;
+    top: unset !important;
+    align-items: center;
+    color: var(--text-default);
+    strong {
+      font-weight: var(--font-weight-bold) !important;
+    }
+    .text_b88801 {
+      margin-left: 4px !important;
+    }
+    .typingDots_b88801 {
+      margin-left: unset;
+    }
+  }
+
+  /* jump to present bar & failed to load bar */
+  .jumpToPresentBar__0f481,
+  .messagesErrorBar__0f481 {
+    bottom: 6px;
+    padding-bottom: 4px !important;
+    border-radius: 8px 8px 0 0;
+  }
+  .jumpToPresentBar__0f481 {
+    background-color: var(--background-accent);
+    opacity: 0.95 !important;
+    color: var(--white-500);
+    .barButtonBase__0f481 {
+      padding-left: unset;
+      padding: 0 12px;
+    }
+    .button_a22cb0 {
+      flex: 0 0 auto;
+      font-weight: 600;
+      position: relative;
+      background: unset;
+      border: unset;
+      &:hover {
+        background-color: unset !important;
+      }
+      .contents__201d5:after {
+        content: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-04.svg");
+        margin-left: 8px;
+      }
+    }
+  }
+  .bottomBar__0f481 {
+    border: unset;
+    padding: unset;
+    left: unset;
+    right: unset;
+    margin: unset;
+    width: unset;
+    min-width: unset;
+    box-shadow: unset;
+    min-height: unset;
+    box-sizing: unset;
+  }
+
+  .barBase__0f481 {
+    left: 16px;
+    right: 16px;
+    min-height: 24px;
+    opacity: 0.95;
+    border: unset;
+    height: 0;
+  }
+
+  .embedFull__623de {
+    border-top: unset;
+    border-right: unset;
+    border-bottom: unset;
+  }
+
+  .cardPrimary__73069,
+  .cardPrimary__73069.editable__73069 {
+    background: var(--__card-accent-color);
+  }
+  .sensitivity_ac7648 {
+    min-height: 0px;
+  }
+
+  /* add emoji button */
+  .largeReactionBtn__23977.forceShow__23977 {
+    padding: unset;
+  }
+  .reactionBtn__23977 {
+    opacity: 0;
+  }
+  .reactionBtn__23977:hover {
+    background: none;
+  }
+
+  /* channel category arrow */
+  .mainContent__29444 {
+    margin-left: -10px;
+  }
+  .mainContent__29444 .icon__29444 {
+    order: -1;
+  }
+
+  .box_f8c98c {
+    background-color: var(--primary-630);
+    box-shadow: var(--elevation-low);
+    border-radius: 5px;
+  }
+  .lookLink__201d5.colorLink__201d5 {
+    color: var(--text-link);
+  }
+
+  /* file embeds */
+  .wrapperAudio_cf09d8,
+  .file__0ccae,
+  .container_a8e786 {
+    background-color: var(--primary-630);
+    border: 1px solid var(--primary-660);
+    box-shadow: unset;
+  }
+  .textContainer__4d95d {
+    background-color: var(--primary-630);
+    border: 1px solid var(--primary-660);
+  }
+  .footer__4d95d {
+    background-color: var(--primary-630);
+    border: 1px solid var(--primary-660);
+  }
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    border-radius: 4px;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    color: var(--text-subtle);
+    background: var(--background-base-lowest);
+    border: 1px solid var(--primary-700) !important;
+  }
+  .audioControls_cf09d8 {
+    border-radius: 3px;
+    background-color: var(--opacity-black-60);
+  }
+
+  /* ping icon */
+  .lowerBadge_cc5dd2 {
+    border: 5px solid var(--primary-700);
+    border-radius: 50%;
+    margin-bottom: -5px;
+    margin-right: -5px;
+  }
+  .upperBadge_cc5dd2 {
+    background: var(--primary-700);
+    width: 24px;
+    height: 24px;
+    position: relative;
+    border-radius: 50%;
+    left: 28px;
+    & > .iconBadge__650eb {
+      top: 4px;
+      left: 4px;
+      position: absolute;
+    }
+  }
+
+  /* voice channel user count */
+  .wrapper__260e1 {
+    display: flex;
+    align-items: stretch;
+    line-height: 20px;
+    border-radius: 10px;
+    color: var(--channels-default);
+    border: none;
+  }
+  .total__260e1 {
+    padding: 0 6px 0 0;
+    background-color: var(--primary-700);
+    &:after {
+      left: -8px;
+      border-right: 8px solid transparent;
+      border-right-color: var(--primary-700);
+    }
+  }
+  .users__260e1 {
+    padding: 0 8px 0 6px;
+    background-color: var(--background-primary);
+  }
+  .total__260e1,
+  .users__260e1 {
+    font-feature-settings: normal;
+    font-variant-numeric: normal;
+  }
+
+  /* placeholder gray square when moving a server icon */
+  .dragInner__87847 {
+    background-color: var(--background-primary) !important;
+    border: none !important;
+  }
+  svg.placeholderMask__87847 {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* unreads bars */
+  .bar__7aaec,
+  .voiceBar__7aaec {
+    border: unset;
+    margin-bottom: 4px;
+    background-color: var(--background-accent);
+    opacity: 0.9;
+  }
+  .top__7aaec,
+  .unreadTop__629e4 {
+    top: 0;
+  }
+  .bottom__7aaec,
+  .unreadBottom__629e4 {
+    bottom: 0;
+  }
+
+  /* invites */
+  .wrapper_d5f3cd {
+    background-color: var(--primary-630);
+    border: unset;
+  }
+
+  /* message flash */
+  .flash__03436,
+  .message__5126c {
+    border-bottom-right-radius: unset;
+    border-top-right-radius: unset;
+  }
+  .flash__03436[data-flash="true"],
+  .highlighted__5126c,
+  .replying__5126c {
+    background-color: rgba(114, 137, 218, 0.05);
+  }
+  :is(.highlighted__5126c, .replying__5126c):hover {
+    background-color: rgba(114, 137, 218, 0.1) !important;
+  }
+
+  /* custom status modal */
+  .header_dbc4b7 {
+    background-image: url("https://discord.com/assets/7d67842f58b6d155.svg");
+    background-size: 200px 120px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 120px !important;
+    margin-top: -93px;
+  }
+  .headerTitle_dbc4b7 .heading-xl\/semibold_cf4812 {
+    display: none;
+  }
+  .profilePreview_dbc4b7 {
+    display: none;
+  }
+  .statusText__19b6d {
+    color: var(--header-secondary);
+  }
+
+  /* go live modal */
+  .container_a55fdc {
+    background: unset;
+    box-shadow: unset;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    .horizontal__7c0ba > .flex__7c0ba:last-child,
+    .horizontal__7c0ba > .flexChild__7c0ba:last-child {
+      margin-top: -5px;
+    }
+    .headerDescription_a55fdc {
+      color: var(--text-default) !important;
+      margin-top: -1px;
+    }
+  }
+  .modalSize_a55fdc {
+    margin-top: -0.5px;
+    width: 410px;
+    .sizeSmall__201d5 {
+      width: 90px;
+      height: 36px;
+    }
+    .cancelButton_a55fdc {
+      margin-right: 150px;
+      background: var(--button-secondary);
+    }
+    .modalFooter_a55fdc .button__201d5:not([type="submit"], .lookLink__201d5) {
+      display: none;
+    }
+  }
+  .segmentContainer_a2de16 {
+    margin: unset;
+    padding: unset;
+  }
+  .segmentControl_a2de16 {
+    padding: 0 16px;
+  }
+  .segmentControlOption_a2de16 {
+    align-items: unset;
+    display: unset;
+    flex: unset;
+    justify-content: unset;
+    margin-left: unset;
+    margin-right: 20px;
+    padding-bottom: 8px;
+    padding-top: 0;
+  }
+  .sourceScroller_a2de16 {
+    height: 300px;
+  }
+  .sourceContainer_a2de16 {
+    padding: 0px;
+  }
+  .tile_a2de16 {
+    padding: unset;
+    margin-top: 12px;
+    .sourceThumbnail_a2de16 {
+      height: 96px;
+      width: 170px;
+      border-radius: 4px;
+    }
+  }
+  .qualitySettingsContainer_c6d3dc {
+    border-radius: 4px;
+    border: 1px solid var(--primary-700);
+  }
+  .refreshedArt_a55fdc {
+    content: url(https://static.discord.com/assets/3d0b430b1bae9f90.svg) !important;
+    display: inline-block;
+    height: var(--custom-go-live-modal-art-height);
+    margin: -60px auto 0;
+    width: 200px;
+    transform: scale(1.4) translateX(-9px);
+  }
+  .art__29209 {
+    background-image: url(https://discord.com/assets/4b9c3419c57d838c4076abc9d34dbea7.svg) !important;
+    height: 120px;
+  }
+  .tile__90dc5 {
+    background-color: unset;
+  }
+  .container__29209 {
+    background: none;
+    button {
+      background: var(--background-floating);
+    }
+  }
+  /* go live modal v2 */
+  /* Only the streaming dialog needs the legacy compact width.
+     Shop bundles and other XL dialogs retain Discord's native dimensions. */
+  .container__8a031.size-xl__8a031:has(.root_a55fdc):not(
+      :has(.confirmStep_a55fdc, .gameProfileModal__8e830)
+    ) {
+    width: 400px;
+  }
+  .container__8a031.size-xl__8a031 {
+    .root_a55fdc {
+      overflow: unset;
+    }
+    .header_a55fdc {
+      padding: unset;
+      padding-inline: 22px;
+      .pillContainer__9e06a {
+        background: unset;
+        .pillItem__9e06a {
+          background: unset;
+          border-radius: unset;
+          padding: 20px 0 8px 0;
+          flex: unset;
+          margin-right: 20px;
+          line-height: 20px;
+          &.pillItemSelected__9e06a {
+            border-bottom: 2px solid var(--white);
+          }
+          svg {
+            display: none;
+          }
+        }
+      }
+      &:before {
+        content: url(https://static.discord.com/assets/3d0b430b1bae9f90.svg) !important;
+        display: inline-block;
+        height: var(--custom-go-live-modal-art-height);
+        width: 200px;
+        margin: -35px 0 0 90px;
+        transform: scale(1.4) translateX(-9px);
+      }
+    }
+    .source__2f580:hover .sourcePreviewContainer__2f580:before {
+      box-shadow: inset 0 0 0 2px var(--blurple);
+    }
+    .sourcePreviewContainer__2f580 {
+      &:before {
+        z-index: 1;
+        border: unset;
+        top: -2px;
+        bottom: -2px;
+        right: -2px;
+        left: -2px;
+        border-radius: 4px;
+        box-shadow: inset 0 0 0 2px transparent;
+        transition:
+          box-shadow 0.15s ease-in-out,
+          -webkit-box-shadow 0.15s ease-in-out;
+      }
+      .sourcePreview__2f580 {
+        width: 170px;
+        height: 96px;
+        border-radius: 4px;
+      }
+      .sourceOverlay__2f580 {
+        background: unset;
+      }
+    }
+    .sourceNameContainer__2f580 {
+      img,
+      svg {
+        display: none;
+      }
+      .sourceName__2f580 {
+        color: var(--text-strong);
+        font-weight: 600;
+        text-align: center;
+      }
+    }
+    .sourceOverlayCTA__2f580 {
+      display: none;
+    }
+    .footer_a55fdc {
+      button:not(.hasText_a22cb0) .buttonChildrenWrapper_a22cb0 {
+        display: none;
+      }
+      button:not(.hasText_a22cb0):after {
+        content: attr(aria-label);
+      }
+    }
+  }
+
+  /* voice panel */
+  .wrapper_e131a9 {
+    margin-left: unset;
+  }
+  .container_e131a9 {
+    gap: 12px;
+    margin: auto var(--space-xs);
+    padding: var(--space-xs);
+    padding-left: 0;
+    padding-right: 0;
+    .labelWrapper__06d62 .text-md\/medium_cf4812 {
+      font-size: 14px !important;
+      font-weight: 600;
+    }
+    &:has(.voiceTimer) .connection_e131a9 {
+      padding-bottom: 20px;
+    }
+    &:has(p) {
+      gap: 28px;
+    }
+  }
+  .container_e131a9:has(.largePing__06d62) {
+    .subtext__339d0 {
+      max-width: 190px;
+      position: fixed;
+      margin-left: -20px;
+    }
+  }
+  .largePing__06d62 {
+    display: block;
+    flex: 0 0 auto;
+    height: 18px;
+    margin-left: 0;
+    margin-right: 4px;
+    width: 16px;
+    background: unset !important;
+    box-shadow: unset;
+    padding: 0;
+    align-self: start;
+  }
+  .rtcConnectionStatus__06d62 {
+    height: unset;
+  }
+  .rtcConnectionStatusWrapper__06d62 .text-sm\/medium_cf4812.lineClamp1__4bd52 {
+    font-size: 12px !important;
+    color: var(--header-secondary) !important;
+  }
+  .rtcConnectionStatusConnected__06d62 {
+    color: var(--text-positive);
+  }
+
+  .wrapper_cb9592:has(.idle__2f4f7),
+  .wrapper_cb9592:is(.video_cb9592) {
+    z-index: 102;
+  }
+
+  /* hide idle call background */
+  .gradientBackground__11664,
+  .gradientBackground__41626 {
+    display: none;
+  }
+
+  /* fix notice positioning */
+  .notice__6e2b9,
+  #bd-notices {
+    box-shadow: var(--elevation-low);
+    margin-top: 23px;
+    margin-bottom: -38px;
+    grid-area: channelsList / channelsList / channelsList / page;
+  }
+  .base__5e434:has(.notice__6e2b9, .bd-notice) .trailing_c38106 {
+    top: 89px;
+    .winButtons_c38106 {
+      bottom: 73px;
+    }
+  }
+  .base__5e434:has(.notice__6e2b9, .bd-notice)
+    :is(.sidebarList__5e434, .page__5e434) {
+    margin-top: 37px;
+  }
+  .page__5e434 {
+    height: auto;
+  }
+
+  .section__00943 {
+    background: var(--primary-630);
+    border: none;
+  }
+
+  /* Replace animated voice icon svg with static */
+  .iconLive_c69b6d {
+    content: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-05.svg");
+  }
+
+  /* polls */
+  .container__0be77 {
+    background-color: var(--deprecated-card-editable-bg);
+    border: unset;
+    .buttonPresentation__0be77 {
+      border: unset;
+    }
+  }
+  .container_f69538 {
+    background-color: var(--primary-630);
+    border-radius: 3px;
+    border: unset;
+  }
+
+  /* call background */
+  .wrapper_cb9592.minimum_cb9592 .callContainer_cb9592 {
+    background: var(--primary-700);
+  }
+  .pulseGradient__11664 {
+    display: none;
+  }
+
+  /* friends tab wumpus */
+  .addFriendWumpusWrapper__72ba7 .description_ddd181 {
+    display: none;
+  }
+
+  /* inbox */
+  .container__2692d,
+  .container_fc561d,
+  .recentMentionsPopout__95796 {
+    background-color: var(--primary-630);
+    .header_e8b59c {
+      border-bottom: unset;
+    }
+    .header_ab6641 {
+      padding: 0 var(--space-md) 0;
+    }
+    .inboxTitle_ab6641,
+    .inboxIcon_ab6641 {
+      display: none;
+    }
+    .controls_ab6641 {
+      margin-bottom: -65px;
+      .friendRequestsButton__523aa {
+        background-color: var(--primary-700);
+        color: var(--interactive-text-normal);
+      }
+    }
+    .top_aa8da2 .item_aa8da2.brand_aa8da2 {
+      --selected-tab-item-color: unset;
+    }
+    .tabBar_ab6641 {
+      margin-left: 16px;
+      .tab_ab6641 {
+        padding: 8px 8px;
+        margin: 0 8px;
+        height: 10px;
+        margin-top: 4px;
+        margin-bottom: 20px;
+        border-radius: 4px;
+      }
+      .tab_ab6641:is(.selected_aa8da2) {
+        background-color: var(--background-accent);
+      }
+      .tab_ab6641:nth-of-type(3) {
+        order: -2;
+      }
+      .tab_ab6641:nth-of-type(2) {
+        order: -1;
+      }
+    }
+    .channelHeader__35a7e {
+      background-color: var(--primary-630);
+    }
+    .primary__06eda {
+      background-color: var(--background-primary);
+      color: var(--interactive-text-normal);
+    }
+    .secondary__06eda {
+      background-color: var(--primary-630);
+      color: var(--interactive-text-normal);
+    }
+    .tertiary__06eda {
+      background-color: var(--primary-700);
+      color: var(--interactive-text-normal);
+    }
+    .messages__1ccd1 {
+      background-color: var(--background-primary);
+      border: unset;
+    }
+    .messageContainer__95796 {
+      background-color: var(--background-primary);
+      border: unset;
+    }
+    .container__0f711 {
+      background-color: var(--primary-630);
+    }
+  }
+
+  /* stupid header bars */
+  .container_d08938,
+  .outerContainer_e1147e,
+  .applicationStore_f07d62,
+  .libraryHeader__5a895,
+  .chat_f75fb0:has(.pageBody__41ed7) {
+    z-index: 102;
+  }
+
+  .changelog_eae0ef,
+  .safetyChecklist_eae0ef {
+    background-color: var(--primary-630);
+  }
+  .auditLog__43dab {
+    background-color: rgba(32, 34, 37, 0.3);
+    padding: unset;
+    border-radius: 3px;
+    border-color: #202225;
+    .headerClickable__43dab {
+      padding: 10px 20px 10px 10px;
+    }
+    .headerExpanded__43dab {
+      background-color: rgba(32, 34, 37, 0.3);
+    }
+    .divider__43dab {
+      background-color: var(--background-nested-floating);
+    }
+  }
+  .footerPlaceholder__98b95 {
+    .card_dc2e44 {
+      border-color: var(--primary-660);
+      border-radius: 5px;
+    }
+  }
+
+  /* the pin broke */
+  .primaryButton__468a6,
+  .secondaryButton__468a6 {
+    flex: 1 1 45%;
+  }
+  .title__468a6,
+  .body__468a6 {
+    text-align: center;
+  }
+  .modalContent__468a6 {
+    padding-bottom: 20px;
+  }
+  .form__468a6:has(.alignCenter_abf706) .separator__49fc1 {
+    box-shadow: unset;
+    align-self: center;
+  }
+  .form__468a6:has(.alignCenter_abf706)
+    .footer__49fc1
+    .primaryButton__468a6.sizeMedium__201d5 {
+    height: 50px;
+  }
+  .title__468a6.defaultColor__5345c.heading-lg\/semibold_cf4812.defaultColor__4bd52 {
+    align-self: center;
+  }
+
+  /* quick switcher */
+  .quickswitcher_ac6cb0 {
+    background-color: var(--primary-630);
+    box-shadow:
+      0 2px 10px var(--opacity-black-20),
+      0 0 0 1px var(--deprecated-card-bg);
+    border: unset;
+    .input_ac6cb0 {
+      background-color: var(--deprecated-quickswitcher-input-background);
+      border: none;
+      border-radius: 5px;
+      box-shadow: var(--elevation-high);
+    }
+    .input_ac6cb0::placeholder {
+      font-weight: 600;
+      color: #dcddde;
+      opacity: 0.5;
+    }
+  }
+
+  /* server banner images */
+  .bannerImage_f37cb1,
+  .bannerImg_f37cb1 {
+    width: 240px;
+    aspect-ratio: unset;
+  }
+
+  /* tooltips */
+  .dialogWrapper_b1f768,
+  .tooltipPrimary_c36707,
+  .reactionTooltip_b49891,
+  .container__50387 {
+    background: var(--background-surface-higher);
+    border: unset;
+    border-radius: 5px;
+  }
+  .tooltip__4e35b,
+  .tooltipPrimary_c36707 .tooltipPointer_c36707 {
+    border-top-color: var(--background-surface-higher);
+  }
+  .tooltipPointer_c36707.tooltipPointerBg_c36707:after,
+  .tooltipPointer_c36707.tooltipPointerBg_c36707:before {
+    border-top: unset;
+  }
+
+  .tooltip__4e35b,
+  .dialogWrapper_b1f768,
+  .popout__76f04,
+  .popout_a16aea,
+  .container__4e30a {
+    background: var(--background-surface-higher);
+    border-radius: 4px;
+  }
+
+  .tooltip_c36707 {
+    border-radius: 4px;
+  }
+
+  .caretIcon_d6f39b .caretFill_d6f39b,
+  .caretIcon__4e35b .caretFill__4e35b {
+    fill: var(--background-surface-higher);
+  }
+
+  /* channel updates */
+  .wrapper__44df5 {
+    background: var(--primary-700);
+    border-radius: 5px;
+    border: unset;
+    margin: 0 0 24px 0;
+    height: 20px;
+    .content__44df5 {
+      margin-left: 8px;
+      .title__44df5 {
+        color: var(--header-primary);
+      }
+    }
+    &:not(:has(img)) .content__44df5:before {
+      content: url(https://discord.com/assets/dc7e9e55b3a6d39d24acdd650ecc2ef3.svg);
+      transform: scale(0.65);
+    }
+    .image__44df5 {
+      margin-left: 5px;
+    }
+  }
+
+  /* clip footer */
+  .mosaicItem__6c706:is(.mosaicItemWithFooter__6c706) .container_b9f75c {
+    background: var(--background-base-lowest);
+  }
+
+  /* mana modals */
+  [data-mana-component="modal"] {
+    padding: unset;
+    border-radius: 5px;
+    border: unset;
+    background: var(--background-primary);
+    .section__8a031 {
+      padding: 12px;
+    }
+    .header__8a031 {
+      box-shadow:
+        0 0 0 1px rgba(32, 34, 37, 0.6),
+        0 2px 10px 0 rgba(0, 0, 0, 0.2);
+    }
+    .icon-only_a22cb0 {
+      padding: unset !important;
+    }
+    .header__8a031 .stack_dbd263 {
+      justify-content: center;
+      .heading-lg\/semibold_cf4812 {
+        text-transform: uppercase;
+        font-size: 16px;
+      }
+      .headerTrailing__8a031 {
+        padding: unset;
+        margin-right: unset;
+        margin-top: unset;
+      }
+    }
+    .bodyControls__8a031 {
+      padding-left: 13px;
+      padding-right: 13px;
+    }
+    .body__8a031 {
+      padding: 0 0 24px 0;
+      .bodyInner__8a031 {
+        padding-left: 13px;
+        padding-right: 13px;
+      }
+    }
+    .input__0ed4f {
+      border-radius: 3px;
+      color: var(--text-default);
+      background-color: var(--deprecated-text-input-bg);
+      border: 1px solid var(--deprecated-text-input-border);
+    }
+    .color-mix_a22cb0 {
+      &:before {
+        all: unset;
+      }
+      &:hover {
+        color: var(--icon-normal);
+      }
+    }
+    .actionBar__8a031 {
+      border-top: 1px var(--border-subtle);
+      background: var(--modal-footer-background);
+      padding: 16px;
+      border-radius: 5px;
+      .actionBarLeading__8a031 {
+        .clearAfterSelectContainer_dbc4b7 {
+          margin-inline-start: 0;
+        }
+      }
+      .actionBarTrailing__8a031 {
+        flex-direction: row-reverse;
+        .stack_dbd263[data-direction="vertical"] {
+          flex-direction: row;
+        }
+      }
+      .stack_dbd263 {
+        width: auto;
+      }
+    }
+  }
+
+  /* owner crown */
+  .ownerIcon__5d473 {
+    color: var(--text-warning);
+  }
+
+  /* show header elements in a call */
+  .transparent__9293f .children__9293f,
+  .transparent__9293f .toolbar__9293f,
+  .transparent__9293f .upperContainer__9293f {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  /* registered games */
+  .notDetected_cc46f0 {
+    background: var(--background-base-lowest);
+  }
+
+  /* unsaved changes */
+  .container_fcf29c {
+    background-color: var(--primary-700);
+  }
+
+  .container__53b23 {
+    background: var(--background-base-lowest);
+  }
+
+  /* channel select */
+  .modeSelected__2ea32 .link__2ea32,
+  .modeSelected__2ea32:hover .link__2ea32 {
+    background: var(--interactive-background-active);
+  }
+  .modeConnected__2ea32 .icon__2ea32,
+  .modeConnected__2ea32:hover .icon__2ea32,
+  .modeSelected__2ea32 .icon__2ea32,
+  .modeSelected__2ea32:hover .icon__2ea32 {
+    color: var(--channel-icon);
+  }
+
+  /* search header */
+  .searchHeader_ae7890 {
+    background: var(--primary-700);
+  }
+
+  /* BetterDiscord Elements */
+  .bd-button {
+    border-radius: 3px;
+  }
+
+  .bd-changelog-modal .bd-modal-content {
+    padding-bottom: 20px;
+  }
+
+  .bd-file-input-wrap {
+    border-radius: 3px;
+    background-color: hsla(0, calc(var(--saturation-factor, 1) * 0%), 0%, 0.1);
+    border: 1px solid hsla(0, calc(var(--saturation-factor, 1) * 0%), 0%, 0.3);
+  }
+
+  .bd-keybind-wrap.recording,
+  .bd-keybind-wrap:not(.bd-keybind-disabled):hover {
+    border-color: hsla(
+      359,
+      calc(var(--saturation-factor, 1) * 82.6%),
+      59.4%,
+      0.3
+    );
+  }
+
+  .bd-keybind-wrap.recording {
+    box-shadow: 0 0 6px
+      hsla(359, calc(var(--saturation-factor, 1) * 82.6%), 59.4%, 0.3);
+  }
+
+  .bd-keybind-wrap.recording input {
+    color: hsl(359, calc(var(--saturation-factor, 1) * 82.6%), 59.4%);
+  }
+
+  .bd-modal-inner {
+    border-radius: 4px;
+  }
+
+  .bd-modal-root {
+    border-radius: 4px;
+    border: unset;
+  }
+
+  .bd-modal-header {
+    border-radius: 4px 4px 0 0;
+  }
+
+  .bd-modal-footer {
+    border-radius: 0 0 5px 5px;
+    box-shadow: inset 0 1px 0 hsl(var(--primary-630-hsl) / 0.6);
+  }
+
+  .bd-modal-content {
+    border-radius: 5px 5px 0 0;
+    padding-bottom: 20px;
+  }
+
+  .bd-number-input {
+    display: flex;
+    background-color: var(--deprecated-text-input-bg);
+    border: 1px solid var(--deprecated-text-input-border);
+    font-size: 14px;
+    padding: 5px;
+    margin: 0;
+    border-radius: 3px;
+    width: 70px;
+  }
+
+  .bd-button.bd-number-input-decrement {
+    border-right: unset;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .bd-button.bd-number-input-increment {
+    border-left: unset;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .bd-radio-option {
+    padding: 10px 10px 10px 7px;
+    margin-bottom: 8px;
+    background-color: var(--background-base-lower);
+    border-radius: 3px;
+    .bd-radio-description {
+      color: var(--interactive-text-normal);
+    }
+  }
+
+  .bd-radio-option:hover {
+    background-color: var(--background-mod-subtle);
+  }
+
+  .bd-radio-option.bd-radio-selected {
+    background-color: var(--background-mod-strong);
+  }
+
+  .bd-toast {
+    animation: bd-toast-up 300ms ease;
+    transform: translateY(-10px);
+    background-color: var(--background-base-low);
+    padding: 10px;
+    border-radius: 5px;
+    border: unset;
+    box-shadow: var(--elevation-medium), var(--elevation-stroke);
+    font-weight: 500;
+    color: var(--header-primary);
+    font-size: 14px;
+    opacity: 1;
+    margin-top: 10px;
+    line-height: unset;
+    margin-bottom: unset;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .bd-toast.toast-success {
+    background-color: var(--green);
+    color: #fff;
+  }
+
+  .bd-toast.toast-warning,
+  .bd-toast.toast-warn {
+    background-color: var(--yellow);
+    color: #fff;
+  }
+
+  .bd-select {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--deprecated-text-input-bg);
+    border: 1px solid var(--deprecated-text-input-border);
+    border-radius: 3px;
+    padding: 5px 5px 5px 5px;
+    transition: 150ms ease border-color;
+  }
+
+  .bd-store-card {
+    padding: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-630);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    margin: 10px 0;
+    border: unset;
+    border-radius: 5px;
+  }
+
+  .bd-addon-store-card {
+    background-color: var(--primary-630) !important;
+  }
+
+  .bd-addon-list .bd-addon-card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+    border: unset;
+    background: var(--background-primary);
+  }
+
+  .bd-addon-list .bd-addon-header {
+    color: var(--header-primary);
+    background: var(--background-base-lowest);
+    padding: 16px;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+  }
+}
+
+html:is([lang="en-us"])
+  .groupHeader__971b5[id="Filters"]
+  [data-text-variant="text-xs/semibold"] {
+  line-height: 0;
+  text-indent: -9999px;
+  display: inline-flex;
+  &:after {
+    content: "Search Options";
+    text-indent: 0;
+    line-height: initial;
+    display: flex;
+  }
+}
+
+/*ttitle bar. and stufuff. i guess*/
+.bar_c38106:not(.systemBar_c38106):not(:has(.channelTabs-trailing)) {
+  padding: 0 12px 0 !important;
+  height: 50px;
+  margin-top: -33px;
+}
+.bar_c38106 .title_c38106 {
+  text-align: start;
+  display: block;
+  position: absolute;
+  margin-bottom: 30px;
+  background-image: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-06.svg");
+  background-repeat: no-repeat;
+  transform: translateY(40px) translateX(12px) scale(1.01);
+  width: 52px;
+  [data-text-variant="text-sm\/medium"] {
+    display: none;
+  }
+  svg {
+    display: none;
+  }
+  .guildIcon_edbb22 {
+    display: none;
+  }
+  html.custom-theme-background & {
+    background-image: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-07.svg");
+  }
+}
+.bar_c38106 .trailing_c38106 {
+  top: 51px;
+  gap: 8px;
+  z-index: 102;
+}
+.bar_c38106 .trailing_c38106:has(> .clickable__9293f) {
+  top: 51px;
+  gap: 8px;
+  z-index: 102;
+}
+.bar_c38106 .trailing_c38106 .clickable_c99c29 {
+  svg {
+    height: 32px;
+    width: 24px;
+  }
+}
+.bar_c38106 .channelTabs-trailing .trailing_c38106 {
+  top: 36px;
+  right: 10px;
+}
+.channelTabs-trailing .winButtons_c38106 {
+  position: absolute;
+  top: -42px;
+  right: 6px;
+  & .winButton_c38106 {
+    height: calc(var(--custom-app-top-bar-height) + 4px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+#channelTabs-settingsMenu {
+  position: relative;
+  right: 20px;
+  top: -2px;
+}
+:is(.container__01ae2, .container_fb64c9) > .container__9293f,
+.page__5e434 .container__01ae2 {
+  z-index: 102;
+}
+.bar_c38106 .trailing_c38106 .iconWrapper__9293f {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+}
+.bar_c38106 .trailing_c38106 .iconWrapper__9293f .icon__9293f {
+  width: 24px;
+  height: 24px;
+}
+
+.bar_c38106 .trailing_c38106 .iconWrapper__9293f.selected__9293f .icon__9293f {
+  opacity: 1;
+}
+.bar_c38106 .trailing_c38106 .iconWrapper__9293f > svg > foreignObject {
+  x: -2px;
+  y: -2px;
+  mask: none !important;
+}
+
+html .bar_c38106 {
+  top: 0;
+  right: 0;
+  z-index: 102;
+}
+.inviteToolbar__133bf > .clickable__9293f.iconWrapper__9293f {
+  flex-wrap: wrap;
+}
+.inviteToolbar__133bf .iconWrapper__9293f:after {
+  border-left: 1px solid var(--border-subtle);
+  content: "";
+  margin-left: 55px;
+  margin-top: -29px;
+  height: calc(var(--custom-app-top-bar-height) - var(--space-12));
+}
+.winButtons_c38106 {
+  position: absolute;
+  gap: unset;
+  justify-content: center;
+  bottom: 38px;
+  right: -12px;
+  z-index: 3001;
+  -webkit-app-region: no-drag !important;
+  .winButton_c38106 {
+    align-items: center;
+    width: 28px;
+    height: 24px;
+  }
+  .winButtonClose_c38106 {
+    height: 22px;
+  }
+}
+.winButtonsWithDivider_c38106:before {
+  border: unset;
+}
+.systemBar_c38106 {
+  background-color: var(--primary-700);
+  min-height: 22px;
+  z-index: 999999 !important;
+  .winButtons_c38106 {
+    bottom: 42px;
+    left: -96px;
+  }
+  html.platform-linux & {
+    display: none;
+  }
+}
+/*.channelTabs-tabContainer div {
+	margin-bottom: 0 !important;
+}*/
+/* server list */
+.base__5e434 .sidebar__5e434 > .guilds__5e434 {
+  width: 72px;
+  .scroller_ef3116 {
+    padding-top: 2px;
+    gap: 0px !important;
+    .isExpanded__48112 ul.stack_dbd263 {
+      height: auto !important;
+    }
+  }
+  #guild-list-unread-dms:has(.listItem__650eb) {
+    padding-top: 8px !important;
+  }
+  .listItem__650eb:has(.guildSeparator__252b6) {
+    margin: 6px 0 8px 0;
+  }
+  .listItem__650eb {
+    margin: 0 0 0px;
+  }
+  .guildSeparator__252b6 {
+    height: 2px;
+  }
+  .folderIcon__48112 {
+    margin-top: 0px;
+    margin-left: -1px;
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+.base__5e434 .sidebar__5e434 > .wrapper_ef3116 {
+  background: var(--primary-700);
+}
+.folderGroup__48112 {
+  --custom-folder-preview-padding: 6px;
+  --custom-folder-color: #7289da;
+}
+.folderGroup__48112:not(.isExpanded__48112) .folderIcon__48112 svg {
+  display: none;
+}
+.folderGroupBackground__48112 {
+  left: 11px;
+  width: 48px;
+  bottom: 4px;
+  border-radius: 16px 16px 25px 25px;
+  background: var(--background-modifier-accent);
+  border: none;
+}
+.folderIconWrapper__48112 {
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  border-radius: 16px;
+  --bg-mod-subtle: rgba(114, 137, 218, 0.4) !important;
+}
+.expandedFolderIconWrapper__48112 {
+  margin: 0;
+  width: 48px;
+  height: 48px;
+}
+.folderGroup__48112:is(.isExpanded__48112) .folderPreviewWrapper__48112 {
+  display: none;
+}
+.folderPreviewGuildIcon__48112 {
+  border-radius: 32px !important;
+}
+
+.listItem__650eb:has(.circleIcon__5bc7e) {
+  margin: 6px 0 0 !important;
+  .circleIconButton__5bc7e {
+    transition: ease 0.17s;
+    &.selected__5bc7e {
+      border-radius: 15px !important;
+    }
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+  }
+}
+.guildsError_e8d03f {
+  width: 48px;
+  height: 48px;
+  background: (rgba(240, 71, 71, 0.1));
+  border-color: var(--red);
+  &:hover {
+    background: var(--red);
+  }
+}
+.mention__3b95d {
+  box-sizing: border-box;
+  opacity: 0.9;
+  border: unset;
+  box-shadow: unset;
+  right: 1px;
+}
+
+.sidebar__5e434:after {
+  display: none;
+}
+
+.tutorialContainer__1f388 ~ .container__93fc9 {
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.tutorialContainer__1f388
+  ~ .container__93fc9
+  .folderGroup__48112:not(.isExpanded__48112)
+  .folderIconWrapper__48112 {
+  padding: 0;
+}
+
+.folderGroup__48112:not(.isExpanded__48112) .pendingFolderButtonIcon__93fc9 {
+  --guildbar-avatar-size: 48px;
+}
+
+/* fix unread dm gap */
+.stack_dbd263#guild-list-unread-dms {
+  gap: 16px !important;
+  padding-bottom: 10px !important;
+}
+
+/* hides left sidebar when fullscreen mode */
+.base__5e434[data-fullscreen="true"] {
+  .sidebar__5e434 {
+    display: none !important;
+  }
+}
+
+.spriteContainer__04eed {
+  --custom-emoji-sprite-size: 24px !important;
+}
+
+.layer__960e4.baseLayer__960e4 {
+  background-color: var(--primary-700);
+}
+
+#app-mount .emojiRemove_e7d73e {
+  opacity: 0;
+  color: transparent;
+  position: absolute;
+  right: -12px;
+  width: 24px;
+  height: 24px;
+  box-shadow: var(--legacy-elevation-border), var(--legacy-elevation-low);
+  background-color: var(--background-primary);
+  background-image: url(https://discord.com/assets/b5ad3c52d0699af9b6987839875450d4.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  transition:
+    opacity 0.1s ease-in-out,
+    box-shadow 0.1s ease-in-out,
+    transform 0.2s ease;
+  .emojiRow_e7d73e:hover & {
+    cursor: pointer;
+    opacity: 1;
+  }
+  &:active {
+    transform: translateY(2px);
+  }
+}
+#app-mount .emojiRow_e7d73e:before {
+  display: none;
+}
+
+.container__60fa3 {
+  border: 1px solid var(--background-base-lowest);
+}
+
+/*new settings*/
+.container__8a031[data-mana-component="layer-modal"] {
+  border: none;
+  max-width: 1080px !important;
+  .panel__6131a {
+    margin: unset;
+  }
+  .content_e9e3ed {
+    gap: var(--space-12);
+  }
+  .contentHeader_e9e3ed {
+    border: unset;
+    padding: 0 var(--space-24) 0 var(--space-30);
+    h1 {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--header-primary) !important;
+    }
+  }
+  [data-text-variant="heading-lg/semibold"],
+  legend,
+  .debugTitle_bc4a3e {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--header-secondary) !important;
+  }
+  .itemContent_caf372 {
+    color: var(--interactive-text-normal) !important;
+  }
+  .item_caf372:hover .itemContent_caf372 {
+    color: var(--interactive-text-hover) !important;
+  }
+  .active_caf372 .itemContent_caf372 {
+    color: var(--interactive-text-active) !important;
+  }
+  .contentHeader_e9e3ed .buttonChildren_a22cb0 {
+    align-items: center;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 3px;
+    border-color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 36px;
+    height: 36px;
+    justify-content: center;
+    width: 36px;
+  }
+  .contentHeader_e9e3ed .icon-only_a22cb0 {
+    align-self: end;
+    border-radius: 50%;
+    width: 42px;
+    height: 40px;
+    .buttonChildrenWrapper_a22cb0 {
+      min-width: 42px;
+      min-height: 40px;
+    }
+  }
+  .contentHeader_e9e3ed .icon-only_a22cb0:after {
+    position: absolute;
+    content: "ESC";
+    top: 43px;
+    color: #72767d;
+    font-size: 13px;
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+.sidebar__409aa {
+  background: var(--background-base-lowest);
+  border: none !important;
+
+  & h1 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    line-height: 1.3333333333333333;
+    padding: 6px 10px;
+    margin: 0;
+    color: var(--channels-default) !important;
+  }
+}
+html.density-default .item_caf372 {
+  border-radius: 4px;
+  padding: 7px 10px;
+  &:active {
+    background: var(--background-mod-muted);
+  }
+  &.active_caf372 {
+    transition: none;
+  }
+}
+.fixedContent__409aa:after {
+  background: linear-gradient(to bottom, var(--primary-630), transparent);
+}
+@container outer-container (max-width: 1080px) {
+  .modal_e44912 {
+    padding-top: 21px;
+  }
+}
+
+
+/* ================= MVSCORD x YoRHa: CAMADA VISUAL =================
+   Bege #242520 e oliva #d6cfb6 do YoRHa original.
+   Sem os seletores .da- antigos, larguras, deslocamentos, filtros de imagens
+   ou animacao do botao Home do tema antigo. A fonte da interface permanece
+   a da base; EnvyCodeR continua nos blocos de codigo.
+   Textura local em CSS: nao depende do wallpaper remoto do YoRHa.
+*/
+:root {
+  --yorha-paper: #242520;
+  --yorha-paper-light: #30312a;
+  --yorha-paper-deep: #1e1f1b;
+  --yorha-ink: #d6cfb6;
+  --yorha-ink-strong: #eee7cf;
+  --yorha-muted: #aaa58f;
+  --yorha-line: rgba(214,207,182,0.30);
+  --yorha-texture: repeating-linear-gradient(0deg, rgba(214,207,182,.025) 0px, rgba(214,207,182,.025) 1px, transparent 1px, transparent 4px);
+}
+
+/* Both legacy tokens (oldcord) and the tokens used in the supplied refresh CSS.
+   Repeated on theme boundaries so dialogs do not inherit Discord's dark colors. */
+html:root,
+html #app-mount,
+html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
+  --background-primary: var(--yorha-paper);
+  --background-base-low: var(--yorha-paper);
+  --background-surface-high: var(--yorha-paper);
+  --modal-background: var(--yorha-paper);
+  --home-background: var(--yorha-paper);
+  --primary-600: var(--yorha-paper);
+  --background-secondary: var(--yorha-paper-deep);
+  --background-base-lower: var(--yorha-paper-deep);
+  --background-surface-higher: var(--yorha-paper-deep);
+  --modal-footer-background: var(--yorha-paper-deep);
+  --primary-630: var(--yorha-paper-deep);
+  --primary-660: var(--yorha-paper-deep);
+  --background-secondary-alt: #191a17;
+  --background-tertiary: #191a17;
+  --background-base-lowest: #191a17;
+  --primary-700: #191a17;
+  --primary-730: #191a17;
+  --primary-800: #191a17;
+  --background-floating: var(--yorha-paper-light);
+  --background-nested-floating: var(--yorha-paper-light);
+  --background-surface-highest: var(--yorha-paper-light);
+  --input-background: var(--yorha-paper-light);
+  --channeltextarea-background: var(--yorha-paper-light);
+  --deprecated-text-input-bg: var(--yorha-paper-light);
+  --deprecated-card-bg: var(--yorha-paper-light);
+  --deprecated-card-editable-bg: var(--yorha-paper-light);
+  --deprecated-quickswitcher-input-background: var(--yorha-paper-light);
+  --primary-500: var(--yorha-paper-light);
+  --text-normal: var(--yorha-ink);
+  --text-default: var(--yorha-ink);
+  --text-primary: var(--yorha-ink);
+  --text-secondary: var(--yorha-ink);
+  --header-secondary: var(--yorha-ink);
+  --channels-default: var(--yorha-ink);
+  --interactive-normal: var(--yorha-ink);
+  --interactive-text-normal: var(--yorha-ink);
+  --icon-primary: var(--yorha-ink);
+  --icon-secondary: var(--yorha-ink);
+  --icon-normal: var(--yorha-ink);
+  --channel-icon: var(--yorha-ink);
+  --background-accent: var(--yorha-ink);
+  --background-brand: var(--yorha-ink);
+  --brand-500: var(--yorha-ink);
+  --brand-530: var(--yorha-ink);
+  --brand-560: var(--yorha-ink);
+  --blurple: var(--yorha-ink);
+  --button-brand-background: var(--yorha-ink);
+  --button-filled-brand-background: var(--yorha-ink);
+  --control-brand-foreground: var(--yorha-ink);
+  --text-brand: var(--yorha-ink);
+  --mention-foreground: var(--yorha-ink);
+  --text-mention-foreground: var(--yorha-ink);
+  --checkbox-background-checked: var(--yorha-ink);
+  --checkbox-border-checked: var(--yorha-ink);
+  --header-primary: var(--yorha-ink-strong);
+  --text-strong: var(--yorha-ink-strong);
+  --interactive-hover: var(--yorha-ink-strong);
+  --interactive-active: var(--yorha-ink-strong);
+  --interactive-text-hover: var(--yorha-ink-strong);
+  --interactive-text-active: var(--yorha-ink-strong);
+  --icon-strong: var(--yorha-ink-strong);
+  --brand-600: var(--yorha-ink-strong);
+  --brand-700: var(--yorha-ink-strong);
+  --button-brand-background-hover: var(--yorha-ink-strong);
+  --button-filled-brand-background-hover: var(--yorha-ink-strong);
+  --text-muted: var(--yorha-muted);
+  --text-subtle: var(--yorha-muted);
+  --interactive-muted: var(--yorha-muted);
+  --interactive-text-muted: var(--yorha-muted);
+  --icon-muted: var(--yorha-muted);
+  --input-placeholder-text: var(--yorha-muted);
+  --button-brand-text: var(--yorha-paper-light);
+  --button-filled-brand-text: var(--yorha-paper-light);
+  --text-on-brand-primary: var(--yorha-paper-light);
+  --background-modifier-hover: rgba(214,207,182,.08);
+  --background-mod-subtle: rgba(214,207,182,.08);
+  --bg-mod-subtle: rgba(214,207,182,.08);
+  --background-message-hover: rgba(214,207,182,.08);
+  --interactive-background-hover: rgba(214,207,182,.08);
+  --background-modifier-active: rgba(214,207,182,.14);
+  --background-mod-muted: rgba(214,207,182,.14);
+  --bg-mod-strong: rgba(214,207,182,.14);
+  --interactive-background-active: rgba(214,207,182,.14);
+  --mention-background: rgba(214,207,182,.14);
+  --background-mentioned: rgba(214,207,182,.14);
+  --background-message-highlight: rgba(214,207,182,.14);
+  --background-modifier-selected: rgba(214,207,182,.21);
+  --background-mod-strong: rgba(214,207,182,.21);
+  --background-mentioned-hover: rgba(214,207,182,.21);
+  --background-modifier-accent: var(--yorha-line);
+  --border-subtle: var(--yorha-line);
+  --border-normal: var(--yorha-line);
+  --border-strong: var(--yorha-line);
+  --input-border: var(--yorha-line);
+  --deprecated-text-input-border: var(--yorha-line);
+  --scrollbar-thin-thumb: var(--yorha-ink);
+  --scrollbar-auto-thumb: var(--yorha-ink);
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-track: transparent;
+  --text-link: #9dcbd0;
+  --text-link-low-saturation: #9dcbd0;
+  --text-positive: #a9c49b;
+  --status-positive: #a9c49b;
+  --text-warning: #87500c;
+  --text-danger: #963c35;
+  --status-danger: #963c35;
+  --button-secondary: #b2ac96;
+  --button-secondary-background: #b2ac96;
+  --button-secondary-hover: #a59e88;
+  --button-secondary-background-hover: #a59e88;
+  --background-gradient-low: var(--yorha-paper);
+  --background-gradient-lower: var(--yorha-paper-deep);
+  --background-gradient-lowest: var(--yorha-paper-deep);
+  --background-gradient-higher: var(--yorha-paper-light);
+  --primary-630-hsl: 47 16% 67%;
+  --brand-500-hsl: 44 11% 27%;
+}
+
+/* Main surfaces: paint only; no transparent layers exposing unrelated windows. */
+html #app-mount :is(.chat_f75fb0, .messagesWrapper__36d07) {
+  background-color: var(--yorha-paper);
+  background-image: var(--yorha-texture);
+}
+html #app-mount :is(.sidebarList__5e434, .members_c8ffbb, .container_c8ffbb) {
+  background-color: var(--yorha-paper-deep);
+}
+
+/* Inverted YoRHa headers and user panel, with local foreground tokens. */
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  --header-primary: var(--yorha-paper-light);
+  --header-secondary: var(--yorha-paper);
+  --text-normal: var(--yorha-paper-light);
+  --text-default: var(--yorha-paper-light);
+  --text-primary: var(--yorha-paper-light);
+  --text-secondary: var(--yorha-paper);
+  --text-strong: var(--yorha-paper-light);
+  --text-muted: var(--yorha-paper);
+  --text-subtle: var(--yorha-paper);
+  --interactive-normal: var(--yorha-paper);
+  --interactive-text-normal: var(--yorha-paper);
+  --interactive-text-hover: #242520;
+  --interactive-text-active: #242520;
+  --icon-primary: var(--yorha-paper);
+  --icon-secondary: var(--yorha-paper);
+  --icon-normal: var(--yorha-paper);
+  --text-positive: #a9c49b;
+  background: var(--yorha-ink);
+  color: var(--yorha-paper-light);
+  box-shadow: inset 0 -1px 0 var(--yorha-paper-deep);
+}
+/* Search fields inside the inverted toolbar retain a readable light surface. */
+html #app-mount .container__9293f .searchBar_c322aa {
+  --text-muted: var(--yorha-muted);
+  --text-normal: var(--yorha-ink);
+  --text-default: var(--yorha-ink);
+  background: var(--yorha-paper);
+  color: var(--yorha-ink);
+}
+
+/* Selection stripes are inset shadows: they consume no layout space. */
+html #app-mount :is(.interactiveSelected__972a0, .selected_aa8da2.item_aa8da2, .active_caf372) {
+  box-shadow: inset 3px 0 0 var(--yorha-ink);
+}
+html #app-mount .folderIconWrapper__48112 {
+  --bg-mod-subtle: rgba(214,207,182,.22) !important;
+}
+html #app-mount .folderGroup__48112 {
+  --custom-folder-color: var(--yorha-ink);
+}
+
+/* Paper-colored menus, inputs and attachment surfaces. Existing radii retained. */
+html #app-mount :is(.menu_c1e9c4, .root__49fc1, .container__8a031[data-mana-component="layer-modal"]) {
+  background-color: var(--yorha-paper-light);
+  box-shadow: 0 8px 24px rgba(238,231,207,.22), inset 0 0 0 1px var(--yorha-line);
+}
+html #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017) {
+  background-color: var(--yorha-paper-light);
+  box-shadow: inset 0 0 0 1px var(--yorha-line);
+}
+html #app-mount :is(.highlighted__5126c, .replying__5126c, .flash__03436[data-flash="true"]) {
+  background-color: rgba(214,207,182,.10);
+}
+html #app-mount :is(.highlighted__5126c, .replying__5126c):hover {
+  background-color: rgba(214,207,182,.16) !important;
+}
+
+/* Keep syntax colors readable on the light palette even in Discord dark mode.
+   EnvyCodeR font declaration remains in the original base above. */
+html #app-mount :is(code, pre, .hljs) {
+  background-color: var(--yorha-paper-light);
+  color: var(--yorha-ink-strong);
+}
+html #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #68624f; }
+html #app-mount :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) { color: #725035; }
+html #app-mount :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) { color: #3c6143; }
+html #app-mount :is(.hljs-title, .hljs-title.function_, .hljs-title.class_, .hljs-built_in, .hljs-symbol) { color: #70516b; }
+html #app-mount :is(.hljs-number, .hljs-attr, .hljs-attribute, .hljs-variable, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id) { color: #345e6b; }
+html #app-mount .hljs-addition { background-color: #c8d5b9; color: #304d32; }
+html #app-mount .hljs-deletion { background-color: #e3c6b9; color: #793c32; }
+/* ================= FIM DA CAMADA YoRHa ================= */
+
+
+/* ===== v1.1: surface and profile color coverage, based on supplied Catppuccin =====
+   Paint-only corrections. Native profile art, role colors and layout retained.
+   Priority is intentional: theme-local Discord/oldcord tokens can otherwise win.
+*/
+html.visual-refresh:is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
+html #app-mount,
+html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
+
+  --background-primary: var(--yorha-paper) !important;
+  --background-base-low: var(--yorha-paper) !important;
+  --background-surface-high: var(--yorha-paper) !important;
+  --modal-background: var(--yorha-paper) !important;
+  --home-background: var(--yorha-paper) !important;
+  --primary-600: var(--yorha-paper) !important;
+  --background-secondary: var(--yorha-paper-deep) !important;
+  --background-base-lower: var(--yorha-paper-deep) !important;
+  --background-surface-higher: var(--yorha-paper-deep) !important;
+  --modal-footer-background: var(--yorha-paper-deep) !important;
+  --primary-630: var(--yorha-paper-deep) !important;
+  --primary-660: var(--yorha-paper-deep) !important;
+  --background-secondary-alt: #191a17 !important;
+  --background-tertiary: #191a17 !important;
+  --background-base-lowest: #191a17 !important;
+  --primary-700: #191a17 !important;
+  --primary-730: #191a17 !important;
+  --primary-800: #191a17 !important;
+  --background-floating: var(--yorha-paper-light) !important;
+  --background-nested-floating: var(--yorha-paper-light) !important;
+  --background-surface-highest: var(--yorha-paper-light) !important;
+  --input-background: var(--yorha-paper-light) !important;
+  --channeltextarea-background: var(--yorha-paper-light) !important;
+  --deprecated-text-input-bg: var(--yorha-paper-light) !important;
+  --deprecated-card-bg: var(--yorha-paper-light) !important;
+  --deprecated-card-editable-bg: var(--yorha-paper-light) !important;
+  --deprecated-quickswitcher-input-background: var(--yorha-paper-light) !important;
+  --primary-500: var(--yorha-paper-light) !important;
+  --text-normal: var(--yorha-ink) !important;
+  --text-default: var(--yorha-ink) !important;
+  --text-primary: var(--yorha-ink) !important;
+  --text-secondary: var(--yorha-ink) !important;
+  --header-secondary: var(--yorha-ink) !important;
+  --channels-default: var(--yorha-ink) !important;
+  --interactive-normal: var(--yorha-ink) !important;
+  --interactive-text-normal: var(--yorha-ink) !important;
+  --icon-primary: var(--yorha-ink) !important;
+  --icon-secondary: var(--yorha-ink) !important;
+  --icon-normal: var(--yorha-ink) !important;
+  --channel-icon: var(--yorha-ink) !important;
+  --background-accent: var(--yorha-ink) !important;
+  --background-brand: var(--yorha-ink) !important;
+  --brand-500: var(--yorha-ink) !important;
+  --brand-530: var(--yorha-ink) !important;
+  --brand-560: var(--yorha-ink) !important;
+  --blurple: var(--yorha-ink) !important;
+  --button-brand-background: var(--yorha-ink) !important;
+  --button-filled-brand-background: var(--yorha-ink) !important;
+  --control-brand-foreground: var(--yorha-ink) !important;
+  --text-brand: var(--yorha-ink) !important;
+  --mention-foreground: var(--yorha-ink) !important;
+  --text-mention-foreground: var(--yorha-ink) !important;
+  --checkbox-background-checked: var(--yorha-ink) !important;
+  --checkbox-border-checked: var(--yorha-ink) !important;
+  --header-primary: var(--yorha-ink-strong) !important;
+  --text-strong: var(--yorha-ink-strong) !important;
+  --interactive-hover: var(--yorha-ink-strong) !important;
+  --interactive-active: var(--yorha-ink-strong) !important;
+  --interactive-text-hover: var(--yorha-ink-strong) !important;
+  --interactive-text-active: var(--yorha-ink-strong) !important;
+  --icon-strong: var(--yorha-ink-strong) !important;
+  --brand-600: var(--yorha-ink-strong) !important;
+  --brand-700: var(--yorha-ink-strong) !important;
+  --button-brand-background-hover: var(--yorha-ink-strong) !important;
+  --button-filled-brand-background-hover: var(--yorha-ink-strong) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  --interactive-muted: var(--yorha-muted) !important;
+  --interactive-text-muted: var(--yorha-muted) !important;
+  --icon-muted: var(--yorha-muted) !important;
+  --input-placeholder-text: var(--yorha-muted) !important;
+  --button-brand-text: var(--yorha-paper-light) !important;
+  --button-filled-brand-text: var(--yorha-paper-light) !important;
+  --text-on-brand-primary: var(--yorha-paper-light) !important;
+  --background-modifier-hover: rgba(214,207,182,.08) !important;
+  --background-mod-subtle: rgba(214,207,182,.08) !important;
+  --bg-mod-subtle: rgba(214,207,182,.08) !important;
+  --background-message-hover: rgba(214,207,182,.08) !important;
+  --interactive-background-hover: rgba(214,207,182,.08) !important;
+  --background-modifier-active: rgba(214,207,182,.14) !important;
+  --background-mod-muted: rgba(214,207,182,.14) !important;
+  --bg-mod-strong: rgba(214,207,182,.14) !important;
+  --interactive-background-active: rgba(214,207,182,.14) !important;
+  --mention-background: rgba(214,207,182,.14) !important;
+  --background-mentioned: rgba(214,207,182,.14) !important;
+  --background-message-highlight: rgba(214,207,182,.14) !important;
+  --background-modifier-selected: rgba(214,207,182,.21) !important;
+  --background-mod-strong: rgba(214,207,182,.21) !important;
+  --background-mentioned-hover: rgba(214,207,182,.21) !important;
+  --background-modifier-accent: var(--yorha-line) !important;
+  --border-subtle: var(--yorha-line) !important;
+  --border-normal: var(--yorha-line) !important;
+  --border-strong: var(--yorha-line) !important;
+  --input-border: var(--yorha-line) !important;
+  --deprecated-text-input-border: var(--yorha-line) !important;
+  --scrollbar-thin-thumb: var(--yorha-ink) !important;
+  --scrollbar-auto-thumb: var(--yorha-ink) !important;
+  --scrollbar-thin-track: transparent !important;
+  --scrollbar-auto-track: transparent !important;
+  --text-link: #9dcbd0 !important;
+  --text-link-low-saturation: #9dcbd0 !important;
+  --text-positive: #a9c49b !important;
+  --status-positive: #a9c49b !important;
+  --text-warning: #87500c !important;
+  --text-danger: #963c35 !important;
+  --status-danger: #963c35 !important;
+  --button-secondary: #b2ac96 !important;
+  --button-secondary-background: #b2ac96 !important;
+  --button-secondary-hover: #a59e88 !important;
+  --button-secondary-background-hover: #a59e88 !important;
+  --background-gradient-low: var(--yorha-paper) !important;
+  --background-gradient-lower: var(--yorha-paper-deep) !important;
+  --background-gradient-lowest: var(--yorha-paper-deep) !important;
+  --background-gradient-higher: var(--yorha-paper-light) !important;
+  --primary-630-hsl: 47 16% 67% !important;
+  --brand-500-hsl: 44 11% 27% !important;
+
+  --chat-background: var(--yorha-paper) !important;
+  --chat-background-default: var(--yorha-paper) !important;
+  --background-code: var(--yorha-paper) !important;
+  --bg-base-primary: var(--yorha-paper) !important;
+  --bg-surface-raised: var(--yorha-paper-deep) !important;
+  --custom-channel-members-bg: var(--yorha-paper-deep) !important;
+  --bg-base-secondary: var(--yorha-paper-deep) !important;
+  --background-gradient-highest: var(--yorha-paper-deep) !important;
+  --card-background-default: var(--yorha-paper-light) !important;
+  --custom-status-bubble-background: var(--yorha-paper-light) !important;
+  --custom-status-bubble-background-color: var(--yorha-paper-light) !important;
+  --user-profile-overlay-background: var(--yorha-paper-light) !important;
+  --input-background-default: var(--yorha-paper-light) !important;
+  --profile-body-background-color: var(--yorha-paper-light) !important;
+  --app-frame-background: #191a17 !important;
+  --bg-base-tertiary: #191a17 !important;
+  --user-profile-overlay-background-hover: #191a17 !important;
+  --input-text-default: var(--yorha-ink) !important;
+  --icon-default: var(--yorha-ink) !important;
+  --icon-subtle: var(--yorha-ink) !important;
+  --interactive-icon-default: var(--yorha-ink) !important;
+  --interactive-icon-hover: var(--yorha-ink) !important;
+  --interactive-icon-active: var(--yorha-ink) !important;
+  --interactive-text-default: var(--yorha-ink) !important;
+  --control-secondary-text-default: var(--yorha-ink) !important;
+  --control-secondary-text-hover: var(--yorha-ink) !important;
+  --control-secondary-text-active: var(--yorha-ink) !important;
+  --logo-primary: var(--yorha-ink) !important;
+  --control-brand-foreground-new: var(--yorha-ink) !important;
+  --input-placeholder-text-default: var(--yorha-muted) !important;
+  --channel-text-area-placeholder: var(--yorha-muted) !important;
+  --chat-text-muted: var(--yorha-muted) !important;
+  --primary-100: var(--yorha-muted) !important;
+  --primary-200: var(--yorha-muted) !important;
+  --primary-300: var(--yorha-muted) !important;
+  --primary-400: var(--yorha-muted) !important;
+  --chat-border: var(--yorha-line) !important;
+  --border-muted: var(--yorha-line) !important;
+  --input-border-default: var(--yorha-line) !important;
+  --control-secondary-border-default: var(--yorha-line) !important;
+  --spine-default: var(--yorha-line) !important;
+  --background-mod-normal: rgba(214,207,182,.14) !important;
+  --interactive-background-selected: rgba(214,207,182,.14) !important;
+  --message-background-hover: rgba(214,207,182,.14) !important;
+  --message-reacted-background-default: rgba(214,207,182,.14) !important;
+  --message-highlight-background-default: rgba(214,207,182,.14) !important;
+  --message-highlight-background-hover: rgba(214,207,182,.14) !important;
+  --message-mentioned-background-default: rgba(214,207,182,.14) !important;
+  --message-mentioned-background-hover: rgba(214,207,182,.14) !important;
+  --message-reacted-text-default: var(--yorha-ink-strong) !important;
+  --control-primary-background-hover: var(--yorha-ink-strong) !important;
+  --control-primary-background-active: var(--yorha-ink-strong) !important;
+  --control-primary-background-default: var(--yorha-ink) !important;
+  --scrollbar-auto-scrollbar-color-thumb: var(--yorha-ink) !important;
+  --control-primary-text-default: var(--yorha-paper-light) !important;
+  --control-primary-text-hover: var(--yorha-paper-light) !important;
+  --control-primary-text-active: var(--yorha-paper-light) !important;
+  --control-secondary-background-default: var(--yorha-paper-deep) !important;
+  --scrollbar-auto-scrollbar-color-track: var(--yorha-paper-deep) !important;
+  --control-secondary-background-hover: #a59e88 !important;
+  --control-secondary-background-active: #a59e88 !important;
+}
+
+/* Actual painted containers, including descendants inside the channel sidebar.
+   Background-color deliberately preserves background-image profile decorations. */
+html #app-mount :is(.sidebarList__5e434, .sidebarList__5e434 > div, .sidebarList__5e434 nav, .sidebar__409aa) {
+  background-color: var(--yorha-paper-deep) !important;
+}
+html #app-mount :is(.guilds__5e434, .wrapper_ef3116, .scroller_ef3116) {
+  background-color: #191a17 !important;
+}
+html #app-mount :is(.members_c8ffbb, .container_c8ffbb, .member__5d473) {
+  background-color: var(--yorha-paper-deep) !important;
+}
+html #app-mount .member__5d473:hover {
+  background-color: var(--yorha-paper-light) !important;
+}
+html #app-mount :is(.childWrapper__6e9f8, .childWrapperNoHoverBg__6e9f8, .circleIconButton__5bc7e) {
+  background-color: var(--yorha-paper-deep) !important;
+  color: var(--yorha-ink) !important;
+}
+html #app-mount :is(.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .circleIconButton__5bc7e:hover) {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light) !important;
+}
+html #app-mount #vc-spotify-player {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light);
+}
+
+/* New icon/text tokens inside the intentionally dark header and user panel. */
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  --icon-default: var(--yorha-paper-light);
+  --icon-subtle: var(--yorha-paper);
+  --interactive-icon-default: var(--yorha-paper);
+  --interactive-icon-hover: var(--yorha-paper-light);
+  --interactive-icon-active: var(--yorha-paper-light);
+  --interactive-text-default: var(--yorha-paper-light);
+}
+html #app-mount .container__9293f .searchBar_c322aa {
+  --interactive-icon-default: var(--yorha-ink);
+  --icon-default: var(--yorha-ink);
+  --input-text-default: var(--yorha-ink);
+}
+/* ===== end v1.1 ===== */
+
+
+/* ===== v1.2: header contrast and unboxed member descriptions =====
+   The trailing toolbar is positioned over the dark header by MVSCord but is
+   outside that header in the DOM. Give it its own light foreground scope.
+*/
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing_c38106) {
+  --header-primary: #242520 !important;
+  --header-secondary: #30312a !important;
+  --text-normal: #242520 !important;
+  --text-default: #242520 !important;
+  --text-primary: #242520 !important;
+  --text-secondary: #30312a !important;
+  --text-strong: #242520 !important;
+  --text-muted: #30312a !important;
+  --text-subtle: #30312a !important;
+  --interactive-normal: #30312a !important;
+  --interactive-hover: #191a17 !important;
+  --interactive-active: #191a17 !important;
+  --interactive-text-normal: #30312a !important;
+  --interactive-text-default: #30312a !important;
+  --interactive-text-hover: #191a17 !important;
+  --interactive-text-active: #191a17 !important;
+  --interactive-icon-default: #30312a !important;
+  --interactive-icon-hover: #191a17 !important;
+  --interactive-icon-active: #191a17 !important;
+  --icon-default: #30312a !important;
+  --icon-primary: #30312a !important;
+  --icon-secondary: #30312a !important;
+  --icon-normal: #30312a !important;
+  --icon-subtle: #30312a !important;
+  --icon-strong: #242520 !important;
+  --channel-icon: #30312a !important;
+}
+
+/* Explicit foregrounds also cover nested theme scopes on header elements.
+   Do not force SVG fills: outline icons, status dots and badges retain their art. */
+html #app-mount :is(.container__9293f, .trailing_c38106) :is(.icon__9293f, .iconWrapper__9293f),
+html #app-mount .trailing_c38106 .clickable_c99c29,
+html #app-mount .trailing_c38106 .clickable_c99c29 > svg {
+  color: #30312a !important;
+}
+html #app-mount :is(.container__9293f, .trailing_c38106) .clickable__9293f:hover .icon__9293f,
+html #app-mount :is(.container__9293f, .trailing_c38106) .selected__9293f .icon__9293f {
+  color: #191a17 !important;
+}
+html #app-mount .container__9293f .titleWrapper__9293f,
+html #app-mount .container__9293f .titleWrapper__9293f > :is(h1, h2, div, span) {
+  color: #242520 !important;
+}
+html #app-mount .container__9293f .topic__6ec1a {
+  color: #30312a !important;
+}
+
+/* The search input stays light, so it needs a separate dark foreground. */
+html #app-mount .container__9293f .searchBar_c322aa {
+  --text-normal: #eee7cf !important;
+  --text-default: #eee7cf !important;
+  --text-primary: #eee7cf !important;
+  --text-muted: #d6cfb6 !important;
+  --text-subtle: #d6cfb6 !important;
+  --interactive-icon-default: #d6cfb6 !important;
+  --icon-default: #d6cfb6 !important;
+  --input-text-default: #eee7cf !important;
+  --input-placeholder-text-default: #d6cfb6 !important;
+  color: #eee7cf !important;
+}
+
+/* Dark descriptions without the v1.1 rectangular backing.
+   Limit foreground overrides to secondary text; role/name colors stay intact. */
+html #app-mount .member__5d473 {
+  --text-muted: #eee7cf !important;
+  --text-subtle: #eee7cf !important;
+  --text-secondary: #eee7cf !important;
+}
+html #app-mount .member__5d473 :is([class*="subText_"], [class*="subtext_"], [class*="activityText_"], [class*="customStatusText_"]) {
+  background-color: transparent !important;
+  color: #eee7cf !important;
+}
+html #app-mount .member__5d473 :is([class*="subText_"], [class*="subtext_"]) :is(span, a) {
+  color: #eee7cf !important;
+}
+/* ===== end v1.2 ===== */
+
+
+/* ===== v1.3: embedded YoRHA-UI assets / Oldcord layout retained =====
+   Source: AccraZed/YoRHA-UI-BetterDiscord (assets supplied/referenced by user).
+   Cursor artwork credited by upstream to JulioDRai; original theme GOmonkeymanGO.
+   All new image bytes are embedded. Native cursors are used. Existing oldcord import is unchanged.
+   Rodin .woff2 files were not supplied; no broken relative font URLs are added.
+   Existing interface and EnvyCodeR code fonts remain unchanged.
+   No upstream sizing, positioning, opacity animations or custom layout variables.
+*/
+:root {
+  --yorha-asset-wallpaper: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/wallpapers/wallpaper.png");
+  --yorha-asset-wallpaper-portrait: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/wallpapers/wallpaper-portrait.png");
+  --yorha-asset-selector: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/decorations/selector.png");
+  --yorha-asset-selector-inverse: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/decorations/selector-inverse.png");
+  --yorha-asset-border: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/decorations/border.svg");
+  --yorha-asset-emblem: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/emblem.svg");
+}
+
+/* Paint the wallpaper directly on chat, avoiding global transparent surfaces. */
+html #app-mount .messagesWrapper__36d07 {
+  background-color: var(--yorha-paper);
+  background-image: var(--yorha-asset-wallpaper);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (orientation: portrait) {
+  html #app-mount .messagesWrapper__36d07 {
+    background-image: var(--yorha-asset-wallpaper-portrait);
+  }
+}
+
+/* YoRHa emblem inside the existing Home button; original hitbox and SVG retained. */
+html #app-mount .tutorialContainer__1f388 .childWrapper__6e9f8 {
+  background-image: var(--yorha-asset-emblem);
+  background-position: center;
+  background-size: 28px 36px;
+  background-repeat: no-repeat;
+}
+html #app-mount .tutorialContainer__1f388 .childWrapper__6e9f8 > svg {
+  opacity: 0;
+}
+/* Light hover background keeps the dark emblem visible. */
+html #app-mount .tutorialContainer__1f388 .wrapper__6e9f8 .childWrapper__6e9f8 {
+  background-color: var(--yorha-paper-light) !important;
+}
+
+/* Reuse the channel icon slot for the selector, with no extra pseudo-element.
+   Voice/locked channel icons retain their functional meaning. */
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 {
+  background-image: var(--yorha-asset-selector);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 .icon__2ea32 {
+  opacity: 0;
+}
+
+/* Decorative border is painted within existing menu padding; it adds no box. */
+html #app-mount .menu_c1e9c4 {
+  background-image: var(--yorha-asset-border);
+  background-position: left bottom;
+  background-size: auto 5px;
+  background-repeat: repeat-x;
+}
+
+/* ===== end v1.3 ===== */
+
+
+/* ===== v1.4: menu texture, directional hover and native cursors =====
+   Adapted from the supplied YoRHA-UI source and video.
+   Oldcord dimensions, spacing, avatar shapes and panel positions stay intact.
+   Texture strength and hover duration can be adjusted here.
+*/
+:root {
+  --yorha-grid-ink: rgba(214,207,182,.045);
+  --yorha-hover-time: 320ms;
+}
+
+/* Grid is painted on interface backgrounds in v1.6, never over content. */
+
+/* Channel menu rails are painted inside the existing channel tree. */
+html #app-mount .container__2637a .content_d125d2 {
+  background-image: linear-gradient(to right,
+    transparent 0 2px, rgba(214,207,182,.32) 2px 4px,
+    transparent 4px 7px, rgba(214,207,182,.20) 7px 8px,
+    transparent 8px);
+  background-repeat: no-repeat;
+}
+
+/* Channel sweep: left to right. No animated widths or injected hitboxes. */
+html #app-mount .wrapper__2ea32 .link__2ea32 {
+  background-color: transparent !important;
+  background-image: linear-gradient(var(--yorha-ink), var(--yorha-ink));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  box-shadow: inset 0 1px transparent, inset 0 -1px transparent;
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html #app-mount .wrapper__2ea32:is(:hover, :focus-within, .modeSelected__2ea32, .modeConnected__2ea32) .link__2ea32 {
+  background-size: 100% 100%;
+  box-shadow: inset 0 1px rgba(48,49,42,.6), inset 0 -1px rgba(48,49,42,.6);
+}
+html #app-mount .wrapper__2ea32:is(:hover, :focus-within, .modeSelected__2ea32, .modeConnected__2ea32) :is(.name__2ea32, .icon__2ea32, .actionIcon_c69b6d) {
+  color: #242520 !important;
+}
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 {
+  background-image: var(--yorha-asset-selector-inverse);
+}
+
+/* Member sweep mirrors the source: right to left. It is deliberately translucent
+   so role colors, nameplate art and dark descriptions remain readable. */
+html #app-mount :is(.member__5d473, .member_c8ffbb) .childContainer__91a9d {
+  background-color: transparent !important;
+  background-image: linear-gradient(rgba(214,207,182,.18), rgba(214,207,182,.18));
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 0% 100%;
+  box-shadow: inset 0 1px transparent, inset 0 -1px rgba(214,207,182,.16);
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html #app-mount :is(.member__5d473, .member_c8ffbb):is(:hover, :focus-within, .selected__91a9d) .childContainer__91a9d {
+  background-size: 100% 100%;
+  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+}
+/* Avoid the previous instant whole-row hover paint competing with the sweep. */
+html #app-mount .member__5d473:hover {
+  background-color: var(--yorha-paper-deep) !important;
+}
+
+/* Voice-panel decoration and button hover, within the existing dark panel. */
+html #app-mount .panels__5e434 {
+  box-shadow: inset 0 1px rgba(48,49,42,.45), inset 3px 0 rgba(48,49,42,.18);
+}
+html #app-mount .panels__5e434 button:not(:disabled):not([aria-disabled="true"]) {
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+html #app-mount .panels__5e434 button:not(:disabled):not([aria-disabled="true"]):hover {
+  background-color: rgba(48,49,42,.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(48,49,42,.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html #app-mount .wrapper__2ea32 .link__2ea32,
+  html #app-mount :is(.member__5d473, .member_c8ffbb) .childContainer__91a9d,
+  html #app-mount .panels__5e434 button {
+    transition: none !important;
+  }
+}
+/* ===== end v1.4 ===== */
+
+
+/* ===== v1.5: subtle YoRHa message nameplates within Oldcord spacing =====
+   The reference uses 8px vertical padding and a 13px left offset. Neither is
+   imported: original line height, margins, padding and avatar geometry remain.
+   Only cozy message headings shrink to their content so the background does
+   not extend across the entire message. Compact mode keeps its inline flow.
+*/
+html #app-mount .cozyMessage__5126c .header_c19a55 {
+  width: fit-content;
+  max-width: 100%;
+  background-color: rgba(48,49,42,.92);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(214,207,182,.30),
+    1px 0 0 rgba(214,207,182,.16),
+    inset 3px 0 0 rgba(214,207,182,.70);
+}
+/* Thin dark edge helps pale role colors on paper; no color or font override.
+   Scope stays on message author names, not profile descriptions or role lists. */
+html #app-mount .message__5126c .username_c19a55 {
+  text-shadow:
+    -.35px 0 rgba(238,231,207,.60),
+     .35px 0 rgba(238,231,207,.60),
+     0 -.35px rgba(238,231,207,.50),
+     0 .65px rgba(238,231,207,.65);
+}
+html #app-mount .cozyMessage__5126c .header_c19a55 .timestamp_c19a55 {
+  color: #d6cfb6;
+  text-shadow: none;
+}
+/* ===== end v1.5 ===== */
+
+
+/* ===== v1.6: nameplate breathing room and background-only grid ===== */
+html #app-mount .cozyMessage__5126c .header_c19a55 {
+  padding-inline-end: 8px;
+  box-sizing: border-box;
+}
+
+:root {
+  --yorha-grid-x: linear-gradient(90deg, transparent 4px, var(--yorha-grid-ink) 4px);
+  --yorha-grid-y: linear-gradient(transparent 4px, var(--yorha-grid-ink) 4px);
+}
+
+/* Backgrounds are below descendants in the paint order. Images and videos,
+   including the image viewer, no longer have a texture overlay above them. */
+html #app-mount .messagesWrapper__36d07 {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper);
+  background-size: 5px 5px, 5px 5px, cover;
+  background-position: left top, left top, center;
+  background-repeat: repeat, repeat, no-repeat;
+}
+@media (orientation: portrait) {
+  html #app-mount .messagesWrapper__36d07 {
+    background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper-portrait);
+  }
+}
+
+/* Opaque interface surfaces only: no image wrappers, profile artwork, or modals. */
+html #app-mount :is(.container__2637a, .members_c8ffbb, .scroller_ef3116, .container__9293f, .header_f37cb1, .panels__5e434, .scrollableContainer__74017) {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px, 5px 5px;
+  background-position: left top;
+  background-repeat: repeat;
+}
+/* ===== end v1.6 ===== */
+
+/* ===== v1.7: explicitly neutralize legacy full-screen grid =====
+   Removing the previous declaration cannot cancel a separately loaded rule.
+   YoRHa used this exact pseudo-element for its full-screen texture.
+   Keep the v1.6 surface backgrounds; do not raise images with z-index.
+*/
+html body #app-mount::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  pointer-events: none !important;
+}
+
+/* Ensure the background includes visible space after the timestamp even when
+   another stylesheet supplies an important padding shorthand. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  padding-inline-start: 11px !important;
+  padding-inline-end: 12px !important;
+  box-sizing: border-box !important;
+  width: fit-content !important;
+  max-width: 100%;
+}
+/* ===== end v1.7 ===== */
+
+/* Stripe is inside the rounded box: no external offset. The 11px start
+   padding includes the 3px stripe plus the existing 8px text gap. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  position: relative;
+  inset-inline-start: 0 !important;
+}
+
+/* v1.8: YoRHa stripes on the main message composer. Paint behind its
+   contents and reserve space before the attachment button. */
+html body #app-mount .channelTextArea_f75fb0 .scrollableContainer__74017 {
+  background-image:
+    linear-gradient(to right,
+      var(--yorha-ink) 0 12px,
+      var(--yorha-paper-light) 12px 17px,
+      var(--yorha-ink) 17px 20px,
+      transparent 20px),
+    var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 100% 100%, 5px 5px, 5px 5px;
+  background-position: left top;
+  background-repeat: no-repeat, repeat, repeat;
+  padding-inline-start: 22px;
+  box-sizing: border-box;
+}
+
+/* v1.8.1: grid on the two marked background surfaces. The guild scroller
+   may end before its parent; texture the parent to cover the empty tail.
+   The chat form supplies the area around/below the composer. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434,
+html body #app-mount .sidebar__5e434 > .wrapper_ef3116,
+html body #app-mount .formWithLoadedChatInput_f75fb0 {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px, 5px 5px !important;
+  background-position: left top !important;
+  background-repeat: repeat !important;
+}
+
+/* Settings close control: dark icon and ESC label on the light theme. */
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"] {
+  color: #d6cfb6 !important;
+  border-color: #d6cfb6 !important;
+  opacity: 1 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"] svg {
+  color: #d6cfb6 !important;
+  fill: currentColor;
+  opacity: 1 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="keybind_"] {
+  color: #d6cfb6 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"]:hover {
+  background-color: rgba(214,207,182,.12) !important;
+}
+
+/* SpotifyControls: paper surface, local grid, and contained panel edges.
+   Plugin selectors checked against its spotifyStyles.css. */
+html body #app-mount #vc-spotify-player {
+  --vc-spotify-green: var(--yorha-ink);
+  --vc-spotify-green-90: rgba(214,207,182,.10);
+  --vc-spotify-green-80: rgba(214,207,182,.20);
+  --text-strong: var(--yorha-ink);
+  --text-default: var(--yorha-ink);
+  --text-normal: var(--yorha-ink);
+  --text-muted: #aaa58f;
+  --interactive-icon-default: var(--yorha-ink);
+  --interactive-icon-hover: #eee7cf;
+  --interactive-icon-active: var(--yorha-ink);
+  --background-mod-strong: rgba(214,207,182,.12);
+  background-color: var(--yorha-paper) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px;
+  background-position: left top;
+  background-repeat: repeat;
+  color: var(--yorha-ink) !important;
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 4px !important;
+  border: 1px solid rgba(214,207,182,.25);
+  border-radius: 2px;
+  box-shadow: none;
+}
+html body #app-mount #vc-spotify-player :is(#vc-spotify-song-title, .vc-spotify-artist, .vc-spotify-album, .vc-spotify-comma, .vc-spotify-progress-time) {
+  color: var(--yorha-ink) !important;
+  text-shadow: none;
+}
+html body #app-mount #vc-spotify-player .vc-spotify-button {
+  color: var(--yorha-ink) !important;
+  border-radius: 2px;
+}
+html body #app-mount #vc-spotify-player .vc-spotify-button:hover {
+  background-color: rgba(214,207,182,.14);
+}
+html body #app-mount #vc-spotify-player :is(.vc-spotify-repeat-context, .vc-spotify-repeat-track, .vc-spotify-shuffle-on) {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="bar_"] {
+  background-color: rgba(214,207,182,.22) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="barFill"] {
+  background-color: var(--yorha-ink) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="grabber"] {
+  background-color: var(--yorha-paper-light) !important;
+  border-color: var(--yorha-ink) !important;
+  box-shadow: 0 0 0 1px var(--yorha-ink);
+}
+
+/* Settings X: cover the newer modal layout as well as the classic tools column.
+   Apply only at rest so the existing hover appearance is preserved. */
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) {
+  color: #eee7cf !important;
+  --interactive-normal: #eee7cf;
+  --interactive-icon-default: #eee7cf;
+  --icon-primary: #eee7cf;
+}
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) :is(svg, path:not([fill="none"])) {
+  color: #eee7cf !important;
+  fill: #eee7cf !important;
+  opacity: 1 !important;
+}
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) [stroke]:not([stroke="none"]) {
+  stroke: #eee7cf !important;
+}
+
+/* Message-author hover: same left-to-right sweep and timing as channels.
+   The box and its hit targets retain their dimensions. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  background-image: linear-gradient(var(--yorha-ink), var(--yorha-ink));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size var(--yorha-hover-time) ease;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55:has(.username_c19a55:is(:hover, :focus-visible)) {
+  background-size: 100% 100%;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55 .username_c19a55:is(:hover, :focus-visible) {
+  text-decoration: none !important;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55:has(.username_c19a55:is(:hover, :focus-visible)) :is(.username_c19a55, .timestamp_c19a55) {
+  color: #242520 !important;
+  text-shadow: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #app-mount .cozyMessage__5126c .header_c19a55 {
+    transition: none;
+  }
+}
+
+/* Profile tabs: keep the native bottom selection marker, without side rails. */
+html body #app-mount :is(.top_aa8da2, .topPill_aa8da2) .item_aa8da2 {
+  box-shadow: none !important;
+}
+
+/* Fine but visible boundaries between servers, channel list, and chat.
+   Inset shadows preserve the Oldcord column widths. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434 {
+  box-shadow: inset -1px 0 0 rgba(214,207,182,.60);
+}
+html body #app-mount .sidebarList__5e434 {
+  box-shadow: inset -2px 0 0 rgba(214,207,182,.50);
+}
+
+/* Unread DM badge: keep the avatar; replace only the count's circular badge.
+   Use the native badge anchor so the envelope follows the avatar corner. */
+html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 {
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 20px;
+  height: 20px;
+  background: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-14.svg") center / 20px 20px no-repeat !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 > * {
+  opacity: 0 !important;
+}
+
+/* DM sidebar: texture on painted background surfaces, below profile artwork. */
+html body #app-mount .sidebarList__5e434 :is([class*="privateChannels_"], [class*="privateChannels_"] > [class*="scroller_"]) {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px !important;
+  background-position: left top;
+  background-repeat: repeat;
+}
+/* Match the server member sweep on DM entries. Keep custom profile art intact. */
+html body #app-mount .sidebarList__5e434 .interactive__972a0 {
+  background-color: transparent !important;
+  background-image: linear-gradient(rgba(214,207,182,.18), rgba(214,207,182,.18)) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 0% 100% !important;
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html body #app-mount .sidebarList__5e434 .interactive__972a0:is(:hover, :focus-within, .interactiveSelected__972a0) {
+  background-size: 100% 100% !important;
+  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #app-mount .sidebarList__5e434 .interactive__972a0 {
+    transition: none;
+  }
+}
+
+/* Continuous server/DM divider: paint above the opaque server scroller,
+   including its occupied portion, without changing column widths. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434 {
+  position: relative;
+  box-shadow: none;
+}
+html body #app-mount .sidebar__5e434 > .guilds__5e434::after {
+  content: "";
+  position: absolute;
+  /* Start at the bottom corner of the 48px search/header row. */
+  top: var(--custom-channel-header-height, 48px);
+  bottom: 12px;
+  right: 0;
+  width: 1px;
+  background-color: rgba(214,207,182,.60);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Strong horizontal separator between unread DMs and servers. */
+html body #app-mount .guildSeparator__252b6 {
+  width: 32px !important;
+  height: 3px !important;
+  background: #d6cfb6 !important;
+  opacity: 1 !important;
+  border-radius: 1px;
+}
+
+/* Vencord's actual description class: remove its fixed 36px/two-line clamp. */
+html body #app-mount .vc-addon-card .vc-addon-note {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+/* Local game/application activity above the voice panel. */
+html body #app-mount .panels__5e434 [class*="activityPanel_"] {
+  --text-normal: #d6cfb6;
+  --text-default: #d6cfb6;
+  --text-strong: #eee7cf;
+  --text-muted: #aaa58f;
+  --text-subtle: #aaa58f;
+  --header-primary: #eee7cf;
+  --header-secondary: #aaa58f;
+  --interactive-normal: #d6cfb6;
+  --interactive-icon-default: #d6cfb6;
+  --interactive-icon-hover: #eee7cf;
+  --icon-primary: #d6cfb6;
+  --icon-secondary: #aaa58f;
+  background-color: var(--yorha-paper) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  color: #d6cfb6 !important;
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 0;
+  max-width: 100%;
+  margin: 4px 4px 0 !important;
+  border: 1px solid rgba(214,207,182,.25) !important;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] :is([class*="title_"], [class*="activityName_"]) {
+  color: #eee7cf !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] :is([class*="subtext_"], [class*="subText_"]) {
+  color: #aaa58f !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] button {
+  color: #d6cfb6 !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] button:hover {
+  background-color: rgba(214,207,182,.14) !important;
+}
+
+/* Voice action buttons: readable surfaces on the dark connection panel. */
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:not(.buttonActive_e131a9):not([aria-pressed="true"]) {
+  background: var(--yorha-paper) !important;
+  color: #eee7cf !important;
+  --interactive-normal: #eee7cf;
+  --interactive-icon-default: #eee7cf;
+  --icon-primary: #eee7cf;
+  box-shadow: inset 0 0 0 1px rgba(48,49,42,.50) !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:not(.buttonActive_e131a9):not([aria-pressed="true"]):hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--yorha-paper-light) !important;
+  color: #eee7cf !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9 svg {
+  color: inherit !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9 svg path:not([fill="none"]) {
+  fill: currentColor !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:is(:disabled, [aria-disabled="true"]) {
+  opacity: .45 !important;
+}
+
+/* Profile dialogs: let the profile surface own its rounded outline.
+   The generic modal paper/shadow otherwise peeks out behind its corners. */
+html body #app-mount :is(.root__49fc1, [data-mana-component="modal"], [data-mana-component="layer-modal"]):is(
+  .user-profile-modal,
+  .user-profile-modal-v2,
+  :has(.user-profile-modal, .user-profile-modal-v2, [class*="profileCustomization_"])
+) {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Dark edition: warm charcoal surfaces, ivory foregrounds, original geometry. */
+:root { color-scheme: dark; }
+html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  background-color: #191a17 !important;
+  color: #ded8c2;
+}
+/* Blend only the chat wallpaper. Avatars, attachments and profiles are untouched. */
+html body #app-mount .messagesWrapper__36d07 {
+  background-color: #292a24 !important;
+  background-blend-mode: normal, normal, multiply;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55 .username_c19a55 {
+  text-shadow: none;
+}
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing_c38106) {
+  --header-primary: #f4efdc !important;
+  --header-secondary: #ded8c2 !important;
+  --text-normal: #f4efdc !important;
+  --text-default: #f4efdc !important;
+  --text-primary: #f4efdc !important;
+  --text-secondary: #ded8c2 !important;
+  --text-strong: #f4efdc !important;
+  --text-muted: #ded8c2 !important;
+  --text-subtle: #ded8c2 !important;
+  --interactive-normal: #ded8c2 !important;
+  --interactive-hover: #fffbed !important;
+  --interactive-active: #fffbed !important;
+  --interactive-text-normal: #ded8c2 !important;
+  --interactive-text-default: #ded8c2 !important;
+  --interactive-text-hover: #fffbed !important;
+  --interactive-text-active: #fffbed !important;
+  --interactive-icon-default: #ded8c2 !important;
+  --interactive-icon-hover: #fffbed !important;
+  --interactive-icon-active: #fffbed !important;
+  --icon-default: #ded8c2 !important;
+  --icon-primary: #ded8c2 !important;
+  --icon-secondary: #ded8c2 !important;
+  --icon-normal: #ded8c2 !important;
+  --icon-subtle: #ded8c2 !important;
+  --icon-strong: #f4efdc !important;
+  --channel-icon: #ded8c2 !important;
+}
+
+/* Explicit foregrounds also cover nested theme scopes on header elements.
+   Do not force SVG fills: outline icons, status dots and badges retain their art. */
+html #app-mount :is(.container__9293f, .trailing_c38106) :is(.icon__9293f, .iconWrapper__9293f),
+html #app-mount .trailing_c38106 .clickable_c99c29,
+html #app-mount .trailing_c38106 .clickable_c99c29 > svg {
+  color: #ded8c2 !important;
+}
+html #app-mount :is(.container__9293f, .trailing_c38106) .clickable__9293f:hover .icon__9293f,
+html #app-mount :is(.container__9293f, .trailing_c38106) .selected__9293f .icon__9293f {
+  color: #fffbed !important;
+}
+html #app-mount .container__9293f .titleWrapper__9293f,
+html #app-mount .container__9293f .titleWrapper__9293f > :is(h1, h2, div, span) {
+  color: #f4efdc !important;
+}
+html #app-mount .container__9293f .topic__6ec1a {
+  color: #ded8c2 !important;
+}
+
+
+html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  --interactive-icon-default: #d6cfb6;
+  --icon-default: #d6cfb6;
+}
+
+/* Palette coverage includes nested application themes, except custom profile
+   roots and their descendants. Native profile contrast is preserved there. */
+
+/* Settings scroll fade: match the sidebar surface, not Discord's primary-630.
+   This is local to settings; Nitro profile theme boundaries stay native. */
+html body #app-mount .sidebar__409aa .fixedContent__409aa::after,
+html body #app-mount .fixedContent__409aa::after {
+  background: linear-gradient(to bottom, var(--yorha-paper-deep), transparent) !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+
+/* Message inputs own both their surface and foreground. Profile text outside
+   these inputs remains native, including Nitro light/dark custom palettes. */
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017) {
+  --text-normal: var(--yorha-ink) !important;
+  --text-default: var(--yorha-ink) !important;
+  --text-primary: var(--yorha-ink) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  --input-text-default: var(--yorha-ink) !important;
+  --input-placeholder-text: var(--yorha-muted) !important;
+  --input-placeholder-text-default: var(--yorha-muted) !important;
+  --channel-text-area-placeholder: var(--yorha-muted) !important;
+  --interactive-normal: var(--yorha-ink) !important;
+  --interactive-icon-default: var(--yorha-ink) !important;
+  --icon-default: var(--yorha-ink) !important;
+  --icon-primary: var(--yorha-ink) !important;
+  color: var(--yorha-ink) !important;
+  caret-color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017)
+:is([role="textbox"], [contenteditable="true"], textarea) {
+  color: var(--yorha-ink) !important;
+  caret-color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017)
+:is([class*="placeholder_"], [data-slate-placeholder="true"]),
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017) textarea::placeholder {
+  color: var(--yorha-muted) !important;
+  opacity: 1;
+}
+
+/* Profile message composer: one painted surface and one rounded outline.
+   No clipping on the profile itself: decorations and effects remain intact. */
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  height: auto !important;
+  min-height: 0;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 .scrollableContainer__74017 {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background-color: var(--yorha-paper-light) !important;
+  box-shadow: inset 0 0 0 1px var(--yorha-line) !important;
+  background-clip: padding-box;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"] {
+  color: var(--yorha-ink-strong) !important;
+  opacity: 1 !important;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"] .spriteContainer__04eed {
+  opacity: 1 !important;
+  filter: grayscale(1) brightness(1.8) !important;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"]:hover .spriteContainer__04eed {
+  filter: none !important;
+}
+
+/* Readable received/sent text attachments and message code. Keep this local
+   to message content and code surfaces; profile colors remain untouched. */
+html body #app-mount .messageContent_c19a55 {
+  color: var(--yorha-ink) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="textContainer_"]:has(code), [class*="codeView_"]) {
+  --text-normal: var(--yorha-ink-strong) !important;
+  --text-default: var(--yorha-ink-strong) !important;
+  --text-primary: var(--yorha-ink-strong) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  background-color: var(--yorha-paper-light) !important;
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(code, pre, .hljs) {
+  background-color: var(--yorha-paper-light) !important;
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is(td, [class*="text_"]) {
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is([class*="lineNumber"], [class*="lineNumbers"]) {
+  color: var(--yorha-muted) !important;
+}
+html body #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #b6af9a !important; }
+html body #app-mount :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) { color: #e2b187 !important; }
+html body #app-mount :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) { color: #acd39f !important; }
+html body #app-mount :is(.hljs-title, .hljs-built_in, .hljs-symbol) { color: #d1b1d7 !important; }
+html body #app-mount :is(.hljs-number, .hljs-attr, .hljs-attribute, .hljs-variable, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id) { color: #9ecdd9 !important; }
+
+/* Syntax highlighting: retain token-level colors, including inline colors in
+   attachment previews. Never force every span to inherit the base foreground. */
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attr,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attribute,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.property,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.attr-name,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#9cdcfe" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156, 220, 254)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156,220,254)" i] { color: #9cdcfe !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-string,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-regexp,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.string,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#ce9178" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206, 145, 120)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206,145,120)" i] { color: #e5a384 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-keyword,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-literal,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.keyword,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.boolean,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#569cd6" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86, 156, 214)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86,156,214)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#c586c0" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197, 134, 192)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197,134,192)" i] { color: #c5a0e6 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-number,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.number,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#b5cea8" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181, 206, 168)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181,206,168)" i] { color: #b5cea8 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-title,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-built_in,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.function,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#dcdcaa" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220, 220, 170)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220,220,170)" i] { color: #e3d58c !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-comment,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-quote,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.comment,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#6a9955" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106, 153, 85)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106,153,85)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#608b4e" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96, 139, 78)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96,139,78)" i] { color: #a2b68f !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-type,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.class-name,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#4ec9b0" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78, 201, 176)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78,201,176)" i] { color: #71d4bd !important; }

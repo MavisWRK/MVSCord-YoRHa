@@ -1,5 +1,12 @@
 # Changelog
 
+## Small online loaders — 2026-10-17
+
+- Replaced root theme files with metadata and one hosted CSS import.
+- Moved complete generated stylesheets to `styles/`, preserving all rules and their order.
+- Kept existing raw installation URLs and portable builds.
+- Added generated-output checks and individual download/release instructions.
+
 ## English documentation — 2026-10-17
 
 - Translated the README and modular migration notes into English.

@@ -48,12 +48,19 @@ for (const configPath of project.themes) {
   });
   if (output.includes('url("@assets/')) throw new Error(`Unresolved asset in ${variant}`);
   if (!portable && /url\(["']data:/.test(output)) throw new Error(`Embedded asset in ${variant}`);
+  const hostedPath = `styles/${variant}.css`;
+  const loader = `${config.header}\n\n@import url("${new URL(hostedPath, assetBase).href}");\n`;
   if (!check) {
-    const target = portable ? path.join('dist/portable', config.name) : config.name;
+    const target = portable ? path.join('dist/portable', config.name) : hostedPath;
     fs.mkdirSync(path.dirname(safePath(target)), { recursive: true });
     fs.writeFileSync(safePath(target), output);
+    if (!portable) fs.writeFileSync(safePath(config.name), loader);
+  } else {
+    if (read(hostedPath) !== output) throw new Error(`Stale hosted CSS: ${hostedPath}. Run npm run build.`);
+    if (read(config.name) !== loader) throw new Error(`Stale loader: ${config.name}. Run npm run build.`);
   }
   console.log(`${check ? 'Verified' : 'Built'} ${config.name}: ${Buffer.byteLength(output)} bytes`);
+  if (!portable) console.log(`  Online loader: ${Buffer.byteLength(loader)} bytes -> ${hostedPath}`);
 }
 if (options.has('--accept-baseline')) {
   fs.writeFileSync(path.join(root, 'scripts/baseline.json'), JSON.stringify(nextBaseline, null, 2) + '\n');
