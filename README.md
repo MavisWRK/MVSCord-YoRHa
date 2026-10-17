@@ -1,30 +1,37 @@
-# MVSCord — modular theme project
+# MVSCord YoRHa — Modular Theme Project
 
 Visual version 1.0.0 · MavisWRK
 
-Light (YoRHa beige), Dark, Pink, and Midnight themes. This structure preserves the existing layout and fixes. The separate NerdFont edition is unchanged and is not included in this package.
+A modular Discord theme inspired by the YoRHa interface from NieR: Automata, combining a classic Discord layout with modern profile customization.
+
+Available in four variants:
+
+- **Light (Original YoRHa):** the original NieR: Automata UI color palette, with beige surfaces and dark text.
+- **Dark:** charcoal surfaces with warm accents.
+- **Pink:** soft pink surfaces with complementary text colors.
+- **Midnight:** deep blue tones built around `#191970`.
 
 ## Project structure
 
-| Path                          | Purpose                                                            |
-| ----------------------------- | ------------------------------------------------------------------ |
-| `src/styles/base/oldcord.css` | Layout inherited from MVSCord/Oldcord                              |
-| `src/styles/components/`      | Shared grids, profiles, inputs, code styling, and other components |
-| `src/themes/light/`           | Beige palette and variant-specific rules                           |
-| `src/themes/dark/`            | Dark palette and variant-specific rules                            |
-| `src/themes/pink/`            | Pink palette and variant-specific rules                            |
-| `src/themes/midnight/`        | Midnight palette and variant-specific rules                        |
-| `src/themes/*/palette.css`    | Main colors and texture settings                                   |
-| `src/themes/*/theme.json`     | Theme metadata and explicit module order                           |
-| `assets/wallpapers/`          | Landscape and portrait wallpapers                                  |
-| `assets/icons/`               | Emblem and icons extracted from the base                           |
-| `assets/decorations/`         | Selectors and decorative borders                                   |
-| `assets/manifest.json`        | Asset inventory, MIME types, sizes, and hashes                     |
-| `scripts/build.mjs`           | Build and verification script, with no npm dependencies            |
-| `project.json`                | Included variants and public asset base URL                        |
-| Root `*.theme.css` files      | Small installable loaders with metadata and one online import      |
-| `styles/`                     | Complete generated stylesheets loaded online                       |
-| `dist/portable/`              | Generated stylesheets with embedded images for local testing       |
+| Path | Purpose |
+| --- | --- |
+| `src/styles/base/oldcord.css` | Layout inherited from MVSCord/Oldcord |
+| `src/styles/components/` | Shared grids, profiles, inputs, code styling, and other components |
+| `src/themes/light/` | Original NieR: Automata UI palette and variant-specific rules |
+| `src/themes/dark/` | Dark palette and variant-specific rules |
+| `src/themes/pink/` | Pink palette and variant-specific rules |
+| `src/themes/midnight/` | Midnight palette and variant-specific rules |
+| `src/themes/*/palette.css` | Main colors and texture settings |
+| `src/themes/*/theme.json` | Theme metadata and explicit module order |
+| `assets/wallpapers/` | Landscape and portrait wallpapers |
+| `assets/icons/` | Emblem and icons extracted from the base |
+| `assets/decorations/` | Selectors and decorative borders |
+| `assets/manifest.json` | Asset inventory, MIME types, sizes, and hashes |
+| `scripts/build.mjs` | Build and verification script, with no npm dependencies |
+| `project.json` | Included variants and public asset base URL |
+| Root `*.theme.css` files | Small installable loaders with metadata and one online import |
+| `styles/` | Complete generated stylesheets loaded online |
+| `dist/portable/` | Generated stylesheets with embedded images for local testing |
 
 There is no React frontend, backend, or JavaScript running inside Discord. Node.js only prepares the files. Discord loads CSS and the images referenced by it.
 
@@ -46,7 +53,7 @@ Each root theme file contains only its metadata and one absolute `@import` URL p
 
 After publishing the generated root loaders and the complete `styles/` and `assets/` folders to the public repository's `main` branch, add one of these URLs to Vencord's online themes list:
 
-**Light / beige**
+**Light — Original YoRHa palette**
 
 ```text
 https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/refs/heads/main/MVSCord-YoRHa.theme.css
