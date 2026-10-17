@@ -1,0 +1,9 @@
+/* Settings scroll fade: match the sidebar surface, not Discord's primary-630.
+   This is local to settings; Nitro profile theme boundaries stay native. */
+html body #app-mount .sidebar__409aa .fixedContent__409aa::after,
+html body #app-mount .fixedContent__409aa::after {
+  background: linear-gradient(to bottom, var(--yorha-paper-deep), transparent) !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+

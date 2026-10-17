@@ -1,0 +1,23 @@
+/* ===== v1.7: explicitly neutralize legacy full-screen grid =====
+   Removing the previous declaration cannot cancel a separately loaded rule.
+   YoRHa used this exact pseudo-element for its full-screen texture.
+   Keep the v1.6 surface backgrounds; do not raise images with z-index.
+*/
+html body #app-mount::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  pointer-events: none !important;
+}
+
+/* Ensure the background includes visible space after the timestamp even when
+   another stylesheet supplies an important padding shorthand. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  padding-inline-start: 11px !important;
+  padding-inline-end: 12px !important;
+  box-sizing: border-box !important;
+  width: fit-content !important;
+  max-width: 100%;
+}
+/* ===== end v1.7 ===== */
+

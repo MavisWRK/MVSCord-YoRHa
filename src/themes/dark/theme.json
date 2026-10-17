@@ -1,0 +1,30 @@
+{
+  "name": "MVSCord-YoRHa-Dark.theme.css",
+  "header": "/**\n * @name MVSCord YoRHa Dark\n * @description Version 1.2.5 \u2014 Dark edition. A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.\n * @version 1.2.5\n * @author MavisWRK\n */",
+  "modules": [
+    "src/styles/base/oldcord.css",
+    "src/themes/dark/palette.css",
+    "src/themes/dark/foundation.css",
+    "src/themes/dark/surface-tokens.css",
+    "src/themes/dark/header-contrast.css",
+    "src/styles/components/artwork.css",
+    "src/themes/dark/hover-and-texture.css",
+    "src/themes/dark/message-names.css",
+    "src/styles/components/surface-grid.css",
+    "src/styles/components/grid-and-spacing.css",
+    "src/themes/dark/composer.css",
+    "src/themes/dark/spotify.css",
+    "src/themes/dark/close-button.css",
+    "src/themes/dark/author-hover.css",
+    "src/styles/components/profile-tabs.css",
+    "src/themes/dark/dividers-and-badges.css",
+    "src/styles/components/profile-dialog-light.css",
+    "src/themes/dark/dark-adjustments.css",
+    "src/styles/components/profile-boundaries.css",
+    "src/styles/components/settings-scroll.css",
+    "src/styles/components/input-contrast.css",
+    "src/styles/components/profile-composer-dark.css",
+    "src/styles/components/code-contrast-dark.css",
+    "src/themes/dark/syntax.css"
+  ]
+}

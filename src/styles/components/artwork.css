@@ -1,0 +1,69 @@
+/* ===== v1.3: embedded YoRHA-UI assets / Oldcord layout retained =====
+   Source: AccraZed/YoRHA-UI-BetterDiscord (assets supplied/referenced by user).
+   Cursor artwork credited by upstream to JulioDRai; original theme GOmonkeymanGO.
+   All new image bytes are embedded. Native cursors are used. Existing oldcord import is unchanged.
+   Rodin .woff2 files were not supplied; no broken relative font URLs are added.
+   Existing interface and EnvyCodeR code fonts remain unchanged.
+   No upstream sizing, positioning, opacity animations or custom layout variables.
+*/
+:root {
+  --yorha-asset-wallpaper: url("@assets/wallpapers/wallpaper.png");
+  --yorha-asset-wallpaper-portrait: url("@assets/wallpapers/wallpaper-portrait.png");
+  --yorha-asset-selector: url("@assets/decorations/selector.png");
+  --yorha-asset-selector-inverse: url("@assets/decorations/selector-inverse.png");
+  --yorha-asset-border: url("@assets/decorations/border.svg");
+  --yorha-asset-emblem: url("@assets/icons/emblem.svg");
+}
+
+/* Paint the wallpaper directly on chat, avoiding global transparent surfaces. */
+html #app-mount .messagesWrapper__36d07 {
+  background-color: var(--yorha-paper);
+  background-image: var(--yorha-asset-wallpaper);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (orientation: portrait) {
+  html #app-mount .messagesWrapper__36d07 {
+    background-image: var(--yorha-asset-wallpaper-portrait);
+  }
+}
+
+/* YoRHa emblem inside the existing Home button; original hitbox and SVG retained. */
+html #app-mount .tutorialContainer__1f388 .childWrapper__6e9f8 {
+  background-image: var(--yorha-asset-emblem);
+  background-position: center;
+  background-size: 28px 36px;
+  background-repeat: no-repeat;
+}
+html #app-mount .tutorialContainer__1f388 .childWrapper__6e9f8 > svg {
+  opacity: 0;
+}
+/* Light hover background keeps the dark emblem visible. */
+html #app-mount .tutorialContainer__1f388 .wrapper__6e9f8 .childWrapper__6e9f8 {
+  background-color: var(--yorha-paper-light) !important;
+}
+
+/* Reuse the channel icon slot for the selector, with no extra pseudo-element.
+   Voice/locked channel icons retain their functional meaning. */
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 {
+  background-image: var(--yorha-asset-selector);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 .icon__2ea32 {
+  opacity: 0;
+}
+
+/* Decorative border is painted within existing menu padding; it adds no box. */
+html #app-mount .menu_c1e9c4 {
+  background-image: var(--yorha-asset-border);
+  background-position: left bottom;
+  background-size: auto 5px;
+  background-repeat: repeat-x;
+}
+
+/* ===== end v1.3 ===== */
+
+

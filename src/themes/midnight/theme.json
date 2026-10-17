@@ -1,0 +1,31 @@
+{
+  "name": "MVSCord-Midnight.theme.css",
+  "header": "/**\n * @name MVSCord Midnight\n * @description Version 1.2.5 \u2014 Midnight Blue edition (#191970). A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.\n * @version 1.2.5\n * @author MavisWRK\n */",
+  "modules": [
+    "src/styles/base/oldcord.css",
+    "src/themes/midnight/palette.css",
+    "src/themes/midnight/foundation.css",
+    "src/themes/midnight/surface-tokens.css",
+    "src/themes/midnight/header-contrast.css",
+    "src/styles/components/artwork.css",
+    "src/themes/midnight/hover-and-texture.css",
+    "src/themes/midnight/message-names.css",
+    "src/styles/components/surface-grid.css",
+    "src/styles/components/grid-and-spacing.css",
+    "src/themes/midnight/composer.css",
+    "src/themes/midnight/spotify.css",
+    "src/themes/midnight/close-button.css",
+    "src/themes/midnight/author-hover.css",
+    "src/styles/components/profile-tabs.css",
+    "src/themes/midnight/dividers-and-badges.css",
+    "src/styles/components/profile-dialog-light.css",
+    "src/themes/midnight/dark-adjustments.css",
+    "src/styles/components/profile-boundaries.css",
+    "src/styles/components/settings-scroll.css",
+    "src/styles/components/input-contrast.css",
+    "src/styles/components/profile-composer-dark.css",
+    "src/styles/components/code-contrast-dark.css",
+    "src/themes/midnight/syntax.css",
+    "src/themes/midnight/midnight-adjustments.css"
+  ]
+}

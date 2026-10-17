@@ -1,0 +1,14 @@
+{
+  "name": "mvscord-yorha",
+  "version": "1.2.5",
+  "private": true,
+  "type": "module",
+  "description": "Modular sources for MVSCord themes",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:portable": "node scripts/build.mjs --portable",
+    "test": "node scripts/build.mjs --check",
+    "baseline:accept": "node scripts/build.mjs --accept-baseline"
+  },
+  "engines": { "node": ">=18" }
+}

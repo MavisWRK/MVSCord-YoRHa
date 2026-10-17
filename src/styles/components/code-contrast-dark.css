@@ -1,0 +1,30 @@
+/* Readable received/sent text attachments and message code. Keep this local
+   to message content and code surfaces; profile colors remain untouched. */
+html body #app-mount .messageContent_c19a55 {
+  color: var(--yorha-ink) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="textContainer_"]:has(code), [class*="codeView_"]) {
+  --text-normal: var(--yorha-ink-strong) !important;
+  --text-default: var(--yorha-ink-strong) !important;
+  --text-primary: var(--yorha-ink-strong) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  background-color: var(--yorha-paper-light) !important;
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(code, pre, .hljs) {
+  background-color: var(--yorha-paper-light) !important;
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is(td, [class*="text_"]) {
+  color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is([class*="lineNumber"], [class*="lineNumbers"]) {
+  color: var(--yorha-muted) !important;
+}
+html body #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #b6af9a !important; }
+html body #app-mount :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) { color: #e2b187 !important; }
+html body #app-mount :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) { color: #acd39f !important; }
+html body #app-mount :is(.hljs-title, .hljs-built_in, .hljs-symbol) { color: #d1b1d7 !important; }
+html body #app-mount :is(.hljs-number, .hljs-attr, .hljs-attribute, .hljs-variable, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id) { color: #9ecdd9 !important; }
+

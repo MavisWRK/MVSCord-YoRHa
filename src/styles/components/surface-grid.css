@@ -1,0 +1,34 @@
+/* ===== v1.6: nameplate breathing room and background-only grid ===== */
+html #app-mount .cozyMessage__5126c .header_c19a55 {
+  padding-inline-end: 8px;
+  box-sizing: border-box;
+}
+
+:root {
+  --yorha-grid-x: linear-gradient(90deg, transparent 4px, var(--yorha-grid-ink) 4px);
+  --yorha-grid-y: linear-gradient(transparent 4px, var(--yorha-grid-ink) 4px);
+}
+
+/* Backgrounds are below descendants in the paint order. Images and videos,
+   including the image viewer, no longer have a texture overlay above them. */
+html #app-mount .messagesWrapper__36d07 {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper);
+  background-size: 5px 5px, 5px 5px, cover;
+  background-position: left top, left top, center;
+  background-repeat: repeat, repeat, no-repeat;
+}
+@media (orientation: portrait) {
+  html #app-mount .messagesWrapper__36d07 {
+    background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper-portrait);
+  }
+}
+
+/* Opaque interface surfaces only: no image wrappers, profile artwork, or modals. */
+html #app-mount :is(.container__2637a, .members_c8ffbb, .scroller_ef3116, .container__9293f, .header_f37cb1, .panels__5e434, .scrollableContainer__74017) {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px, 5px 5px;
+  background-position: left top;
+  background-repeat: repeat;
+}
+/* ===== end v1.6 ===== */
+

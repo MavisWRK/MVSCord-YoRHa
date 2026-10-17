@@ -1,0 +1,9 @@
+/* Midnight palette: deep indigo surfaces and cool lavender foregrounds. */
+:root {
+  --midnight-base: #191970;
+  --midnight-accent: #a5b4fc;
+}
+html body #app-mount .messagesWrapper__36d07 {
+  background-color: var(--midnight-base) !important;
+  background-blend-mode: normal, normal, multiply;
+}

@@ -1,0 +1,9 @@
+{
+  "assetBase": "https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/",
+  "themes": [
+    "src/themes/light/theme.json",
+    "src/themes/dark/theme.json",
+    "src/themes/pink/theme.json",
+    "src/themes/midnight/theme.json"
+  ]
+}

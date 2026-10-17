@@ -1,0 +1,22 @@
+/* Pink edition — blush surfaces, plum text, vivid pink/lilac details.
+   Wallpaper blending affects only the chat background, never media or profiles. */
+:root {
+  --mvscord-pink-accent: #ef62bb;
+  --mvscord-lilac-accent: #9462d9;
+}
+html body #app-mount .messagesWrapper__36d07 {
+  background-color: #f6e7ec !important;
+  background-blend-mode: normal, normal, luminosity;
+}
+html body #app-mount :is(.interactiveSelected__972a0, .selected_aa8da2.item_aa8da2, .active_caf372) {
+  box-shadow: inset 3px 0 0 var(--mvscord-pink-accent);
+}
+html body #app-mount .wrapper__2ea32:is(:hover, :focus-within, .modeSelected__2ea32, .modeConnected__2ea32) .link__2ea32 {
+  box-shadow: inset 0 1px rgba(239,98,187,.7), inset 0 -1px rgba(239,98,187,.7);
+}
+html body #app-mount #vc-spotify-player {
+  --vc-spotify-green: #9462d9;
+  --vc-spotify-green-90: rgba(148,98,217,.12);
+  --vc-spotify-green-80: rgba(148,98,217,.24);
+}
+

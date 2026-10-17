@@ -1,0 +1,27 @@
+/* Light surfaces: remap only neutral highlighter foregrounds. Keep colored
+   syntax spans intact, including JSON keys, strings, booleans and numbers. */
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-punctuation,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.punctuation,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#d4d4d4" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(212, 212, 212)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(212,212,212)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#dcdcdc" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220, 220, 220)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220,220,220)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#cccccc" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(204, 204, 204)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(204,204,204)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#d6deeb" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(214, 222, 235)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(214,222,235)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#c9d1d9" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(201, 209, 217)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(201,209,217)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#abb2bf" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(171, 178, 191)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(171,178,191)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#ffffff" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255, 255, 255)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255,255,255)" i] {
+  color: var(--yorha-ink-strong) !important;
+}

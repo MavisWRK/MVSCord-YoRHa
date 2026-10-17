@@ -1,0 +1,56 @@
+/* SpotifyControls: paper surface, local grid, and contained panel edges.
+   Plugin selectors checked against its spotifyStyles.css. */
+html body #app-mount #vc-spotify-player {
+  --vc-spotify-green: var(--yorha-ink);
+  --vc-spotify-green-90: rgba(174,187,255,.10);
+  --vc-spotify-green-80: rgba(174,187,255,.20);
+  --text-strong: var(--yorha-ink);
+  --text-default: var(--yorha-ink);
+  --text-normal: var(--yorha-ink);
+  --text-muted: #b5bde5;
+  --interactive-icon-default: var(--yorha-ink);
+  --interactive-icon-hover: #f5f6ff;
+  --interactive-icon-active: var(--yorha-ink);
+  --background-mod-strong: rgba(174,187,255,.12);
+  background-color: var(--yorha-paper) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px;
+  background-position: left top;
+  background-repeat: repeat;
+  color: var(--yorha-ink) !important;
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0 4px !important;
+  border: 1px solid rgba(174,187,255,.25);
+  border-radius: 2px;
+  box-shadow: none;
+}
+html body #app-mount #vc-spotify-player :is(#vc-spotify-song-title, .vc-spotify-artist, .vc-spotify-album, .vc-spotify-comma, .vc-spotify-progress-time) {
+  color: var(--yorha-ink) !important;
+  text-shadow: none;
+}
+html body #app-mount #vc-spotify-player .vc-spotify-button {
+  color: var(--yorha-ink) !important;
+  border-radius: 2px;
+}
+html body #app-mount #vc-spotify-player .vc-spotify-button:hover {
+  background-color: rgba(174,187,255,.14);
+}
+html body #app-mount #vc-spotify-player :is(.vc-spotify-repeat-context, .vc-spotify-repeat-track, .vc-spotify-shuffle-on) {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="bar_"] {
+  background-color: rgba(174,187,255,.22) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="barFill"] {
+  background-color: var(--yorha-ink) !important;
+}
+html body #app-mount #vc-spotify-progress-bar [class*="grabber"] {
+  background-color: var(--yorha-paper-light) !important;
+  border-color: var(--yorha-ink) !important;
+  box-shadow: 0 0 0 1px var(--yorha-ink);
+}
+

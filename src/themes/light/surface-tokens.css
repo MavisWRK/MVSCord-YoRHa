@@ -1,0 +1,232 @@
+/* ===== v1.1: surface and profile color coverage, based on supplied Catppuccin =====
+   Paint-only corrections. Native profile art, role colors and layout retained.
+   Priority is intentional: theme-local Discord/oldcord tokens can otherwise win.
+*/
+html.visual-refresh:is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
+html #app-mount,
+html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
+
+  --background-primary: var(--yorha-paper) !important;
+  --background-base-low: var(--yorha-paper) !important;
+  --background-surface-high: var(--yorha-paper) !important;
+  --modal-background: var(--yorha-paper) !important;
+  --home-background: var(--yorha-paper) !important;
+  --primary-600: var(--yorha-paper) !important;
+  --background-secondary: var(--yorha-paper-deep) !important;
+  --background-base-lower: var(--yorha-paper-deep) !important;
+  --background-surface-higher: var(--yorha-paper-deep) !important;
+  --modal-footer-background: var(--yorha-paper-deep) !important;
+  --primary-630: var(--yorha-paper-deep) !important;
+  --primary-660: var(--yorha-paper-deep) !important;
+  --background-secondary-alt: #aaa48f !important;
+  --background-tertiary: #aaa48f !important;
+  --background-base-lowest: #aaa48f !important;
+  --primary-700: #aaa48f !important;
+  --primary-730: #aaa48f !important;
+  --primary-800: #aaa48f !important;
+  --background-floating: var(--yorha-paper-light) !important;
+  --background-nested-floating: var(--yorha-paper-light) !important;
+  --background-surface-highest: var(--yorha-paper-light) !important;
+  --input-background: var(--yorha-paper-light) !important;
+  --channeltextarea-background: var(--yorha-paper-light) !important;
+  --deprecated-text-input-bg: var(--yorha-paper-light) !important;
+  --deprecated-card-bg: var(--yorha-paper-light) !important;
+  --deprecated-card-editable-bg: var(--yorha-paper-light) !important;
+  --deprecated-quickswitcher-input-background: var(--yorha-paper-light) !important;
+  --primary-500: var(--yorha-paper-light) !important;
+  --text-normal: var(--yorha-ink) !important;
+  --text-default: var(--yorha-ink) !important;
+  --text-primary: var(--yorha-ink) !important;
+  --text-secondary: var(--yorha-ink) !important;
+  --header-secondary: var(--yorha-ink) !important;
+  --channels-default: var(--yorha-ink) !important;
+  --interactive-normal: var(--yorha-ink) !important;
+  --interactive-text-normal: var(--yorha-ink) !important;
+  --icon-primary: var(--yorha-ink) !important;
+  --icon-secondary: var(--yorha-ink) !important;
+  --icon-normal: var(--yorha-ink) !important;
+  --channel-icon: var(--yorha-ink) !important;
+  --background-accent: var(--yorha-ink) !important;
+  --background-brand: var(--yorha-ink) !important;
+  --brand-500: var(--yorha-ink) !important;
+  --brand-530: var(--yorha-ink) !important;
+  --brand-560: var(--yorha-ink) !important;
+  --blurple: var(--yorha-ink) !important;
+  --button-brand-background: var(--yorha-ink) !important;
+  --button-filled-brand-background: var(--yorha-ink) !important;
+  --control-brand-foreground: var(--yorha-ink) !important;
+  --text-brand: var(--yorha-ink) !important;
+  --mention-foreground: var(--yorha-ink) !important;
+  --text-mention-foreground: var(--yorha-ink) !important;
+  --checkbox-background-checked: var(--yorha-ink) !important;
+  --checkbox-border-checked: var(--yorha-ink) !important;
+  --header-primary: var(--yorha-ink-strong) !important;
+  --text-strong: var(--yorha-ink-strong) !important;
+  --interactive-hover: var(--yorha-ink-strong) !important;
+  --interactive-active: var(--yorha-ink-strong) !important;
+  --interactive-text-hover: var(--yorha-ink-strong) !important;
+  --interactive-text-active: var(--yorha-ink-strong) !important;
+  --icon-strong: var(--yorha-ink-strong) !important;
+  --brand-600: var(--yorha-ink-strong) !important;
+  --brand-700: var(--yorha-ink-strong) !important;
+  --button-brand-background-hover: var(--yorha-ink-strong) !important;
+  --button-filled-brand-background-hover: var(--yorha-ink-strong) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  --interactive-muted: var(--yorha-muted) !important;
+  --interactive-text-muted: var(--yorha-muted) !important;
+  --icon-muted: var(--yorha-muted) !important;
+  --input-placeholder-text: var(--yorha-muted) !important;
+  --button-brand-text: var(--yorha-paper-light) !important;
+  --button-filled-brand-text: var(--yorha-paper-light) !important;
+  --text-on-brand-primary: var(--yorha-paper-light) !important;
+  --background-modifier-hover: rgba(77,73,62,.08) !important;
+  --background-mod-subtle: rgba(77,73,62,.08) !important;
+  --bg-mod-subtle: rgba(77,73,62,.08) !important;
+  --background-message-hover: rgba(77,73,62,.08) !important;
+  --interactive-background-hover: rgba(77,73,62,.08) !important;
+  --background-modifier-active: rgba(77,73,62,.14) !important;
+  --background-mod-muted: rgba(77,73,62,.14) !important;
+  --bg-mod-strong: rgba(77,73,62,.14) !important;
+  --interactive-background-active: rgba(77,73,62,.14) !important;
+  --mention-background: rgba(77,73,62,.14) !important;
+  --background-mentioned: rgba(77,73,62,.14) !important;
+  --background-message-highlight: rgba(77,73,62,.14) !important;
+  --background-modifier-selected: rgba(77,73,62,.21) !important;
+  --background-mod-strong: rgba(77,73,62,.21) !important;
+  --background-mentioned-hover: rgba(77,73,62,.21) !important;
+  --background-modifier-accent: var(--yorha-line) !important;
+  --border-subtle: var(--yorha-line) !important;
+  --border-normal: var(--yorha-line) !important;
+  --border-strong: var(--yorha-line) !important;
+  --input-border: var(--yorha-line) !important;
+  --deprecated-text-input-border: var(--yorha-line) !important;
+  --scrollbar-thin-thumb: var(--yorha-ink) !important;
+  --scrollbar-auto-thumb: var(--yorha-ink) !important;
+  --scrollbar-thin-track: transparent !important;
+  --scrollbar-auto-track: transparent !important;
+  --text-link: #365a65 !important;
+  --text-link-low-saturation: #365a65 !important;
+  --text-positive: #386044 !important;
+  --status-positive: #386044 !important;
+  --text-warning: #87500c !important;
+  --text-danger: #963c35 !important;
+  --status-danger: #963c35 !important;
+  --button-secondary: #b2ac96 !important;
+  --button-secondary-background: #b2ac96 !important;
+  --button-secondary-hover: #a59e88 !important;
+  --button-secondary-background-hover: #a59e88 !important;
+  --background-gradient-low: var(--yorha-paper) !important;
+  --background-gradient-lower: var(--yorha-paper-deep) !important;
+  --background-gradient-lowest: var(--yorha-paper-deep) !important;
+  --background-gradient-higher: var(--yorha-paper-light) !important;
+  --primary-630-hsl: 47 16% 67% !important;
+  --brand-500-hsl: 44 11% 27% !important;
+
+  --chat-background: var(--yorha-paper) !important;
+  --chat-background-default: var(--yorha-paper) !important;
+  --background-code: var(--yorha-paper) !important;
+  --bg-base-primary: var(--yorha-paper) !important;
+  --bg-surface-raised: var(--yorha-paper-deep) !important;
+  --custom-channel-members-bg: var(--yorha-paper-deep) !important;
+  --bg-base-secondary: var(--yorha-paper-deep) !important;
+  --background-gradient-highest: var(--yorha-paper-deep) !important;
+  --card-background-default: var(--yorha-paper-light) !important;
+  --custom-status-bubble-background: var(--yorha-paper-light) !important;
+  --custom-status-bubble-background-color: var(--yorha-paper-light) !important;
+  --user-profile-overlay-background: var(--yorha-paper-light) !important;
+  --input-background-default: var(--yorha-paper-light) !important;
+  --profile-body-background-color: var(--yorha-paper-light) !important;
+  --app-frame-background: #aaa48f !important;
+  --bg-base-tertiary: #aaa48f !important;
+  --user-profile-overlay-background-hover: #aaa48f !important;
+  --input-text-default: var(--yorha-ink) !important;
+  --icon-default: var(--yorha-ink) !important;
+  --icon-subtle: var(--yorha-ink) !important;
+  --interactive-icon-default: var(--yorha-ink) !important;
+  --interactive-icon-hover: var(--yorha-ink) !important;
+  --interactive-icon-active: var(--yorha-ink) !important;
+  --interactive-text-default: var(--yorha-ink) !important;
+  --control-secondary-text-default: var(--yorha-ink) !important;
+  --control-secondary-text-hover: var(--yorha-ink) !important;
+  --control-secondary-text-active: var(--yorha-ink) !important;
+  --logo-primary: var(--yorha-ink) !important;
+  --control-brand-foreground-new: var(--yorha-ink) !important;
+  --input-placeholder-text-default: var(--yorha-muted) !important;
+  --channel-text-area-placeholder: var(--yorha-muted) !important;
+  --chat-text-muted: var(--yorha-muted) !important;
+  --primary-100: var(--yorha-muted) !important;
+  --primary-200: var(--yorha-muted) !important;
+  --primary-300: var(--yorha-muted) !important;
+  --primary-400: var(--yorha-muted) !important;
+  --chat-border: var(--yorha-line) !important;
+  --border-muted: var(--yorha-line) !important;
+  --input-border-default: var(--yorha-line) !important;
+  --control-secondary-border-default: var(--yorha-line) !important;
+  --spine-default: var(--yorha-line) !important;
+  --background-mod-normal: rgba(77,73,62,.14) !important;
+  --interactive-background-selected: rgba(77,73,62,.14) !important;
+  --message-background-hover: rgba(77,73,62,.14) !important;
+  --message-reacted-background-default: rgba(77,73,62,.14) !important;
+  --message-highlight-background-default: rgba(77,73,62,.14) !important;
+  --message-highlight-background-hover: rgba(77,73,62,.14) !important;
+  --message-mentioned-background-default: rgba(77,73,62,.14) !important;
+  --message-mentioned-background-hover: rgba(77,73,62,.14) !important;
+  --message-reacted-text-default: var(--yorha-ink-strong) !important;
+  --control-primary-background-hover: var(--yorha-ink-strong) !important;
+  --control-primary-background-active: var(--yorha-ink-strong) !important;
+  --control-primary-background-default: var(--yorha-ink) !important;
+  --scrollbar-auto-scrollbar-color-thumb: var(--yorha-ink) !important;
+  --control-primary-text-default: var(--yorha-paper-light) !important;
+  --control-primary-text-hover: var(--yorha-paper-light) !important;
+  --control-primary-text-active: var(--yorha-paper-light) !important;
+  --control-secondary-background-default: var(--yorha-paper-deep) !important;
+  --scrollbar-auto-scrollbar-color-track: var(--yorha-paper-deep) !important;
+  --control-secondary-background-hover: #a59e88 !important;
+  --control-secondary-background-active: #a59e88 !important;
+}
+
+/* Actual painted containers, including descendants inside the channel sidebar.
+   Background-color deliberately preserves background-image profile decorations. */
+html #app-mount :is(.sidebarList__5e434, .sidebarList__5e434 > div, .sidebarList__5e434 nav, .sidebar__409aa) {
+  background-color: var(--yorha-paper-deep) !important;
+}
+html #app-mount :is(.guilds__5e434, .wrapper_ef3116, .scroller_ef3116) {
+  background-color: #aaa48f !important;
+}
+html #app-mount :is(.members_c8ffbb, .container_c8ffbb, .member__5d473) {
+  background-color: var(--yorha-paper-deep) !important;
+}
+html #app-mount .member__5d473:hover {
+  background-color: var(--yorha-paper-light) !important;
+}
+html #app-mount :is(.childWrapper__6e9f8, .childWrapperNoHoverBg__6e9f8, .circleIconButton__5bc7e) {
+  background-color: var(--yorha-paper-deep) !important;
+  color: var(--yorha-ink) !important;
+}
+html #app-mount :is(.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .circleIconButton__5bc7e:hover) {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light) !important;
+}
+html #app-mount #vc-spotify-player {
+  background-color: var(--yorha-ink) !important;
+  color: var(--yorha-paper-light);
+}
+
+/* New icon/text tokens inside the intentionally dark header and user panel. */
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  --icon-default: var(--yorha-paper-light);
+  --icon-subtle: var(--yorha-paper);
+  --interactive-icon-default: var(--yorha-paper);
+  --interactive-icon-hover: var(--yorha-paper-light);
+  --interactive-icon-active: var(--yorha-paper-light);
+  --interactive-text-default: var(--yorha-paper-light);
+}
+html #app-mount .container__9293f .searchBar_c322aa {
+  --interactive-icon-default: var(--yorha-ink);
+  --icon-default: var(--yorha-ink);
+  --input-text-default: var(--yorha-ink);
+}
+/* ===== end v1.1 ===== */
+
+

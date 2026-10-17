@@ -1,0 +1,51 @@
+/* Syntax highlighting: retain token-level colors, including inline colors in
+   attachment previews. Never force every span to inherit the base foreground. */
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attr,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attribute,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.property,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.attr-name,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#9cdcfe" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156, 220, 254)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156,220,254)" i] { color: #145b80 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-string,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-regexp,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.string,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#ce9178" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206, 145, 120)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206,145,120)" i] { color: #913c26 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-keyword,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-literal,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.keyword,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.boolean,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#569cd6" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86, 156, 214)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86,156,214)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#c586c0" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197, 134, 192)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197,134,192)" i] { color: #7040a0 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-number,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.number,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#b5cea8" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181, 206, 168)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181,206,168)" i] { color: #37613b !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-title,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-built_in,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.function,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#dcdcaa" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220, 220, 170)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220,220,170)" i] { color: #76550b !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-comment,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-quote,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.comment,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#6a9955" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106, 153, 85)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106,153,85)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#608b4e" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96, 139, 78)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96,139,78)" i] { color: #5d6550 !important; }
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-type,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.class-name,
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#4ec9b0" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78, 201, 176)" i],
+html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78,201,176)" i] { color: #21645f !important; }
+

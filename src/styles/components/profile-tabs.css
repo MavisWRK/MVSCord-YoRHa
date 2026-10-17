@@ -1,0 +1,5 @@
+/* Profile tabs: keep the native bottom selection marker, without side rails. */
+html body #app-mount :is(.top_aa8da2, .topPill_aa8da2) .item_aa8da2 {
+  box-shadow: none !important;
+}
+

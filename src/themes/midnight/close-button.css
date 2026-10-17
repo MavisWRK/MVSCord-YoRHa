@@ -1,0 +1,17 @@
+/* Settings X: cover the newer modal layout as well as the classic tools column.
+   Apply only at rest so the existing hover appearance is preserved. */
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) {
+  color: #f5f6ff !important;
+  --interactive-normal: #f5f6ff;
+  --interactive-icon-default: #f5f6ff;
+  --icon-primary: #f5f6ff;
+}
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) :is(svg, path:not([fill="none"])) {
+  color: #f5f6ff !important;
+  fill: #f5f6ff !important;
+  opacity: 1 !important;
+}
+html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) [stroke]:not([stroke="none"]) {
+  stroke: #f5f6ff !important;
+}
+

@@ -1,0 +1,25 @@
+/* Message-author hover: same left-to-right sweep and timing as channels.
+   The box and its hit targets retain their dimensions. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  background-image: linear-gradient(var(--yorha-ink), var(--yorha-ink));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size var(--yorha-hover-time) ease;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55:has(.username_c19a55:is(:hover, :focus-visible)) {
+  background-size: 100% 100%;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55 .username_c19a55:is(:hover, :focus-visible) {
+  text-decoration: none !important;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55:has(.username_c19a55:is(:hover, :focus-visible)) :is(.username_c19a55, .timestamp_c19a55) {
+  color: #fff3fa !important;
+  text-shadow: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #app-mount .cozyMessage__5126c .header_c19a55 {
+    transition: none;
+  }
+}
+

@@ -1,0 +1,32 @@
+/* ===== v1.5: subtle YoRHa message nameplates within Oldcord spacing =====
+   The reference uses 8px vertical padding and a 13px left offset. Neither is
+   imported: original line height, margins, padding and avatar geometry remain.
+   Only cozy message headings shrink to their content so the background does
+   not extend across the entire message. Compact mode keeps its inline flow.
+*/
+html #app-mount .cozyMessage__5126c .header_c19a55 {
+  width: fit-content;
+  max-width: 100%;
+  background-color: rgba(37,37,127,.92);
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(174,187,255,.30),
+    1px 0 0 rgba(174,187,255,.16),
+    inset 3px 0 0 rgba(174,187,255,.70);
+}
+/* Thin dark edge helps pale role colors on paper; no color or font override.
+   Scope stays on message author names, not profile descriptions or role lists. */
+html #app-mount .message__5126c .username_c19a55 {
+  text-shadow:
+    -.35px 0 rgba(232,237,255,.60),
+     .35px 0 rgba(232,237,255,.60),
+     0 -.35px rgba(232,237,255,.50),
+     0 .65px rgba(232,237,255,.65);
+}
+html #app-mount .cozyMessage__5126c .header_c19a55 .timestamp_c19a55 {
+  color: #e2e6ff;
+  text-shadow: none;
+}
+/* ===== end v1.5 ===== */
+
+

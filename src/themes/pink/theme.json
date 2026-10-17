@@ -1,0 +1,31 @@
+{
+  "name": "MVSCord-YoRHa-Pink.theme.css",
+  "header": "/**\n * @name MVSCord YoRHa Pink\n * @description Version 1.2.5 \u2014 Pink edition. A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.\n * @version 1.2.5\n * @author MavisWRK\n */",
+  "modules": [
+    "src/styles/base/oldcord.css",
+    "src/themes/pink/palette.css",
+    "src/themes/pink/foundation.css",
+    "src/themes/pink/surface-tokens.css",
+    "src/themes/pink/header-contrast.css",
+    "src/styles/components/artwork.css",
+    "src/themes/pink/hover-and-texture.css",
+    "src/themes/pink/message-names.css",
+    "src/styles/components/surface-grid.css",
+    "src/styles/components/grid-and-spacing.css",
+    "src/themes/pink/composer.css",
+    "src/themes/pink/spotify.css",
+    "src/themes/pink/close-button.css",
+    "src/themes/pink/author-hover.css",
+    "src/styles/components/profile-tabs.css",
+    "src/themes/pink/dividers-and-badges.css",
+    "src/themes/pink/profile-dialog.css",
+    "src/themes/pink/pink-adjustments.css",
+    "src/styles/components/profile-boundaries.css",
+    "src/styles/components/settings-scroll.css",
+    "src/styles/components/input-contrast.css",
+    "src/styles/components/profile-composer-light.css",
+    "src/styles/components/code-contrast-light.css",
+    "src/styles/components/syntax-light.css",
+    "src/styles/components/neutral-syntax-light.css"
+  ]
+}

@@ -1,0 +1,17 @@
+/* ================= MVSCORD x YoRHa: CAMADA VISUAL =================
+   Bege #191970 e oliva #e2e6ff do YoRHa original.
+   Sem os seletores .da- antigos, larguras, deslocamentos, filtros de imagens
+   ou animacao do botao Home do tema antigo. A fonte da interface permanece
+   a da base; EnvyCodeR continua nos blocos de codigo.
+   Textura local em CSS: nao depende do wallpaper remoto do YoRHa.
+*/
+:root {
+  --yorha-paper: #191970;
+  --yorha-paper-light: #25257f;
+  --yorha-paper-deep: #141454;
+  --yorha-ink: #e2e6ff;
+  --yorha-ink-strong: #f5f6ff;
+  --yorha-muted: #b5bde5;
+  --yorha-line: rgba(174,187,255,0.30);
+  --yorha-texture: repeating-linear-gradient(0deg, rgba(174,187,255,.025) 0px, rgba(174,187,255,.025) 1px, transparent 1px, transparent 4px);
+}

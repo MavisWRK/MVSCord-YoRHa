@@ -1,0 +1,68 @@
+/* Dark edition: warm charcoal surfaces, ivory foregrounds, original geometry. */
+:root { color-scheme: dark; }
+html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  background-color: #191a17 !important;
+  color: #ded8c2;
+}
+/* Blend only the chat wallpaper. Avatars, attachments and profiles are untouched. */
+html body #app-mount .messagesWrapper__36d07 {
+  background-color: #292a24 !important;
+  background-blend-mode: normal, normal, multiply;
+}
+html body #app-mount .cozyMessage__5126c .header_c19a55 .username_c19a55 {
+  text-shadow: none;
+}
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing_c38106) {
+  --header-primary: #f4efdc !important;
+  --header-secondary: #ded8c2 !important;
+  --text-normal: #f4efdc !important;
+  --text-default: #f4efdc !important;
+  --text-primary: #f4efdc !important;
+  --text-secondary: #ded8c2 !important;
+  --text-strong: #f4efdc !important;
+  --text-muted: #ded8c2 !important;
+  --text-subtle: #ded8c2 !important;
+  --interactive-normal: #ded8c2 !important;
+  --interactive-hover: #fffbed !important;
+  --interactive-active: #fffbed !important;
+  --interactive-text-normal: #ded8c2 !important;
+  --interactive-text-default: #ded8c2 !important;
+  --interactive-text-hover: #fffbed !important;
+  --interactive-text-active: #fffbed !important;
+  --interactive-icon-default: #ded8c2 !important;
+  --interactive-icon-hover: #fffbed !important;
+  --interactive-icon-active: #fffbed !important;
+  --icon-default: #ded8c2 !important;
+  --icon-primary: #ded8c2 !important;
+  --icon-secondary: #ded8c2 !important;
+  --icon-normal: #ded8c2 !important;
+  --icon-subtle: #ded8c2 !important;
+  --icon-strong: #f4efdc !important;
+  --channel-icon: #ded8c2 !important;
+}
+
+/* Explicit foregrounds also cover nested theme scopes on header elements.
+   Do not force SVG fills: outline icons, status dots and badges retain their art. */
+html #app-mount :is(.container__9293f, .trailing_c38106) :is(.icon__9293f, .iconWrapper__9293f),
+html #app-mount .trailing_c38106 .clickable_c99c29,
+html #app-mount .trailing_c38106 .clickable_c99c29 > svg {
+  color: #ded8c2 !important;
+}
+html #app-mount :is(.container__9293f, .trailing_c38106) .clickable__9293f:hover .icon__9293f,
+html #app-mount :is(.container__9293f, .trailing_c38106) .selected__9293f .icon__9293f {
+  color: #fffbed !important;
+}
+html #app-mount .container__9293f .titleWrapper__9293f,
+html #app-mount .container__9293f .titleWrapper__9293f > :is(h1, h2, div, span) {
+  color: #f4efdc !important;
+}
+html #app-mount .container__9293f .topic__6ec1a {
+  color: #ded8c2 !important;
+}
+
+
+html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+  --interactive-icon-default: #d6cfb6;
+  --icon-default: #d6cfb6;
+}
+

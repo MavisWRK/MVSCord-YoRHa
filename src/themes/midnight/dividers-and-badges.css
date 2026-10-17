@@ -1,0 +1,155 @@
+/* Fine but visible boundaries between servers, channel list, and chat.
+   Inset shadows preserve the Oldcord column widths. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434 {
+  box-shadow: inset -1px 0 0 rgba(174,187,255,.60);
+}
+html body #app-mount .sidebarList__5e434 {
+  box-shadow: inset -2px 0 0 rgba(174,187,255,.50);
+}
+
+/* Unread DM badge: keep the avatar; replace only the count's circular badge.
+   Use the native badge anchor so the envelope follows the avatar corner. */
+html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 {
+  border: 0 !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  width: 20px;
+  height: 20px;
+  background: url("@assets/icons/legacy-icon-14.svg") center / 20px 20px no-repeat !important;
+  box-shadow: none !important;
+  pointer-events: none;
+}
+html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 > * {
+  opacity: 0 !important;
+}
+
+/* DM sidebar: texture on painted background surfaces, below profile artwork. */
+html body #app-mount .sidebarList__5e434 :is([class*="privateChannels_"], [class*="privateChannels_"] > [class*="scroller_"]) {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px !important;
+  background-position: left top;
+  background-repeat: repeat;
+}
+/* Match the server member sweep on DM entries. Keep custom profile art intact. */
+html body #app-mount .sidebarList__5e434 .interactive__972a0 {
+  background-color: transparent !important;
+  background-image: linear-gradient(rgba(174,187,255,.18), rgba(174,187,255,.18)) !important;
+  background-repeat: no-repeat !important;
+  background-position: right center !important;
+  background-size: 0% 100% !important;
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html body #app-mount .sidebarList__5e434 .interactive__972a0:is(:hover, :focus-within, .interactiveSelected__972a0) {
+  background-size: 100% 100% !important;
+  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+}
+@media (prefers-reduced-motion: reduce) {
+  html body #app-mount .sidebarList__5e434 .interactive__972a0 {
+    transition: none;
+  }
+}
+
+/* Continuous server/DM divider: paint above the opaque server scroller,
+   including its occupied portion, without changing column widths. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434 {
+  position: relative;
+  box-shadow: none;
+}
+html body #app-mount .sidebar__5e434 > .guilds__5e434::after {
+  content: "";
+  position: absolute;
+  /* Start at the bottom corner of the 48px search/header row. */
+  top: var(--custom-channel-header-height, 48px);
+  bottom: 12px;
+  right: 0;
+  width: 1px;
+  background-color: rgba(174,187,255,.60);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Strong horizontal separator between unread DMs and servers. */
+html body #app-mount .guildSeparator__252b6 {
+  width: 32px !important;
+  height: 3px !important;
+  background: #e2e6ff !important;
+  opacity: 1 !important;
+  border-radius: 1px;
+}
+
+/* Vencord's actual description class: remove its fixed 36px/two-line clamp. */
+html body #app-mount .vc-addon-card .vc-addon-note {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+/* Local game/application activity above the voice panel. */
+html body #app-mount .panels__5e434 [class*="activityPanel_"] {
+  --text-normal: #e2e6ff;
+  --text-default: #e2e6ff;
+  --text-strong: #f5f6ff;
+  --text-muted: #b5bde5;
+  --text-subtle: #b5bde5;
+  --header-primary: #f5f6ff;
+  --header-secondary: #b5bde5;
+  --interactive-normal: #e2e6ff;
+  --interactive-icon-default: #e2e6ff;
+  --interactive-icon-hover: #f5f6ff;
+  --icon-primary: #e2e6ff;
+  --icon-secondary: #b5bde5;
+  background-color: var(--yorha-paper) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  color: #e2e6ff !important;
+  box-sizing: border-box;
+  width: auto !important;
+  min-width: 0;
+  max-width: 100%;
+  margin: 4px 4px 0 !important;
+  border: 1px solid rgba(174,187,255,.25) !important;
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] :is([class*="title_"], [class*="activityName_"]) {
+  color: #f5f6ff !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] :is([class*="subtext_"], [class*="subText_"]) {
+  color: #b5bde5 !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] button {
+  color: #e2e6ff !important;
+}
+html body #app-mount .panels__5e434 [class*="activityPanel_"] button:hover {
+  background-color: rgba(174,187,255,.14) !important;
+}
+
+/* Voice action buttons: readable surfaces on the dark connection panel. */
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:not(.buttonActive_e131a9):not([aria-pressed="true"]) {
+  background: var(--yorha-paper) !important;
+  color: #f5f6ff !important;
+  --interactive-normal: #f5f6ff;
+  --interactive-icon-default: #f5f6ff;
+  --icon-primary: #f5f6ff;
+  box-shadow: inset 0 0 0 1px rgba(37,37,127,.50) !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:not(.buttonActive_e131a9):not([aria-pressed="true"]):hover:not(:disabled):not([aria-disabled="true"]) {
+  background: var(--yorha-paper-light) !important;
+  color: #f5f6ff !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9 svg {
+  color: inherit !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9 svg path:not([fill="none"]) {
+  fill: currentColor !important;
+}
+html body #app-mount .panels__5e434 .container_e131a9 .buttonColor_e131a9:is(:disabled, [aria-disabled="true"]) {
+  opacity: .45 !important;
+}
+

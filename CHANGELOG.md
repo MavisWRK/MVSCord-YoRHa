@@ -1,5 +1,10 @@
 # Changelog
 
-## 1.2.5
+## Organização modular — 2026-10-17
 
-Initial packaged version of the customized theme. Includes the YoRHa palette and assets, Oldcord-style layout, profile readability improvements, local background grids, hover effects, unread-DM envelope badges, Spotify styling, and activity-panel contrast adjustments.
+- Separação dos fontes, paletas, componentes compartilhados e arquivos gerados.
+- Extração de 14 assets incorporados, com preservação dos bytes originais.
+- Build linear das variantes Light, Dark, Pink e Midnight.
+- Saídas para hospedagem com imagens externas e saída portátil para teste.
+- Verificação da equivalência da cascata e da integridade dos assets.
+- Sem alteração visual planejada; versão NerdFont não modificada.

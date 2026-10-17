@@ -1,0 +1,35 @@
+/* Profile message composer: one painted surface and one rounded outline.
+   No clipping on the profile itself: decorations and effects remain intact. */
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  height: auto !important;
+  min-height: 0;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 .scrollableContainer__74017 {
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 8px !important;
+  background-color: var(--yorha-paper-light) !important;
+  box-shadow: inset 0 0 0 1px var(--yorha-line) !important;
+  background-clip: padding-box;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"] {
+  color: var(--yorha-ink-strong) !important;
+  opacity: 1 !important;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"] .spriteContainer__04eed {
+  opacity: 1 !important;
+  filter: grayscale(1) brightness(.42) !important;
+}
+html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer__5be3e) .channelTextArea__74017 [class*="emojiButton_"]:hover .spriteContainer__04eed {
+  filter: none !important;
+}
+

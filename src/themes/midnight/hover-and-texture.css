@@ -1,0 +1,86 @@
+/* ===== v1.4: menu texture, directional hover and native cursors =====
+   Adapted from the supplied YoRHA-UI source and video.
+   Oldcord dimensions, spacing, avatar shapes and panel positions stay intact.
+   Texture strength and hover duration can be adjusted here.
+*/
+:root {
+  --yorha-grid-ink: rgba(174,187,255,.045);
+  --yorha-hover-time: 320ms;
+}
+
+/* Grid is painted on interface backgrounds in v1.6, never over content. */
+
+/* Channel menu rails are painted inside the existing channel tree. */
+html #app-mount .container__2637a .content_d125d2 {
+  background-image: linear-gradient(to right,
+    transparent 0 2px, rgba(174,187,255,.32) 2px 4px,
+    transparent 4px 7px, rgba(174,187,255,.20) 7px 8px,
+    transparent 8px);
+  background-repeat: no-repeat;
+}
+
+/* Channel sweep: left to right. No animated widths or injected hitboxes. */
+html #app-mount .wrapper__2ea32 .link__2ea32 {
+  background-color: transparent !important;
+  background-image: linear-gradient(var(--yorha-ink), var(--yorha-ink));
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  box-shadow: inset 0 1px transparent, inset 0 -1px transparent;
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html #app-mount .wrapper__2ea32:is(:hover, :focus-within, .modeSelected__2ea32, .modeConnected__2ea32) .link__2ea32 {
+  background-size: 100% 100%;
+  box-shadow: inset 0 1px rgba(37,37,127,.6), inset 0 -1px rgba(37,37,127,.6);
+}
+html #app-mount .wrapper__2ea32:is(:hover, :focus-within, .modeSelected__2ea32, .modeConnected__2ea32) :is(.name__2ea32, .icon__2ea32, .actionIcon_c69b6d) {
+  color: #191970 !important;
+}
+html #app-mount .wrapper__2ea32.modeSelected__2ea32:not(.typeVoice__2ea32):not(.modeLocked__2ea32) .iconContainer__2ea32 {
+  background-image: var(--yorha-asset-selector-inverse);
+}
+
+/* Member sweep mirrors the source: right to left. It is deliberately translucent
+   so role colors, nameplate art and dark descriptions remain readable. */
+html #app-mount :is(.member__5d473, .member_c8ffbb) .childContainer__91a9d {
+  background-color: transparent !important;
+  background-image: linear-gradient(rgba(174,187,255,.18), rgba(174,187,255,.18));
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 0% 100%;
+  box-shadow: inset 0 1px transparent, inset 0 -1px rgba(174,187,255,.16);
+  transition: background-size var(--yorha-hover-time) ease,
+              box-shadow var(--yorha-hover-time) ease;
+}
+html #app-mount :is(.member__5d473, .member_c8ffbb):is(:hover, :focus-within, .selected__91a9d) .childContainer__91a9d {
+  background-size: 100% 100%;
+  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+}
+/* Avoid the previous instant whole-row hover paint competing with the sweep. */
+html #app-mount .member__5d473:hover {
+  background-color: var(--yorha-paper-deep) !important;
+}
+
+/* Voice-panel decoration and button hover, within the existing dark panel. */
+html #app-mount .panels__5e434 {
+  box-shadow: inset 0 1px rgba(37,37,127,.45), inset 3px 0 rgba(37,37,127,.18);
+}
+html #app-mount .panels__5e434 button:not(:disabled):not([aria-disabled="true"]) {
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
+html #app-mount .panels__5e434 button:not(:disabled):not([aria-disabled="true"]):hover {
+  background-color: rgba(37,37,127,.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(37,37,127,.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html #app-mount .wrapper__2ea32 .link__2ea32,
+  html #app-mount :is(.member__5d473, .member_c8ffbb) .childContainer__91a9d,
+  html #app-mount .panels__5e434 button {
+    transition: none !important;
+  }
+}
+/* ===== end v1.4 ===== */
+
+

@@ -1,0 +1,54 @@
+/* Stripe is inside the rounded box: no external offset. The 11px start
+   padding includes the 3px stripe plus the existing 8px text gap. */
+html body #app-mount .cozyMessage__5126c .header_c19a55 {
+  position: relative;
+  inset-inline-start: 0 !important;
+}
+
+/* v1.8: YoRHa stripes on the main message composer. Paint behind its
+   contents and reserve space before the attachment button. */
+html body #app-mount .channelTextArea_f75fb0 .scrollableContainer__74017 {
+  background-image:
+    linear-gradient(to right,
+      var(--yorha-ink) 0 12px,
+      var(--yorha-paper-light) 12px 17px,
+      var(--yorha-ink) 17px 20px,
+      transparent 20px),
+    var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 100% 100%, 5px 5px, 5px 5px;
+  background-position: left top;
+  background-repeat: no-repeat, repeat, repeat;
+  padding-inline-start: 22px;
+  box-sizing: border-box;
+}
+
+/* v1.8.1: grid on the two marked background surfaces. The guild scroller
+   may end before its parent; texture the parent to cover the empty tail.
+   The chat form supplies the area around/below the composer. */
+html body #app-mount .sidebar__5e434 > .guilds__5e434,
+html body #app-mount .sidebar__5e434 > .wrapper_ef3116,
+html body #app-mount .formWithLoadedChatInput_f75fb0 {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px, 5px 5px !important;
+  background-position: left top !important;
+  background-repeat: repeat !important;
+}
+
+/* Settings close control: dark icon and ESC label on the light theme. */
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"] {
+  color: #d6cfb6 !important;
+  border-color: #d6cfb6 !important;
+  opacity: 1 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"] svg {
+  color: #d6cfb6 !important;
+  fill: currentColor;
+  opacity: 1 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="keybind_"] {
+  color: #d6cfb6 !important;
+}
+html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"]:hover {
+  background-color: rgba(214,207,182,.12) !important;
+}
+

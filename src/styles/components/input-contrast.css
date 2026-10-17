@@ -1,0 +1,31 @@
+/* Message inputs own both their surface and foreground. Profile text outside
+   these inputs remains native, including Nitro light/dark custom palettes. */
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017) {
+  --text-normal: var(--yorha-ink) !important;
+  --text-default: var(--yorha-ink) !important;
+  --text-primary: var(--yorha-ink) !important;
+  --text-muted: var(--yorha-muted) !important;
+  --text-subtle: var(--yorha-muted) !important;
+  --input-text-default: var(--yorha-ink) !important;
+  --input-placeholder-text: var(--yorha-muted) !important;
+  --input-placeholder-text-default: var(--yorha-muted) !important;
+  --channel-text-area-placeholder: var(--yorha-muted) !important;
+  --interactive-normal: var(--yorha-ink) !important;
+  --interactive-icon-default: var(--yorha-ink) !important;
+  --icon-default: var(--yorha-ink) !important;
+  --icon-primary: var(--yorha-ink) !important;
+  color: var(--yorha-ink) !important;
+  caret-color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017)
+:is([role="textbox"], [contenteditable="true"], textarea) {
+  color: var(--yorha-ink) !important;
+  caret-color: var(--yorha-ink-strong) !important;
+}
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017)
+:is([class*="placeholder_"], [data-slate-placeholder="true"]),
+html body #app-mount :is(.channelTextArea__74017, .scrollableContainer__74017) textarea::placeholder {
+  color: var(--yorha-muted) !important;
+  opacity: 1;
+}
+

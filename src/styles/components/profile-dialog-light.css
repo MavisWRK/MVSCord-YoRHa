@@ -1,0 +1,14 @@
+/* Profile dialogs: let the profile surface own its rounded outline.
+   The generic modal paper/shadow otherwise peeks out behind its corners. */
+html body #app-mount :is(.root__49fc1, [data-mana-component="modal"], [data-mana-component="layer-modal"]):is(
+  .user-profile-modal,
+  .user-profile-modal-v2,
+  :has(.user-profile-modal, .user-profile-modal-v2, [class*="profileCustomization_"])
+) {
+  background-color: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+

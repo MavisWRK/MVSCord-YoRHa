@@ -1,0 +1,83 @@
+/* ===== v1.2: header contrast and unboxed member descriptions =====
+   The trailing toolbar is positioned over the dark header by MVSCord but is
+   outside that header in the DOM. Give it its own light foreground scope.
+*/
+html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing_c38106) {
+  --header-primary: #242520 !important;
+  --header-secondary: #30312a !important;
+  --text-normal: #242520 !important;
+  --text-default: #242520 !important;
+  --text-primary: #242520 !important;
+  --text-secondary: #30312a !important;
+  --text-strong: #242520 !important;
+  --text-muted: #30312a !important;
+  --text-subtle: #30312a !important;
+  --interactive-normal: #30312a !important;
+  --interactive-hover: #191a17 !important;
+  --interactive-active: #191a17 !important;
+  --interactive-text-normal: #30312a !important;
+  --interactive-text-default: #30312a !important;
+  --interactive-text-hover: #191a17 !important;
+  --interactive-text-active: #191a17 !important;
+  --interactive-icon-default: #30312a !important;
+  --interactive-icon-hover: #191a17 !important;
+  --interactive-icon-active: #191a17 !important;
+  --icon-default: #30312a !important;
+  --icon-primary: #30312a !important;
+  --icon-secondary: #30312a !important;
+  --icon-normal: #30312a !important;
+  --icon-subtle: #30312a !important;
+  --icon-strong: #242520 !important;
+  --channel-icon: #30312a !important;
+}
+
+/* Explicit foregrounds also cover nested theme scopes on header elements.
+   Do not force SVG fills: outline icons, status dots and badges retain their art. */
+html #app-mount :is(.container__9293f, .trailing_c38106) :is(.icon__9293f, .iconWrapper__9293f),
+html #app-mount .trailing_c38106 .clickable_c99c29,
+html #app-mount .trailing_c38106 .clickable_c99c29 > svg {
+  color: #30312a !important;
+}
+html #app-mount :is(.container__9293f, .trailing_c38106) .clickable__9293f:hover .icon__9293f,
+html #app-mount :is(.container__9293f, .trailing_c38106) .selected__9293f .icon__9293f {
+  color: #191a17 !important;
+}
+html #app-mount .container__9293f .titleWrapper__9293f,
+html #app-mount .container__9293f .titleWrapper__9293f > :is(h1, h2, div, span) {
+  color: #242520 !important;
+}
+html #app-mount .container__9293f .topic__6ec1a {
+  color: #30312a !important;
+}
+
+/* The search input stays light, so it needs a separate dark foreground. */
+html #app-mount .container__9293f .searchBar_c322aa {
+  --text-normal: #eee7cf !important;
+  --text-default: #eee7cf !important;
+  --text-primary: #eee7cf !important;
+  --text-muted: #d6cfb6 !important;
+  --text-subtle: #d6cfb6 !important;
+  --interactive-icon-default: #d6cfb6 !important;
+  --icon-default: #d6cfb6 !important;
+  --input-text-default: #eee7cf !important;
+  --input-placeholder-text-default: #d6cfb6 !important;
+  color: #eee7cf !important;
+}
+
+/* Dark descriptions without the v1.1 rectangular backing.
+   Limit foreground overrides to secondary text; role/name colors stay intact. */
+html #app-mount .member__5d473 {
+  --text-muted: #eee7cf !important;
+  --text-subtle: #eee7cf !important;
+  --text-secondary: #eee7cf !important;
+}
+html #app-mount .member__5d473 :is([class*="subText_"], [class*="subtext_"], [class*="activityText_"], [class*="customStatusText_"]) {
+  background-color: transparent !important;
+  color: #eee7cf !important;
+}
+html #app-mount .member__5d473 :is([class*="subText_"], [class*="subtext_"]) :is(span, a) {
+  color: #eee7cf !important;
+}
+/* ===== end v1.2 ===== */
+
+
