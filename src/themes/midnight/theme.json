@@ -26,6 +26,7 @@
     "src/styles/components/profile-composer-dark.css",
     "src/styles/components/code-contrast-dark.css",
     "src/themes/midnight/syntax.css",
-    "src/themes/midnight/midnight-adjustments.css"
+    "src/themes/midnight/midnight-adjustments.css",
+    "src/styles/components/spotify-frame.css"
   ]
 }

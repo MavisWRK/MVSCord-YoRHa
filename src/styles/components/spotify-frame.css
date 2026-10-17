@@ -1,0 +1,7 @@
+/* Close the Spotify frame when no game/activity panel is present. */
+html body #app-mount
+.panels__5e434:not(:has([class*="activityPanel_"]))
+#vc-spotify-player {
+  border-top: 4px solid var(--yorha-ink) !important;
+  border-radius: 0 !important;
+}

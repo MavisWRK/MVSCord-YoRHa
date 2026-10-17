@@ -25,6 +25,7 @@
     "src/styles/components/profile-composer-light.css",
     "src/styles/components/code-contrast-light.css",
     "src/styles/components/syntax-light.css",
-    "src/styles/components/neutral-syntax-light.css"
+    "src/styles/components/neutral-syntax-light.css",
+    "src/styles/components/spotify-frame.css"
   ]
 }
