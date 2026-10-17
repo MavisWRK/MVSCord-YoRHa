@@ -1,35 +1,35 @@
-# MVSCord — projeto modular
+# MVSCord — modular theme project
 
-Versão visual 1.2.5 · MavisWRK
+Visual version 1.2.5 · MavisWRK
 
-Temas Light (YoRHa bege), Dark, Pink e Midnight. Esta organização mantém o layout e as correções atuais; a versão NerdFont continua separada e não foi alterada.
+Light (YoRHa beige), Dark, Pink, and Midnight themes. This structure preserves the existing layout and fixes. The separate NerdFont edition is unchanged and is not included in this package.
 
-## Estrutura
+## Project structure
 
-| Caminho | Responsabilidade |
+| Path | Purpose |
 | --- | --- |
-| `src/styles/base/oldcord.css` | Base de layout herdada do MVSCord/Oldcord |
-| `src/styles/components/` | Regras compartilhadas: grades, perfis, campos, código e outros componentes |
-| `src/themes/light/` | Paleta e diferenças da versão bege |
-| `src/themes/dark/` | Paleta e diferenças da versão escura |
-| `src/themes/pink/` | Paleta e diferenças da versão rosa |
-| `src/themes/midnight/` | Paleta e diferenças da versão Midnight |
-| `src/themes/*/palette.css` | Cores principais e textura da variante |
-| `src/themes/*/theme.json` | Metadados e sequência explícita dos módulos |
-| `assets/wallpapers/` | Wallpapers horizontal e vertical |
-| `assets/icons/` | Emblema e ícones extraídos da base |
-| `assets/decorations/` | Seletores e bordas decorativas |
-| `assets/manifest.json` | Inventário dos assets, tipos e hashes |
-| `scripts/build.mjs` | Montagem e validação, sem dependências npm |
-| `project.json` | Variantes incluídas e endereço público dos assets |
-| `*.theme.css` na raiz | Arquivos gerados para os links públicos existentes |
-| `dist/portable/` | Arquivos autocontidos para teste local |
+| `src/styles/base/oldcord.css` | Layout inherited from MVSCord/Oldcord |
+| `src/styles/components/` | Shared grids, profiles, inputs, code styling, and other components |
+| `src/themes/light/` | Beige palette and variant-specific rules |
+| `src/themes/dark/` | Dark palette and variant-specific rules |
+| `src/themes/pink/` | Pink palette and variant-specific rules |
+| `src/themes/midnight/` | Midnight palette and variant-specific rules |
+| `src/themes/*/palette.css` | Main colors and texture settings |
+| `src/themes/*/theme.json` | Theme metadata and explicit module order |
+| `assets/wallpapers/` | Landscape and portrait wallpapers |
+| `assets/icons/` | Emblem and icons extracted from the base |
+| `assets/decorations/` | Selectors and decorative borders |
+| `assets/manifest.json` | Asset inventory, MIME types, sizes, and hashes |
+| `scripts/build.mjs` | Build and verification script, with no npm dependencies |
+| `project.json` | Included variants and public asset base URL |
+| Root `*.theme.css` files | Generated stylesheets for the existing public links |
+| `dist/portable/` | Generated stylesheets with embedded images for local testing |
 
-Não há frontend React, backend ou JavaScript executado dentro do Discord. O Node é usado somente para preparar os arquivos. O Discord recebe CSS e carrega as imagens referenciadas por ele.
+There is no React frontend, backend, or JavaScript running inside Discord. Node.js only prepares the files. Discord loads CSS and the images referenced by it.
 
 ## Build
 
-Use Node.js 18 ou superior. Não é necessário executar `npm install`.
+Use Node.js 18 or later. No `npm install` is required.
 
 ```sh
 npm run build
@@ -37,62 +37,92 @@ npm test
 npm run build:portable
 ```
 
-O build concatena os módulos na ordem indicada em cada `theme.json`. Não usa imports entre módulos em tempo de execução, minificação ou `@layer`: isso conserva a prioridade das regras e torna a saída linear. O import já existente de variáveis do Oldcord é mantido.
+The build concatenates modules in the order defined by each `theme.json`. It does not use runtime imports between source modules, minification, or `@layer`, preserving rule precedence and producing a linear stylesheet. The existing external Oldcord variables import remains in place.
 
-O CSS publicado na raiz contém URLs para assets separados, sem imagens em base64. A saída portátil incorpora as imagens e fica maior; ela é opcional e serve para testar localmente antes de publicar.
+The root CSS files reference separate assets using absolute URLs, without embedded base64 images. The optional portable output embeds images and is larger; use it to test locally before publishing.
 
-## Instalar agora, sem publicar
+## Install with a raw URL in Vencord
 
-1. Abra `dist/portable/` neste pacote.
-2. Copie somente a variante desejada para a pasta de temas do Vencord.
-3. Desative as outras variantes e ative a escolhida.
+After publishing the generated root CSS files and the complete `assets/` folder to the public repository's `main` branch, add one of these URLs to Vencord's online themes list:
 
-A versão portátil ainda depende do import de variáveis do Oldcord. Ela não é totalmente offline.
+**Light / beige**
 
-## Publicar no repositório existente
+```text
+https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/refs/heads/main/MVSCord-YoRHa.theme.css
+```
 
-O endereço configurado em `project.json` é:
+**Dark**
+
+```text
+https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/refs/heads/main/MVSCord-YoRHa-Dark.theme.css
+```
+
+**Pink**
+
+```text
+https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/refs/heads/main/MVSCord-YoRHa-Pink.theme.css
+```
+
+**Midnight**
+
+```text
+https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/refs/heads/main/MVSCord-Midnight.theme.css
+```
+
+Paste the plain URL without Markdown formatting or backticks. Enable only one MVSCord variant at a time. Existing raw theme links remain usable because the generated filenames and root locations are unchanged. Users do not need Node.js or the source folders to load the published theme.
+
+## Test locally before publishing
+
+1. Open `dist/portable/` in this package, or generate it with `npm run build:portable`.
+2. Copy the desired variant into Vencord's themes folder.
+3. Disable other variants and enable the selected theme.
+
+Portable builds still depend on the external Oldcord variables import; they are not fully offline.
+
+## Publish to the existing repository
+
+The asset base URL configured in `project.json` is:
 
 ```text
 https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/
 ```
 
-1. Copie o conteúdo deste projeto para seu checkout do repositório existente.
-2. Preserve seus screenshots, licenças e outras alterações próprias; integre a documentação conforme necessário.
-3. Execute `npm run build` e `npm test`.
-4. Publique os quatro `*.theme.css` da raiz junto com `assets/`, `src/`, `scripts/`, `project.json`, `package.json` e a documentação.
-5. Confira que os assets estão acessíveis e recarregue o tema no Discord.
+1. Copy this project's contents into your existing repository checkout.
+2. Preserve your screenshots, licenses, and other custom changes; merge documentation as needed.
+3. Run `npm run build` and `npm test`.
+4. Commit and push the four root `*.theme.css` files together with `assets/`, `src/`, `scripts/`, `project.json`, `package.json`, and the documentation.
+5. Check that the published assets are accessible, then reload the theme in Discord.
 
-Os nomes dos três temas anteriores foram preservados; o Midnight usa `MVSCord-Midnight.theme.css`. Não publique somente o CSS: os novos caminhos de imagens só funcionarão depois que a pasta `assets/` estiver no GitHub. Este pacote não publica nada automaticamente.
+Keep the contents at the repository root, rather than inside an extra `MVSCord-YoRHa-modular/` directory. Do not publish only the CSS: image URLs will work only after the matching `assets/` folder is published. This package does not publish anything automatically.
 
-Para outro repositório ou branch, altere `assetBase` em `project.json` e gere novamente. Para um build temporário, também é possível definir a variável de ambiente `MVSCORD_ASSET_BASE` com uma URL absoluta terminada em `/`.
+For a different repository or branch, change `assetBase` in `project.json` and rebuild. For a temporary build, set the `MVSCORD_ASSET_BASE` environment variable to an absolute URL ending in `/`.
 
-## Como editar
+## Editing guide
 
-- Cores principais: `src/themes/<variante>/palette.css`.
-- Cores específicas de componentes: arquivos da variante, como `spotify.css`, `header-contrast.css` e `surface-tokens.css`.
-- Regra comum: procure o módulo em `src/styles/components/` e veja quais manifestos o incluem.
-- Layout herdado: `src/styles/base/oldcord.css`.
-- Wallpaper: substitua a imagem em `assets/wallpapers/`, conservando o nome e atualizando seu hash no manifesto.
-- Novo módulo: crie o CSS e registre sua posição em `theme.json`.
+- Main colors: `src/themes/<variant>/palette.css`.
+- Component-specific colors: variant files such as `spotify.css`, `header-contrast.css`, and `surface-tokens.css`.
+- Shared rules: locate the module in `src/styles/components/` and check which theme manifests include it.
+- Inherited layout: `src/styles/base/oldcord.css`.
+- Wallpapers: replace the image in `assets/wallpapers/`, keeping its filename and updating its manifest hash and size.
+- New modules: create the CSS file and register its position in `theme.json`.
 
-Módulos com sufixos como `-light` são compartilhados apenas pelas variantes que os listam. A organização mantém diferenças explícitas em vez de forçar uma paleta comum sobre perfis Nitro. Alguns overrides históricos foram preservados intencionalmente: fundi-los ou mudar a ordem pode causar regressões. Não edite os CSS gerados na raiz, pois o build os sobrescreve.
+Modules with suffixes such as `-light` are shared only by the variants that list them. Variant differences remain explicit to avoid forcing a common palette onto Nitro profiles. Some historical overrides are intentionally preserved: merging or reordering them can introduce regressions. Do not edit the generated root stylesheets; the build overwrites them.
 
-## Verificação
+## Verification
 
-A migração foi comparada com os quatro arquivos anteriores: após normalizar URLs, a ordem e o conteúdo das regras são idênticos, e os 14 assets mantêm os mesmos bytes. Os builds hospedado e portátil passaram nessa comparação. Isso não substitui uma verificação visual no Discord.
+The initial migration was compared against all four previous stylesheets. After normalizing asset URLs, rule order and content were identical, and all 14 assets retained their original bytes. Both hosted and portable builds passed this comparison. This does not replace visual testing in Discord.
 
-`npm test` confere a integridade dos assets, as referências dos módulos e o hash da cascata aprovada. Uma edição intencional de CSS muda esse hash. Depois de revisar o diff e validar visualmente, execute:
+`npm test` checks asset integrity, module references, and the approved cascade hash. An intentional CSS edit changes this hash. After reviewing the diff and visually validating the result, run:
 
 ```sh
 npm run baseline:accept
 npm test
 ```
 
-Não aceite a baseline apenas para esconder uma falha inesperada. Para trocar imagens, atualize `sha256` e `bytes` do arquivo correspondente em `assets/manifest.json` antes de gerar.
+Do not accept a new baseline merely to hide an unexpected failure. When replacing images, update the corresponding `sha256` and `bytes` fields in `assets/manifest.json` before building.
 
-Confira especialmente perfis claros e escuros, caixa de mensagem do perfil, prévias de JSON/TXT, loja, configurações, player Spotify e chamadas.
+Pay particular attention to light and dark profiles, profile message inputs, JSON/TXT previews, the shop, settings, the Spotify player, and calls.
 
-## Créditos
+## Credits
 
-Veja [CREDITS.md](CREDITS.md). Os assets extraídos mantêm suas origens; reorganizá-los não altera sua autoria.
+See [CREDITS.md](CREDITS.md). Extracted assets retain their original attribution; reorganizing them does not change authorship.
