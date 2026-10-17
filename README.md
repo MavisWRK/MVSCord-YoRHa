@@ -142,3 +142,19 @@ The four root `.theme.css` files are ready for individual download. Users can ei
 For downloadable release attachments, create a GitHub release after publishing `styles/` and `assets/`, then attach the four root `.theme.css` files. The attachments continue to import the current `main` branch styles; they are not frozen snapshots of that release. Portable builds are an optional alternative for users who prefer embedded images.
 
 No GitHub release or upload is performed by the build script. The repository must remain publicly accessible for these URLs to work.
+
+## Preview
+
+### Original YoRHa
+
+<img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/e41a1f2d-5898-4a92-9d03-f01dfbbc0340" />
+<img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/691448bb-36f2-4f46-87e8-8f635e7dfaef" />
+<img width="2559" height="1439" alt="image" src="https://github.com/user-attachments/assets/5c088cf8-ca24-458c-a08b-f77eaee1ba37" />
+<img width="306" height="402" alt="Screenshot 2026-10-17 124016" src="https://github.com/user-attachments/assets/53d4444e-d6f8-44cc-a1cd-d876b4f2cfad" />
+<img width="114" height="38" alt="Screenshot 2026-10-17 124011" src="https://github.com/user-attachments/assets/2cf11fb0-792f-466d-9c55-2106ebff6204" />
+<img width="187" height="40" alt="Screenshot 2026-10-17 123954" src="https://github.com/user-attachments/assets/75ff73dc-273e-43e1-8272-e01e5f2affce" />
+
+
+
+
+
