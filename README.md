@@ -1,30 +1,30 @@
 # MVSCord — modular theme project
 
-Visual version 1.2.5 · MavisWRK
+Visual version 1.0.0 · MavisWRK
 
 Light (YoRHa beige), Dark, Pink, and Midnight themes. This structure preserves the existing layout and fixes. The separate NerdFont edition is unchanged and is not included in this package.
 
 ## Project structure
 
-| Path | Purpose |
-| --- | --- |
-| `src/styles/base/oldcord.css` | Layout inherited from MVSCord/Oldcord |
-| `src/styles/components/` | Shared grids, profiles, inputs, code styling, and other components |
-| `src/themes/light/` | Beige palette and variant-specific rules |
-| `src/themes/dark/` | Dark palette and variant-specific rules |
-| `src/themes/pink/` | Pink palette and variant-specific rules |
-| `src/themes/midnight/` | Midnight palette and variant-specific rules |
-| `src/themes/*/palette.css` | Main colors and texture settings |
-| `src/themes/*/theme.json` | Theme metadata and explicit module order |
-| `assets/wallpapers/` | Landscape and portrait wallpapers |
-| `assets/icons/` | Emblem and icons extracted from the base |
-| `assets/decorations/` | Selectors and decorative borders |
-| `assets/manifest.json` | Asset inventory, MIME types, sizes, and hashes |
-| `scripts/build.mjs` | Build and verification script, with no npm dependencies |
-| `project.json` | Included variants and public asset base URL |
-| Root `*.theme.css` files | Small installable loaders with metadata and one online import |
-| `styles/` | Complete generated stylesheets loaded online |
-| `dist/portable/` | Generated stylesheets with embedded images for local testing |
+| Path                          | Purpose                                                            |
+| ----------------------------- | ------------------------------------------------------------------ |
+| `src/styles/base/oldcord.css` | Layout inherited from MVSCord/Oldcord                              |
+| `src/styles/components/`      | Shared grids, profiles, inputs, code styling, and other components |
+| `src/themes/light/`           | Beige palette and variant-specific rules                           |
+| `src/themes/dark/`            | Dark palette and variant-specific rules                            |
+| `src/themes/pink/`            | Pink palette and variant-specific rules                            |
+| `src/themes/midnight/`        | Midnight palette and variant-specific rules                        |
+| `src/themes/*/palette.css`    | Main colors and texture settings                                   |
+| `src/themes/*/theme.json`     | Theme metadata and explicit module order                           |
+| `assets/wallpapers/`          | Landscape and portrait wallpapers                                  |
+| `assets/icons/`               | Emblem and icons extracted from the base                           |
+| `assets/decorations/`         | Selectors and decorative borders                                   |
+| `assets/manifest.json`        | Asset inventory, MIME types, sizes, and hashes                     |
+| `scripts/build.mjs`           | Build and verification script, with no npm dependencies            |
+| `project.json`                | Included variants and public asset base URL                        |
+| Root `*.theme.css` files      | Small installable loaders with metadata and one online import      |
+| `styles/`                     | Complete generated stylesheets loaded online                       |
+| `dist/portable/`              | Generated stylesheets with embedded images for local testing       |
 
 There is no React frontend, backend, or JavaScript running inside Discord. Node.js only prepares the files. Discord loads CSS and the images referenced by it.
 
