@@ -1,26 +1,28 @@
-/* Close the frame when Spotify is shown without a game/activity panel.
-   Extend the top edge across the player's existing 4px side margins. */
+/* Draw the top edge inside the panel itself, rather than extending a
+   Spotify border beyond its margins. Keep the existing side frame. */
 html
   body
   #app-mount
-  .panels__5e434:not(:has([class*="activityPanel_"]))
-  #vc-spotify-player {
-  position: relative;
-  border-top: 4px solid var(--yorha-ink) !important;
-  border-radius: 0 !important;
+  .panels__5e434:has(#vc-spotify-player):not(:has([class*="activityPanel_"])) {
+  padding-top: 4px !important;
+  box-shadow: inset 0 4px 0 0 var(--yorha-ink) !important;
 }
 
 html
   body
   #app-mount
   .panels__5e434:not(:has([class*="activityPanel_"]))
+  #vc-spotify-player {
+  margin-top: 0 !important;
+  border-top: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Remove the previous overhanging top edge if an older rule is loaded. */
+html
+  body
+  #app-mount
+  .panels__5e434:not(:has([class*="activityPanel_"]))
   #vc-spotify-player::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  height: 4px;
-  background: var(--yorha-ink);
-  pointer-events: none;
+  content: none !important;
 }
