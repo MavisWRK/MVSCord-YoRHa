@@ -136,7 +136,6 @@ Pay particular attention to light and dark profiles, profile message inputs, JSO
 # Sources and attribution
 
 - **MavisWRK** — theme customization and visual direction.
-- **MVSCord** — supplied base stylesheet (`MVSCord EnvyCode_R.css`), preserved within the theme. Its original distribution and licensing need confirmation.
 - **milbits / Oldcord** — classic layout components and the imported variables stylesheet: https://github.com/milbits/oldcord
 - **AccraZed / YoRHA-UI-BetterDiscord** — YoRHa visual reference and embedded wallpaper, selector, border, and emblem assets: https://github.com/AccraZed/YoRHA-UI-BetterDiscord
 - Supplied Catppuccin CSS was consulted for Discord color-token mappings.
