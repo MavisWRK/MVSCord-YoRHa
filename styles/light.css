@@ -2585,7 +2585,6 @@ html:is([lang="en-us"])
   margin-top: -33px;
 }
 .bar_c38106 .title_c38106 {
-  text-align: start;
   display: block;
   position: absolute;
   margin-bottom: 30px;
@@ -2593,13 +2592,10 @@ html:is([lang="en-us"])
   background-repeat: no-repeat;
   transform: translateY(40px) translateX(12px) scale(1.01);
   width: 52px;
-  [data-text-variant="text-sm\/medium"] {
-    display: none;
-  }
-  svg {
-    display: none;
-  }
-  .guildIcon_edbb22 {
+  min-height: 10px;
+  /* Discord can render the native title as bare text or inside a wrapper. */
+  font-size: 0;
+  > * {
     display: none;
   }
   html.custom-theme-background & {
@@ -4284,4 +4280,32 @@ html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#f
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255, 255, 255)" i],
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255,255,255)" i] {
   color: var(--yorha-ink-strong) !important;
+}
+/* Draw the top edge inside the panel itself, rather than extending a
+   Spotify border beyond its margins. Keep the existing side frame. */
+html
+  body
+  #app-mount
+  .panels__5e434:has(#vc-spotify-player):not(:has([class*="activityPanel_"])) {
+  padding-top: 4px !important;
+  box-shadow: inset 0 4px 0 0 var(--yorha-ink) !important;
+}
+
+html
+  body
+  #app-mount
+  .panels__5e434:not(:has([class*="activityPanel_"]))
+  #vc-spotify-player {
+  margin-top: 0 !important;
+  border-top: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Remove the previous overhanging top edge if an older rule is loaded. */
+html
+  body
+  #app-mount
+  .panels__5e434:not(:has([class*="activityPanel_"]))
+  #vc-spotify-player::before {
+  content: none !important;
 }
