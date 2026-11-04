@@ -2580,7 +2580,6 @@ html:is([lang="en-us"])
   margin-top: -33px;
 }
 .bar_c38106 .title_c38106 {
-  text-align: start;
   display: block;
   position: absolute;
   margin-bottom: 30px;
@@ -2588,13 +2587,10 @@ html:is([lang="en-us"])
   background-repeat: no-repeat;
   transform: translateY(40px) translateX(12px) scale(1.01);
   width: 52px;
-  [data-text-variant="text-sm\/medium"] {
-    display: none;
-  }
-  svg {
-    display: none;
-  }
-  .guildIcon_edbb22 {
+  min-height: 10px;
+  /* Discord can render the native title as bare text or inside a wrapper. */
+  font-size: 0;
+  > * {
     display: none;
   }
   html.custom-theme-background & {
