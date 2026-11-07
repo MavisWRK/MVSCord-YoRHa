@@ -12,7 +12,7 @@ html body #app-mount::after {
 
 /* Ensure the background includes visible space after the timestamp even when
    another stylesheet supplies an important padding shorthand. */
-html body #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) {
+html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
   padding-inline-start: 11px !important;
   padding-inline-end: 12px !important;
   box-sizing: border-box !important;
@@ -21,3 +21,33 @@ html body #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, 
 }
 /* ===== end v1.7 ===== */
 
+
+/* Keep the chat surface visible when the message scroller paints a background. */
+html body #app-mount [class*="chatContent_"] [class*="messagesWrapper_"] > [class*="scroller_"] {
+  background-color: transparent;
+}
+
+/* Compact one-line composer while retaining growth for multiline messages. */
+html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] {
+  --custom-channel-textarea-text-area-height: 44px;
+}
+html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] [class*="textArea_"] {
+  min-height: 44px;
+}
+html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] [class*="slateTextArea_"] {
+  padding-top: 11px;
+  padding-bottom: 11px;
+  line-height: 22px;
+}
+
+
+/* Attachment and action controls must fit the compact editor row. */
+html body #app-mount .chatContent_z_gUBg .channelTextArea_2x8-Qn .buttons_2x8-Qn {
+  height: 44px;
+  align-items: center;
+}
+html body #app-mount .chatContent_z_gUBg .channelTextArea_2x8-Qn .attachWrapper_7TM4SO {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  box-sizing: border-box;
+}

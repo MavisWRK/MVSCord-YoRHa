@@ -16,7 +16,7 @@
 }
 
 /* Paint the wallpaper directly on chat, avoiding global transparent surfaces. */
-html #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
+html #app-mount .chatContent_z_gUBg .messagesWrapper_8AE1Qq {
   background-color: var(--yorha-paper);
   background-image: var(--yorha-asset-wallpaper);
   background-position: center;
@@ -24,40 +24,40 @@ html #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
   background-repeat: no-repeat;
 }
 @media (orientation: portrait) {
-  html #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
+  html #app-mount .chatContent_z_gUBg .messagesWrapper_8AE1Qq {
     background-image: var(--yorha-asset-wallpaper-portrait);
   }
 }
 
 /* YoRHa emblem inside the existing Home button; original hitbox and SVG retained. */
-html #app-mount :is(.tutorialContainer_1IyMuq, .tutorialContainer__1f388) :is(.childWrapper_JJ-hgR, .childWrapper__6e9f8) {
+html #app-mount .tutorialContainer_1IyMuq .childWrapper_JJ-hgR {
   background-image: var(--yorha-asset-emblem);
   background-position: center;
   background-size: 28px 36px;
   background-repeat: no-repeat;
 }
-html #app-mount :is(.tutorialContainer_1IyMuq, .tutorialContainer__1f388) :is(.childWrapper_JJ-hgR, .childWrapper__6e9f8) > svg {
+html #app-mount .tutorialContainer_1IyMuq .childWrapper_JJ-hgR > svg {
   opacity: 0;
 }
 /* Light hover background keeps the dark emblem visible. */
-html #app-mount :is(.tutorialContainer_1IyMuq, .tutorialContainer__1f388) :is(.wrapper_JJ-hgR, .wrapper__6e9f8) :is(.childWrapper_JJ-hgR, .childWrapper__6e9f8) {
+html #app-mount .tutorialContainer_1IyMuq .wrapper_JJ-hgR .childWrapper_JJ-hgR {
   background-color: var(--yorha-paper-light) !important;
 }
 
 /* Reuse the channel icon slot for the selector, with no extra pseudo-element.
    Voice/locked channel icons retain their functional meaning. */
-html #app-mount :is(.wrapper_TNyK-N, .wrapper__2ea32):is(.modeSelected_TNyK-N, .modeSelected__2ea32):not(.typeVoice__2ea32):not(:is(.modeLocked_TNyK-N, .modeLocked__2ea32)) :is(.iconContainer_TNyK-N, .iconContainer__2ea32) {
+html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.modeLocked_TNyK-N) .iconContainer_TNyK-N {
   background-image: var(--yorha-asset-selector);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-html #app-mount :is(.wrapper_TNyK-N, .wrapper__2ea32):is(.modeSelected_TNyK-N, .modeSelected__2ea32):not(.typeVoice__2ea32):not(:is(.modeLocked_TNyK-N, .modeLocked__2ea32)) :is(.iconContainer_TNyK-N, .iconContainer__2ea32) :is(.icon_TNyK-N, .icon__2ea32) {
+html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.modeLocked_TNyK-N) .iconContainer_TNyK-N .icon_TNyK-N {
   opacity: 0;
 }
 
 /* Decorative border is painted within existing menu padding; it adds no box. */
-html #app-mount :is(.menu_M3qk4j, .menu_c1e9c4) {
+html #app-mount .menu_M3qk4j {
   background-image: var(--yorha-asset-border);
   background-position: left bottom;
   background-size: auto 5px;
