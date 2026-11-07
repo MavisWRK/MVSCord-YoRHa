@@ -3,7 +3,7 @@
 html
   body
   #app-mount
-  :is(.panels_pog62O, .panels__5e434):has(#vc-spotify-player):not(:has([class*="activityPanel_"])) {
+  .panels_pog62O:has(#vc-spotify-player):not(:has([class*="activityPanel_"])) {
   padding-top: 4px !important;
   box-shadow: inset 0 4px 0 0 var(--yorha-ink) !important;
 }
@@ -11,7 +11,7 @@ html
 html
   body
   #app-mount
-  :is(.panels_pog62O, .panels__5e434):not(:has([class*="activityPanel_"]))
+  .panels_pog62O:not(:has([class*="activityPanel_"]))
   #vc-spotify-player {
   margin-top: 0 !important;
   border-top: 0 !important;
@@ -22,7 +22,7 @@ html
 html
   body
   #app-mount
-  :is(.panels_pog62O, .panels__5e434):not(:has([class*="activityPanel_"]))
+  .panels_pog62O:not(:has([class*="activityPanel_"]))
   #vc-spotify-player::before {
   content: none !important;
 }

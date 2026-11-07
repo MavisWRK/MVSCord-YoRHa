@@ -1,5 +1,5 @@
 /* Profile tabs: keep the native bottom selection marker, without side rails. */
-html body #app-mount :is(:is(.top_6zZYhF, .top_aa8da2), :is(.topPill_6zZYhF, .topPill_aa8da2)) :is(.item_6zZYhF, .item_aa8da2) {
+html body #app-mount :is(.top_6zZYhF, .topPill_6zZYhF) .item_6zZYhF {
   box-shadow: none !important;
 }
 
