@@ -1,9 +1,9 @@
 /* Readable received/sent text attachments and message code. Keep this local
    to message content and code surfaces; profile colors remain untouched. */
-html body #app-mount .messageContent_c19a55 {
+html body #app-mount :is(.messageContent_2i8Bfm, .messageContent_c19a55) {
   color: var(--yorha-ink) !important;
 }
-html body #app-mount :is(.textContainer__4d95d, [class*="textContainer_"]:has(code), [class*="codeView_"]) {
+html body #app-mount :is(:is(.textContainer_BOOBu-, .textContainer__4d95d), [class*="textContainer_"]:has(code), [class*="codeView_"]) {
   --text-normal: var(--yorha-ink-strong) !important;
   --text-default: var(--yorha-ink-strong) !important;
   --text-primary: var(--yorha-ink-strong) !important;
@@ -16,10 +16,10 @@ html body #app-mount :is(code, pre, .hljs) {
   background-color: var(--yorha-paper-light) !important;
   color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is(td, [class*="text_"]) {
+html body #app-mount :is(:is(.textContainer_BOOBu-, .textContainer__4d95d), [class*="codeView_"]) :is(td, [class*="text_"]) {
   color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.textContainer__4d95d, [class*="codeView_"]) :is([class*="lineNumber"], [class*="lineNumbers"]) {
+html body #app-mount :is(:is(.textContainer_BOOBu-, .textContainer__4d95d), [class*="codeView_"]) :is([class*="lineNumber"], [class*="lineNumbers"]) {
   color: var(--yorha-muted) !important;
 }
 html body #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #625747 !important; }

@@ -3,7 +3,7 @@
   --midnight-base: #191970;
   --midnight-accent: #a5b4fc;
 }
-html body #app-mount .messagesWrapper__36d07 {
+html body #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
   background-color: var(--midnight-base) !important;
   background-blend-mode: normal, normal, multiply;
 }

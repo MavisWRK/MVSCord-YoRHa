@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.2.6 — 2026-11-07
+
+- Update selectors for the current Discord layout, including the title bar, Home emblem, chat wallpaper, and unread DM envelope.
+- Keep legacy selectors for clients using the previous class names.
+
 ## Small online loaders — 2026-10-17
 
 - Replaced root theme files with metadata and one hosted CSS import.

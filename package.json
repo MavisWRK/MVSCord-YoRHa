@@ -1,6 +1,6 @@
 {
   "name": "mvscord-yorha",
-  "version": "1.0.0",
+  "version": "1.2.6",
   "private": true,
   "type": "module",
   "description": "Modular sources for MVSCord themes",

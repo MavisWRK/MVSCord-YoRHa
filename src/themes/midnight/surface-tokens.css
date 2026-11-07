@@ -188,23 +188,23 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
 
 /* Actual painted containers, including descendants inside the channel sidebar.
    Background-color deliberately preserves background-image profile decorations. */
-html #app-mount :is(.sidebarList__5e434, .sidebarList__5e434 > div, .sidebarList__5e434 nav, .sidebar__409aa) {
+html #app-mount :is(:is(.sidebarList_pog62O, .sidebarList__5e434), :is(.sidebarList_pog62O, .sidebarList__5e434) > div, :is(.sidebarList_pog62O, .sidebarList__5e434) nav, :is(.sidebar_cR4ic2, .sidebar__409aa)) {
   background-color: var(--yorha-paper-deep) !important;
 }
-html #app-mount :is(.guilds__5e434, .wrapper_ef3116, .scroller_ef3116) {
+html #app-mount :is(:is(.guilds_pog62O, .guilds__5e434), :is(.wrapper_5dqHTG, .wrapper_ef3116), :is(.scroller_5dqHTG, .scroller_ef3116)) {
   background-color: #0e0e32 !important;
 }
-html #app-mount :is(.members_c8ffbb, .container_c8ffbb, .member__5d473) {
+html #app-mount :is(:is(.members_86es0b, .members_c8ffbb), :is(.container_86es0b, .container_c8ffbb), :is(.member_Iy0c7A, .member__5d473)) {
   background-color: var(--yorha-paper-deep) !important;
 }
-html #app-mount .member__5d473:hover {
+html #app-mount :is(.member_Iy0c7A, .member__5d473):hover {
   background-color: var(--yorha-paper-light) !important;
 }
-html #app-mount :is(.childWrapper__6e9f8, .childWrapperNoHoverBg__6e9f8, .circleIconButton__5bc7e) {
+html #app-mount :is(:is(.childWrapper_JJ-hgR, .childWrapper__6e9f8), :is(.childWrapperNoHoverBg_JJ-hgR, .childWrapperNoHoverBg__6e9f8), :is(.circleIconButton_g8YUxD, .circleIconButton__5bc7e)) {
   background-color: var(--yorha-paper-deep) !important;
   color: var(--yorha-ink) !important;
 }
-html #app-mount :is(.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .circleIconButton__5bc7e:hover) {
+html #app-mount :is(:is(.wrapper_JJ-hgR, .wrapper__6e9f8):is(.selected_JJ-hgR, .selected__6e9f8) :is(.childWrapper_JJ-hgR, .childWrapper__6e9f8), :is(.circleIconButton_g8YUxD, .circleIconButton__5bc7e):hover) {
   background-color: var(--yorha-ink) !important;
   color: var(--yorha-paper-light) !important;
 }
@@ -214,7 +214,7 @@ html #app-mount #vc-spotify-player {
 }
 
 /* New icon/text tokens inside the intentionally dark header and user panel. */
-html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434)) {
   --icon-default: var(--yorha-paper-light);
   --icon-subtle: var(--yorha-paper);
   --interactive-icon-default: var(--yorha-paper);
@@ -222,7 +222,7 @@ html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
   --interactive-icon-active: var(--yorha-paper-light);
   --interactive-text-default: var(--yorha-paper-light);
 }
-html #app-mount .container__9293f .searchBar_c322aa {
+html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.searchBar_i16Ad0, .searchBar_c322aa) {
   --interactive-icon-default: var(--yorha-ink);
   --icon-default: var(--yorha-ink);
   --input-text-default: var(--yorha-ink);

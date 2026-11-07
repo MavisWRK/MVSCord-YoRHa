@@ -12,7 +12,7 @@ html body #app-mount::after {
 
 /* Ensure the background includes visible space after the timestamp even when
    another stylesheet supplies an important padding shorthand. */
-html body #app-mount .cozyMessage__5126c .header_c19a55 {
+html body #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) {
   padding-inline-start: 11px !important;
   padding-inline-end: 12px !important;
   box-sizing: border-box !important;

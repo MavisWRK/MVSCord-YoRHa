@@ -1,6 +1,6 @@
 {
   "name": "MVSCord-Midnight.theme.css",
-  "header": "/**\n * @name MVSCord Midnight\n * @description Version 1.2.5 \u2014 Midnight Blue edition (#191970). A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.\n * @version 1.2.5\n * @author MavisWRK\n */",
+  "header": "/**\n * @name MVSCord Midnight\n * @description Version 1.2.6 \u2014 Midnight Blue edition (#191970). A classic Discord layout with the visual identity and profile customization of modern Discord, styled after the YoRHa interface from NieR: Automata. Customized by MavisWRK.\n * @version 1.2.6\n * @author MavisWRK\n */",
   "modules": [
     "src/styles/base/oldcord.css",
     "src/themes/midnight/palette.css",

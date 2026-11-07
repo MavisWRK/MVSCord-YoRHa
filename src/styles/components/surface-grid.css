@@ -1,5 +1,5 @@
 /* ===== v1.6: nameplate breathing room and background-only grid ===== */
-html #app-mount .cozyMessage__5126c .header_c19a55 {
+html #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) {
   padding-inline-end: 8px;
   box-sizing: border-box;
 }
@@ -11,20 +11,20 @@ html #app-mount .cozyMessage__5126c .header_c19a55 {
 
 /* Backgrounds are below descendants in the paint order. Images and videos,
    including the image viewer, no longer have a texture overlay above them. */
-html #app-mount .messagesWrapper__36d07 {
+html #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper);
   background-size: 5px 5px, 5px 5px, cover;
   background-position: left top, left top, center;
   background-repeat: repeat, repeat, no-repeat;
 }
 @media (orientation: portrait) {
-  html #app-mount .messagesWrapper__36d07 {
+  html #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
     background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper-portrait);
   }
 }
 
 /* Opaque interface surfaces only: no image wrappers, profile artwork, or modals. */
-html #app-mount :is(.container__2637a, .members_c8ffbb, .scroller_ef3116, .container__9293f, .header_f37cb1, .panels__5e434, .scrollableContainer__74017) {
+html #app-mount :is(:is(.container_H5ozaj, .container__2637a), :is(.members_86es0b, .members_c8ffbb), :is(.scroller_5dqHTG, .scroller_ef3116), :is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434), :is(.scrollableContainer_2x8-Qn, .scrollableContainer__74017)) {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
   background-size: 5px 5px, 5px 5px;
   background-position: left top;

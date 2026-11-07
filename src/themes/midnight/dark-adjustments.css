@@ -1,18 +1,18 @@
 /* Dark edition: warm charcoal surfaces, ivory foregrounds, original geometry. */
 :root { color-scheme: dark; }
-html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+html body #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434)) {
   background-color: #0e0e32 !important;
   color: #e2e6ff;
 }
 /* Blend only the chat wallpaper. Avatars, attachments and profiles are untouched. */
-html body #app-mount .messagesWrapper__36d07 {
+html body #app-mount :is(.messagesWrapper_UU236g, .messagesWrapper__36d07) {
   background-color: #191970 !important;
   background-blend-mode: normal, normal, multiply;
 }
-html body #app-mount .cozyMessage__5126c .header_c19a55 .username_c19a55 {
+html body #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) :is(.username_2i8Bfm, .username_c19a55) {
   text-shadow: none;
 }
-html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing_c38106) {
+html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434), :is(.trailing_3zSH5d, .trailing_c38106)) {
   --header-primary: #f5f6ff !important;
   --header-secondary: #e2e6ff !important;
   --text-normal: #f5f6ff !important;
@@ -43,25 +43,25 @@ html #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434, .trailing
 
 /* Explicit foregrounds also cover nested theme scopes on header elements.
    Do not force SVG fills: outline icons, status dots and badges retain their art. */
-html #app-mount :is(.container__9293f, .trailing_c38106) :is(.icon__9293f, .iconWrapper__9293f),
-html #app-mount .trailing_c38106 .clickable_c99c29,
-html #app-mount .trailing_c38106 .clickable_c99c29 > svg {
+html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(:is(.icon_ybUK7Z, .icon__9293f), :is(.iconWrapper_ybUK7Z, .iconWrapper__9293f)),
+html #app-mount :is(.trailing_3zSH5d, .trailing_c38106) .clickable_c99c29,
+html #app-mount :is(.trailing_3zSH5d, .trailing_c38106) .clickable_c99c29 > svg {
   color: #e2e6ff !important;
 }
-html #app-mount :is(.container__9293f, .trailing_c38106) .clickable__9293f:hover .icon__9293f,
-html #app-mount :is(.container__9293f, .trailing_c38106) .selected__9293f .icon__9293f {
+html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(.clickable_ybUK7Z, .clickable__9293f):hover :is(.icon_ybUK7Z, .icon__9293f),
+html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(.selected_ybUK7Z, .selected__9293f) :is(.icon_ybUK7Z, .icon__9293f) {
   color: #ffffff !important;
 }
-html #app-mount .container__9293f .titleWrapper__9293f,
-html #app-mount .container__9293f .titleWrapper__9293f > :is(h1, h2, div, span) {
+html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.titleWrapper_ybUK7Z, .titleWrapper__9293f),
+html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.titleWrapper_ybUK7Z, .titleWrapper__9293f) > :is(h1, h2, div, span) {
   color: #f5f6ff !important;
 }
-html #app-mount .container__9293f .topic__6ec1a {
+html #app-mount :is(.container_ybUK7Z, .container__9293f) .topic__6ec1a {
   color: #e2e6ff !important;
 }
 
 
-html body #app-mount :is(.container__9293f, .header_f37cb1, .panels__5e434) {
+html body #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434)) {
   --interactive-icon-default: #e2e6ff;
   --icon-default: #e2e6ff;
 }
