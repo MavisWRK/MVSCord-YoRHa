@@ -3935,19 +3935,23 @@ html body #app-mount .sidebarList__5e434 {
   box-shadow: inset -2px 0 0 rgba(97,60,89,.50);
 }
 
-/* Unread DM badge: keep the avatar; replace only the count's circular badge.
-   Use the native badge anchor so the envelope follows the avatar corner. */
-html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 {
-  border: 0 !important;
-  border-radius: 0 !important;
-  margin: 0 !important;
+/* Every entry in this list is an unread DM, even without a native count badge. */
+html body #app-mount #guild-list-unread-dms .listItem__650eb {
+  position: relative;
+}
+html body #app-mount #guild-list-unread-dms .listItem__650eb::after {
+  content: "";
+  position: absolute;
+  right: calc(50% - 24px);
+  bottom: 0;
   width: 20px;
   height: 20px;
-  background: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-14.svg") center / 20px 20px no-repeat !important;
-  box-shadow: none !important;
+  background: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-14.svg") center / contain no-repeat;
+  z-index: 1;
   pointer-events: none;
 }
-html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 > * {
+/* The envelope replaces the native count when Discord provides one. */
+html body #app-mount #guild-list-unread-dms .lowerBadge_cc5dd2 {
   opacity: 0 !important;
 }
 
