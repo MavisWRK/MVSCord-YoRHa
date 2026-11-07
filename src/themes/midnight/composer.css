@@ -1,13 +1,13 @@
 /* Stripe is inside the rounded box: no external offset. The 11px start
    padding includes the 3px stripe plus the existing 8px text gap. */
-html body #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) {
+html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
   position: relative;
   inset-inline-start: 0 !important;
 }
 
 /* v1.8: YoRHa stripes on the main message composer. Paint behind its
    contents and reserve space before the attachment button. */
-html body #app-mount :is(.channelTextArea_z_gUBg, .channelTextArea_f75fb0) :is(.scrollableContainer_2x8-Qn, .scrollableContainer__74017) {
+html body #app-mount .channelTextArea_z_gUBg .scrollableContainer_2x8-Qn {
   background-image:
     linear-gradient(to right,
       var(--yorha-ink) 0 12px,
@@ -25,9 +25,9 @@ html body #app-mount :is(.channelTextArea_z_gUBg, .channelTextArea_f75fb0) :is(.
 /* v1.8.1: grid on the two marked background surfaces. The guild scroller
    may end before its parent; texture the parent to cover the empty tail.
    The chat form supplies the area around/below the composer. */
-html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.guilds_pog62O, .guilds__5e434),
-html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.wrapper_5dqHTG, .wrapper_ef3116),
-html body #app-mount :is(.formWithLoadedChatInput_z_gUBg, .formWithLoadedChatInput_f75fb0) {
+html body #app-mount .sidebar_pog62O > .guilds_pog62O,
+html body #app-mount .sidebar_pog62O > .wrapper_5dqHTG,
+html body #app-mount .formWithLoadedChatInput_z_gUBg {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
   background-size: 5px 5px, 5px 5px !important;
   background-position: left top !important;

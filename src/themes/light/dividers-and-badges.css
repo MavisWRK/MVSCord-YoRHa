@@ -1,41 +1,40 @@
 /* Fine but visible boundaries between servers, channel list, and chat.
    Inset shadows preserve the Oldcord column widths. */
-html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.guilds_pog62O, .guilds__5e434) {
+html body #app-mount .sidebar_pog62O > .guilds_pog62O {
   box-shadow: inset -1px 0 0 rgba(77, 73, 62, .60);
 }
-html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) {
+html body #app-mount .sidebarList_pog62O {
   box-shadow: inset -2px 0 0 rgba(77, 73, 62, .50);
 }
 
-/* Every entry in this list is an unread DM, even without a native count badge. */
-html body #app-mount #guild-list-unread-dms :is(.listItem_rwEpIL, .listItem__650eb) {
-  position: relative;
-}
-html body #app-mount #guild-list-unread-dms :is(.listItem_rwEpIL, .listItem__650eb)::after {
-  content: "";
-  position: absolute;
-  right: calc(50% - 24px);
-  bottom: 0;
+/* A call can keep a DM in this list after its messages have been read.
+   Replace only an existing native notification counter. */
+html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"]:has([class*="numberBadge_"]) {
+  border: 0 !important;
+  margin: 0 !important;
   width: 20px;
   height: 20px;
-  background: url("@assets/icons/legacy-icon-14.svg") center / contain no-repeat;
-  z-index: 1;
   pointer-events: none;
 }
-/* The envelope replaces the native count when Discord provides one. */
-html body #app-mount #guild-list-unread-dms :is(.lowerBadge_hqZPsU, .lowerBadge_cc5dd2) {
+html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"]:has([class*="numberBadge_"])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("@assets/icons/legacy-icon-14.svg") center / contain no-repeat;
+}
+html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"] [class*="numberBadge_"] {
   opacity: 0 !important;
 }
 
 /* DM sidebar: texture on painted background surfaces, below profile artwork. */
-html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) :is([class*="privateChannels_"], [class*="privateChannels_"] > [class*="scroller_"]) {
+html body #app-mount .sidebarList_pog62O :is([class*="privateChannels_"], [class*="privateChannels_"] > [class*="scroller_"]) {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
   background-size: 5px 5px !important;
   background-position: left top;
   background-repeat: repeat;
 }
 /* Match the server member sweep on DM entries. Keep custom profile art intact. */
-html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) :is(.interactive_zln_tS, .interactive__972a0) {
+html body #app-mount .sidebarList_pog62O .interactive_zln_tS {
   background-color: transparent !important;
   background-image: linear-gradient(rgba(77,73,62,.18), rgba(77,73,62,.18)) !important;
   background-repeat: no-repeat !important;
@@ -44,23 +43,23 @@ html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) :is(.interact
   transition: background-size var(--yorha-hover-time) ease,
               box-shadow var(--yorha-hover-time) ease;
 }
-html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) :is(.interactive_zln_tS, .interactive__972a0):is(:hover, :focus-within, :is(.interactiveSelected_zln_tS, .interactiveSelected__972a0)) {
+html body #app-mount .sidebarList_pog62O .interactive_zln_tS:is(:hover, :focus-within, .interactiveSelected_zln_tS) {
   background-size: 100% 100% !important;
   box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
 }
 @media (prefers-reduced-motion: reduce) {
-  html body #app-mount :is(.sidebarList_pog62O, .sidebarList__5e434) :is(.interactive_zln_tS, .interactive__972a0) {
+  html body #app-mount .sidebarList_pog62O .interactive_zln_tS {
     transition: none;
   }
 }
 
 /* Continuous server/DM divider: paint above the opaque server scroller,
    including its occupied portion, without changing column widths. */
-html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.guilds_pog62O, .guilds__5e434) {
+html body #app-mount .sidebar_pog62O > .guilds_pog62O {
   position: relative;
   box-shadow: none;
 }
-html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.guilds_pog62O, .guilds__5e434)::after {
+html body #app-mount .sidebar_pog62O > .guilds_pog62O::after {
   content: "";
   position: absolute;
   /* Start at the bottom corner of the 48px search/header row. */
@@ -74,7 +73,7 @@ html body #app-mount :is(.sidebar_pog62O, .sidebar__5e434) > :is(.guilds_pog62O,
 }
 
 /* Strong horizontal separator between unread DMs and servers. */
-html body #app-mount :is(.guildSeparator_3WHVfy, .guildSeparator__252b6) {
+html body #app-mount .guildSeparator_3WHVfy {
   width: 32px !important;
   height: 3px !important;
   background: #4d493e !important;
@@ -95,7 +94,7 @@ html body #app-mount .vc-addon-card .vc-addon-note {
 }
 
 /* Local game/application activity above the voice panel. */
-html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_"] {
+html body #app-mount .panels_pog62O [class*="activityPanel_"] {
   --text-normal: #4d493e;
   --text-default: #4d493e;
   --text-strong: #353228;
@@ -121,21 +120,21 @@ html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_
   border-radius: 0 !important;
   box-shadow: none;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_"] :is([class*="title_"], [class*="activityName_"]) {
+html body #app-mount .panels_pog62O [class*="activityPanel_"] :is([class*="title_"], [class*="activityName_"]) {
   color: #353228 !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_"] :is([class*="subtext_"], [class*="subText_"]) {
+html body #app-mount .panels_pog62O [class*="activityPanel_"] :is([class*="subtext_"], [class*="subText_"]) {
   color: #625d4e !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_"] button {
+html body #app-mount .panels_pog62O [class*="activityPanel_"] button {
   color: #4d493e !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) [class*="activityPanel_"] button:hover {
+html body #app-mount .panels_pog62O [class*="activityPanel_"] button:hover {
   background-color: rgba(77,73,62,.14) !important;
 }
 
 /* Voice action buttons: readable surfaces on the dark connection panel. */
-html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, .container_e131a9) :is(.buttonColor_9U6LUN, .buttonColor_e131a9):not(:is(.buttonActive_9U6LUN, .buttonActive_e131a9)):not([aria-pressed="true"]) {
+html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not([aria-pressed="true"]) {
   background: var(--yorha-paper) !important;
   color: #353228 !important;
   --interactive-normal: #353228;
@@ -143,17 +142,17 @@ html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, 
   --icon-primary: #353228;
   box-shadow: inset 0 0 0 1px rgba(222,216,194,.50) !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, .container_e131a9) :is(.buttonColor_9U6LUN, .buttonColor_e131a9):not(:is(.buttonActive_9U6LUN, .buttonActive_e131a9)):not([aria-pressed="true"]):hover:not(:disabled):not([aria-disabled="true"]) {
+html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not([aria-pressed="true"]):hover:not(:disabled):not([aria-disabled="true"]) {
   background: var(--yorha-paper-light) !important;
   color: #353228 !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, .container_e131a9) :is(.buttonColor_9U6LUN, .buttonColor_e131a9) svg {
+html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN svg {
   color: inherit !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, .container_e131a9) :is(.buttonColor_9U6LUN, .buttonColor_e131a9) svg path:not([fill="none"]) {
+html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN svg path:not([fill="none"]) {
   fill: currentColor !important;
 }
-html body #app-mount :is(.panels_pog62O, .panels__5e434) :is(.container_9U6LUN, .container_e131a9) :is(.buttonColor_9U6LUN, .buttonColor_e131a9):is(:disabled, [aria-disabled="true"]) {
+html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:is(:disabled, [aria-disabled="true"]) {
   opacity: .45 !important;
 }
 

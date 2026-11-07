@@ -2,7 +2,7 @@
    The trailing toolbar is positioned over the dark header by MVSCord but is
    outside that header in the DOM. Give it its own light foreground scope.
 */
-html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434), :is(.trailing_3zSH5d, .trailing_c38106)) {
+html #app-mount :is(.container_ybUK7Z, .header_XH4OpX, .panels_pog62O, .trailing_3zSH5d) {
   --header-primary: #fff3fa !important;
   --header-secondary: #fbeef2 !important;
   --text-normal: #fff3fa !important;
@@ -33,25 +33,25 @@ html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4Op
 
 /* Explicit foregrounds also cover nested theme scopes on header elements.
    Do not force SVG fills: outline icons, status dots and badges retain their art. */
-html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(:is(.icon_ybUK7Z, .icon__9293f), :is(.iconWrapper_ybUK7Z, .iconWrapper__9293f)),
-html #app-mount :is(.trailing_3zSH5d, .trailing_c38106) .clickable_c99c29,
-html #app-mount :is(.trailing_3zSH5d, .trailing_c38106) .clickable_c99c29 > svg {
+html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) :is(.icon_ybUK7Z, .iconWrapper_ybUK7Z),
+html #app-mount .trailing_3zSH5d .clickable_c99c29,
+html #app-mount .trailing_3zSH5d .clickable_c99c29 > svg {
   color: #fbeef2 !important;
 }
-html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(.clickable_ybUK7Z, .clickable__9293f):hover :is(.icon_ybUK7Z, .icon__9293f),
-html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.trailing_3zSH5d, .trailing_c38106)) :is(.selected_ybUK7Z, .selected__9293f) :is(.icon_ybUK7Z, .icon__9293f) {
+html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) .clickable_ybUK7Z:hover .icon_ybUK7Z,
+html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) .selected_ybUK7Z .icon_ybUK7Z {
   color: #fff8fc !important;
 }
-html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.titleWrapper_ybUK7Z, .titleWrapper__9293f),
-html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.titleWrapper_ybUK7Z, .titleWrapper__9293f) > :is(h1, h2, div, span) {
+html #app-mount .container_ybUK7Z .titleWrapper_ybUK7Z,
+html #app-mount .container_ybUK7Z .titleWrapper_ybUK7Z > :is(h1, h2, div, span) {
   color: #fff3fa !important;
 }
-html #app-mount :is(.container_ybUK7Z, .container__9293f) .topic__6ec1a {
+html #app-mount .container_ybUK7Z .topic_pVbL3l {
   color: #fbeef2 !important;
 }
 
 /* The search input stays light, so it needs a separate dark foreground. */
-html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.searchBar_i16Ad0, .searchBar_c322aa) {
+html #app-mount .container_ybUK7Z .searchBar_i16Ad0 {
   --text-normal: #412638 !important;
   --text-default: #412638 !important;
   --text-primary: #412638 !important;
@@ -66,16 +66,16 @@ html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.searchBar_i16Ad0,
 
 /* Dark descriptions without the v1.1 rectangular backing.
    Limit foreground overrides to secondary text; role/name colors stay intact. */
-html #app-mount :is(.member_Iy0c7A, .member__5d473) {
+html #app-mount .member_Iy0c7A {
   --text-muted: #412638 !important;
   --text-subtle: #412638 !important;
   --text-secondary: #412638 !important;
 }
-html #app-mount :is(.member_Iy0c7A, .member__5d473) :is([class*="subText_"], [class*="subtext_"], [class*="activityText_"], [class*="customStatusText_"]) {
+html #app-mount .member_Iy0c7A :is([class*="subText_"], [class*="subtext_"], [class*="activityText_"], [class*="customStatusText_"]) {
   background-color: transparent !important;
   color: #412638 !important;
 }
-html #app-mount :is(.member_Iy0c7A, .member__5d473) :is([class*="subText_"], [class*="subtext_"]) :is(span, a) {
+html #app-mount .member_Iy0c7A :is([class*="subText_"], [class*="subtext_"]) :is(span, a) {
   color: #412638 !important;
 }
 /* ===== end v1.2 ===== */

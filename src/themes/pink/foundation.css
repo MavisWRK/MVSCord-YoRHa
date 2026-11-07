@@ -124,16 +124,16 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
 }
 
 /* Main surfaces: paint only; no transparent layers exposing unrelated windows. */
-html #app-mount :is(:is(.chat_z_gUBg, .chat_f75fb0), :is(.messagesWrapper_UU236g, .messagesWrapper__36d07)) {
+html #app-mount :is(.chat_z_gUBg, .messagesWrapper_8AE1Qq) {
   background-color: var(--yorha-paper);
   background-image: var(--yorha-texture);
 }
-html #app-mount :is(:is(.sidebarList_pog62O, .sidebarList__5e434), :is(.members_86es0b, .members_c8ffbb), :is(.container_86es0b, .container_c8ffbb)) {
+html #app-mount :is(.sidebarList_pog62O, .members_86es0b, .container_86es0b) {
   background-color: var(--yorha-paper-deep);
 }
 
 /* Inverted YoRHa headers and user panel, with local foreground tokens. */
-html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4OpX, .header_f37cb1), :is(.panels_pog62O, .panels__5e434)) {
+html #app-mount :is(.container_ybUK7Z, .header_XH4OpX, .panels_pog62O) {
   --header-primary: var(--yorha-paper-light);
   --header-secondary: var(--yorha-paper);
   --text-normal: var(--yorha-paper-light);
@@ -156,7 +156,7 @@ html #app-mount :is(:is(.container_ybUK7Z, .container__9293f), :is(.header_XH4Op
   box-shadow: inset 0 -1px 0 var(--yorha-paper-deep);
 }
 /* Search fields inside the inverted toolbar retain a readable light surface. */
-html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.searchBar_i16Ad0, .searchBar_c322aa) {
+html #app-mount .container_ybUK7Z .searchBar_i16Ad0 {
   --text-muted: var(--yorha-muted);
   --text-normal: var(--yorha-ink);
   --text-default: var(--yorha-ink);
@@ -165,29 +165,29 @@ html #app-mount :is(.container_ybUK7Z, .container__9293f) :is(.searchBar_i16Ad0,
 }
 
 /* Selection stripes are inset shadows: they consume no layout space. */
-html #app-mount :is(:is(.interactiveSelected_zln_tS, .interactiveSelected__972a0), :is(.selected_6zZYhF, .selected_aa8da2):is(.item_6zZYhF, .item_aa8da2), :is(.active_xyJHva, .active_caf372)) {
+html #app-mount :is(.interactiveSelected_zln_tS, .selected_6zZYhF.item_6zZYhF, .active_ifLhOx) {
   box-shadow: inset 3px 0 0 var(--yorha-ink);
 }
-html #app-mount :is(.folderIconWrapper_RTMSuZ, .folderIconWrapper__48112) {
+html #app-mount .folderIconWrapper_RTMSuZ {
   --bg-mod-subtle: rgba(97,60,89,.22) !important;
 }
-html #app-mount :is(.folderGroup_RTMSuZ, .folderGroup__48112) {
+html #app-mount .folderGroup_RTMSuZ {
   --custom-folder-color: var(--yorha-ink);
 }
 
 /* Paper-colored menus, inputs and attachment surfaces. Existing radii retained. */
-html #app-mount :is(:is(.menu_M3qk4j, .menu_c1e9c4), :is(.root__KoJTP, .root__49fc1), :is(.container_dvN-MP, .container__8a031)[data-mana-component="layer-modal"]) {
+html #app-mount :is(.menu_M3qk4j, .root__KoJTP, .container_dvN-MP[data-mana-component="layer-modal"]) {
   background-color: var(--yorha-paper-light);
   box-shadow: 0 8px 24px rgba(65,38,56,.22), inset 0 0 0 1px var(--yorha-line);
 }
-html #app-mount :is(:is(.channelTextArea_2x8-Qn, .channelTextArea__74017), :is(.scrollableContainer_2x8-Qn, .scrollableContainer__74017)) {
+html #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn) {
   background-color: var(--yorha-paper-light);
   box-shadow: inset 0 0 0 1px var(--yorha-line);
 }
-html #app-mount :is(.highlighted__5126c, .replying__5126c, .flash__03436[data-flash="true"]) {
+html #app-mount :is(.highlighted_SY_P2T, .replying_SY_P2T, .flash__03436[data-flash="true"]) {
   background-color: rgba(97,60,89,.10);
 }
-html #app-mount :is(.highlighted__5126c, .replying__5126c):hover {
+html #app-mount :is(.highlighted_SY_P2T, .replying_SY_P2T):hover {
   background-color: rgba(97,60,89,.16) !important;
 }
 

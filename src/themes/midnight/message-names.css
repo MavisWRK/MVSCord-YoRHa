@@ -4,7 +4,7 @@
    Only cozy message headings shrink to their content so the background does
    not extend across the entire message. Compact mode keeps its inline flow.
 */
-html #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) {
+html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
   width: fit-content;
   max-width: 100%;
   background-color: rgba(37,37,127,.92);
@@ -16,14 +16,14 @@ html #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .head
 }
 /* Thin dark edge helps pale role colors on paper; no color or font override.
    Scope stays on message author names, not profile descriptions or role lists. */
-html #app-mount .message__5126c :is(.username_2i8Bfm, .username_c19a55) {
+html #app-mount .message_SY_P2T .username_2i8Bfm {
   text-shadow:
     -.35px 0 rgba(232,237,255,.60),
      .35px 0 rgba(232,237,255,.60),
      0 -.35px rgba(232,237,255,.50),
      0 .65px rgba(232,237,255,.65);
 }
-html #app-mount :is(.cozy_2i8Bfm, .cozyMessage__5126c) :is(.header_2i8Bfm, .header_c19a55) :is(.timestamp_2i8Bfm, .timestamp_c19a55) {
+html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm .timestamp_2i8Bfm {
   color: #e2e6ff;
   text-shadow: none;
 }
