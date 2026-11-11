@@ -2187,6 +2187,18 @@ html.visual-refresh {
     }
   }
 
+  /* Keep server banners proportional to the resizable channel sidebar. */
+  .bannerImage_XH4OpX {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+  .bannerImg_XH4OpX {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   /* tooltips */
   .dialogWrapper_b1f768,
   .tooltipPrimary_3_v8qp,
