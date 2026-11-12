@@ -3005,6 +3005,7 @@ html.density-default .item_caf372 {
    Textura local em CSS: nao depende do wallpaper remoto do YoRHa.
 */
 :root {
+  --yorha-banner-transition: #4d493e;
   --yorha-paper: #c8c2aa;
   --yorha-paper-light: #ded8c2;
   --yorha-paper-deep: #b9b39e;
@@ -4368,12 +4369,17 @@ html body #app-mount .base_pog62O .sidebar_pog62O::after {
 }
 
 /* Keep the channel tree inside the sidebar instead of extending it by 1px. */
+html body #app-mount .sidebarList_pog62O {
+  border-top-left-radius: 12px !important;
+}
+
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
   margin-inline: 0 !important;
   width: 100% !important;
   min-width: 0;
   box-sizing: border-box;
+  border-top-left-radius: 12px !important;
 }
 
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
@@ -4390,6 +4396,7 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   gap: 0 !important;
   box-sizing: border-box;
   flex-shrink: 0;
+  border-radius: 12px 0 0 0 !important;
 }
 
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
@@ -4469,7 +4476,7 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
    Omit the adjoining sides to keep the two title bars visually continuous. */
 html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   border-right: 0 !important;
-  border-radius: 12px 0 0 0;
+  border-radius: 12px 0 0 0 !important;
 }
 
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
@@ -4480,11 +4487,32 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
 /* A short blurred shadow joins the solid header to the artwork below it. */
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
   z-index: 2;
-  --yorha-topbar-elevation: 0 4px 8px -4px rgb(0 0 0 / 45%);
+  border-bottom: 0 !important;
+  --yorha-topbar-elevation: 0 5px 10px -4px rgb(0 0 0 / 40%);
 }
 
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   z-index: 1;
+  border-radius: 0 !important;
+}
+
+/* A small textured veil connects the solid header to the image. The mask
+   fades the texture and backdrop blur together within the first 16px. */
+html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 16px;
+  z-index: 2;
+  pointer-events: none;
+  background-color: color-mix(in srgb, var(--yorha-banner-transition) 65%, transparent);
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  backdrop-filter: blur(3px);
+  box-shadow: inset 0 5px 8px rgb(0 0 0 / 30%);
+  mask-image: linear-gradient(to bottom, black, transparent);
 }
 
 /* The banner now occupies layout space above the channel scroller.

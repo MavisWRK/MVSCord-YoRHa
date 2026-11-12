@@ -6,6 +6,7 @@
    Textura local em CSS: nao depende do wallpaper remoto do YoRHa.
 */
 :root {
+  --yorha-banner-transition: #191a17;
   --yorha-paper: #242520;
   --yorha-paper-light: #30312a;
   --yorha-paper-deep: #1e1f1b;
