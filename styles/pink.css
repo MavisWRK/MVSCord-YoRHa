@@ -1082,7 +1082,7 @@ html.visual-refresh {
   .base_pog62O .sidebar_pog62O {
     display: grid;
     grid-template-areas: "guilds sidebar" "guilds panels";
-    grid-template-columns: [start] min-content [sidebarStart] unset [end];
+    grid-template-columns: [start] min-content [sidebarStart] minmax(0, 1fr) [end];
     grid-template-rows: [start] 1fr [panelsStart] min-content [end];
     border-radius: 0;
   }
@@ -4424,13 +4424,26 @@ html body #app-mount .sidebar_pog62O > .panels_pog62O {
   box-sizing: border-box;
   width: 100% !important;
   min-width: 0 !important;
-  max-width: none !important;
+  max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
   margin-inline: 0 !important;
   padding-inline: 0 !important;
   justify-self: stretch;
   border-left: 1px solid color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light)) !important;
   /* Keep the upper separator, without the old additional 3px left stripe. */
   box-shadow: inset 0 1px var(--yorha-line) !important;
+}
+
+/* Keep the shared column from growing to the intrinsic width of song titles. */
+html body #app-mount .sidebar_pog62O > .panels_pog62O > * {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* These surfaces contain only grid layers; share the viewport origin. */
+html body #app-mount :is(.container_H5ozaj, .panels_pog62O, #vc-spotify-player),
+html body #app-mount .panels_pog62O [class*="activityPanel_"] {
+  background-position: 0 0 !important;
+  background-attachment: fixed !important;
 }
 
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
@@ -4557,7 +4570,7 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   z-index: 1;
   border-radius: 0 !important;
   border: 0 !important;
-  box-shadow: 0 5px 10px -4px rgb(0 0 0 / 45%);
+  box-shadow: none !important;
 }
 
 /* Lower transition blends the artwork into the channel-list surface. */
@@ -4571,14 +4584,12 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
   z-index: 2;
   pointer-events: none;
   background-color: color-mix(in srgb, var(--yorha-paper-deep) 65%, transparent);
-  background-image:
-    radial-gradient(ellipse at 50% 0%, transparent 15%, rgb(0 0 0 / 30%) 100%),
-    var(--yorha-grid-x), var(--yorha-grid-y);
-  background-size: 100% 100%, 5px 5px, 5px 5px;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
   background-position: 0 0;
-  background-attachment: local, fixed, fixed;
+  background-attachment: fixed;
   backdrop-filter: blur(3px);
-  box-shadow: inset 0 -6px 10px rgb(0 0 0 / 45%);
+  box-shadow: none !important;
   mask-image: linear-gradient(to top, black, transparent);
 }
 
@@ -4592,12 +4603,10 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::after {
   z-index: 2;
   pointer-events: none;
   background-color: color-mix(in srgb, var(--yorha-banner-transition) 65%, transparent);
-  background-image:
-    radial-gradient(ellipse at 50% 100%, transparent 15%, rgb(0 0 0 / 30%) 100%),
-    var(--yorha-grid-x), var(--yorha-grid-y);
-  background-size: 100% 100%, 5px 5px, 5px 5px;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
   background-position: 0 0;
-  background-attachment: local, fixed, fixed;
+  background-attachment: fixed;
   backdrop-filter: blur(3px);
   box-shadow: inset 0 5px 8px rgb(0 0 0 / 30%);
   mask-image: linear-gradient(to bottom, black, transparent);
