@@ -1,3 +1,15 @@
+/* Explicitly cancel earlier frame experiments if another loaded stylesheet
+   still defines them. Deleting a source rule alone cannot cancel that rule. */
+html body #app-mount .base_pog62O::before,
+html body #app-mount .page_pog62O::before,
+html body #app-mount .base_pog62O .sidebar_pog62O::after {
+  content: none !important;
+  display: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  pointer-events: none !important;
+}
+
 /* Keep the channel tree inside the sidebar instead of extending it by 1px. */
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;

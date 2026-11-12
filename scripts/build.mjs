@@ -49,7 +49,9 @@ for (const configPath of project.themes) {
   if (output.includes('url("@assets/')) throw new Error(`Unresolved asset in ${variant}`);
   if (!portable && /url\(["']data:/.test(output)) throw new Error(`Embedded asset in ${variant}`);
   const hostedPath = `styles/${variant}.css`;
-  const loader = `${config.header}\n\n@import url("${new URL(hostedPath, assetBase).href}");\n`;
+  const hostedUrl = new URL(hostedPath, assetBase);
+  hostedUrl.searchParams.set('v', hash(output).slice(0, 12));
+  const loader = `${config.header}\n\n@import url("${hostedUrl.href}");\n`;
   if (!check) {
     const target = portable ? path.join('dist/portable', config.name) : hostedPath;
     fs.mkdirSync(path.dirname(safePath(target)), { recursive: true });

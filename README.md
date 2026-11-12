@@ -49,6 +49,8 @@ The build concatenates modules in the order defined by each `theme.json`. It doe
 
 Each root theme file contains only its metadata and one absolute `@import` URL pointing to `styles/<variant>.css`. The hosted stylesheet references separate assets using absolute URLs, without embedded base64 images. Publish both `styles/` and `assets/`. This reduces the installed file size, but Discord still downloads the hosted CSS and images and may cache them locally; it does not eliminate network traffic or runtime memory use. The optional portable output embeds images and is larger; use it to test locally before publishing.
 
+The build adds a content-based `?v=` value to each loader's CSS import. When the stylesheet changes, the import URL changes too, avoiding reuse of an older nested CSS response. Publish the regenerated root loaders together with `styles/`, then refresh the theme in Discord.
+
 ## Install with a raw URL in Vencord
 
 After publishing the generated root loaders and the complete `styles/` and `assets/` folders to the public repository's `main` branch, add one of these URLs to Vencord's online themes list:
