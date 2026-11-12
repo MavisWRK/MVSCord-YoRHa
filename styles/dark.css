@@ -4410,6 +4410,11 @@ html body #app-mount .base_pog62O .sidebar_pog62O::after {
 
 /* Keep the channel tree inside the sidebar instead of extending it by 1px. */
 html body #app-mount .sidebarList_pog62O {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  box-sizing: border-box;
+  justify-self: stretch;
   border-top-left-radius: 12px !important;
   border-left: 0 !important;
   padding-left: 0 !important;
@@ -4430,7 +4435,7 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   min-width: 0;
   box-sizing: border-box;
   border: 0 !important;
-  border-left: 1px solid var(--yorha-column-stroke) !important;
+  border-left: 1px solid var(--yorha-ink) !important;
   padding-inline: 0 !important;
   border-top-left-radius: 12px !important;
 }
@@ -4440,11 +4445,11 @@ html body #app-mount .sidebar_pog62O > .panels_pog62O {
   box-sizing: border-box;
   width: 100% !important;
   min-width: 0 !important;
-  max-width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width)) !important;
+  max-width: 100% !important;
   margin-inline: 0 !important;
   padding-inline: 0 !important;
   justify-self: stretch;
-  border-left: 1px solid color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light)) !important;
+  border-left: 1px solid var(--yorha-ink) !important;
   /* Keep the upper separator, without the old additional 3px left stripe. */
   box-shadow: inset 0 1px var(--yorha-line) !important;
 }
