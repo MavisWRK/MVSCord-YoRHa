@@ -1,16 +1,43 @@
-/* Keep the native banner behind the server name instead of painting over it.
-   Only the visible-banner state gets this overlay; scrolled headers stay solid. */
-html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in srgb, var(--yorha-banner-shade) 78%, transparent),
-    color-mix(in srgb, var(--yorha-banner-shade) 24%, transparent)
-  ) !important;
-  box-shadow: none;
-  border-bottom-color: transparent;
-  text-shadow: 0 1px 3px rgb(0 0 0 / 55%);
+/* Reserve the full 16:9 banner above the solid server header.
+   Percentage padding follows the channel column width without fixed pixels. */
+html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
+  position: relative;
+  height: auto !important;
+  padding-top: 56.25%;
+  box-sizing: content-box;
+  flex-shrink: 0;
 }
 
-html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX .guildDropdown_XH4OpX {
-  background: transparent !important;
+html body #app-mount .hasBanner_XH4OpX .animatedContainer_XH4OpX {
+  position: absolute;
+  inset: 0 0 auto;
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 16 / 9;
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
+  position: absolute;
+  inset: 0;
+  transform: none !important;
+}
+
+html body #app-mount .hasBanner_XH4OpX .bannerImg_XH4OpX {
+  object-fit: contain;
+}
+
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
+  position: relative !important;
+  inset: auto !important;
+  height: var(--custom-channel-header-height, 48px);
+  transform: none !important;
+}
+
+/* The banner now occupies layout space above the channel scroller.
+   Remove only the old leading reservation, not channel virtualization gaps. */
+html body #app-mount .sidebarList_pog62O:has(.hasBanner_XH4OpX)
+  .content_tqapBM > div[aria-hidden="true"]:first-child {
+  height: 0 !important;
 }
