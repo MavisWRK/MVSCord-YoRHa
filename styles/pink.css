@@ -4408,13 +4408,21 @@ html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::af
 
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
+  --yorha-column-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   margin-inline: 0 !important;
   width: 100% !important;
   min-width: 0;
   box-sizing: border-box;
   border: 0 !important;
+  border-left: 1px solid var(--yorha-column-stroke) !important;
   padding-inline: 0 !important;
   border-top-left-radius: 12px !important;
+}
+
+/* Continue the same column edge through the sibling voice/user panel. */
+html body #app-mount .sidebar_pog62O > .panels_pog62O {
+  box-sizing: border-box;
+  border-left: 1px solid color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light)) !important;
 }
 
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
@@ -4437,7 +4445,7 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   border: 0 !important;
   box-sizing: border-box;
   flex-shrink: 0;
-  border-radius: 12px 0 0 0 !important;
+  border-radius: 11px 0 0 0 !important;
 }
 
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
@@ -4519,8 +4527,10 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
 /* A real border makes a single clean arc at the rounded corner.
    Omit the adjoining sides to keep the two title bars visually continuous. */
 html body #app-mount .sidebarList_pog62O .header_XH4OpX {
+  /* The parent owns the left edge for both the title and artwork. */
+  border-left: 0 !important;
   border-right: 0 !important;
-  border-radius: 12px 0 0 0 !important;
+  border-radius: 11px 0 0 0 !important;
 }
 
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
