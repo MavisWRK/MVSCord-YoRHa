@@ -4379,8 +4379,15 @@ html
   #vc-spotify-player::before {
   content: none !important;
 }
-/* Put the header and banner in normal flow, in that order.
-   Find the banner's direct wrapper by its contents, not a guessed wrapper class. */
+/* Keep the channel tree inside the sidebar instead of extending it by 1px. */
+html body #app-mount .sidebarList_pog62O .container_H5ozaj {
+  margin-inline: 0 !important;
+  width: 100% !important;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Put the header and banner in normal flow, in that order. */
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   position: relative;
   display: flex !important;
@@ -4393,7 +4400,7 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
 }
 
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
-  > :is(.bannerImage_XH4OpX, :has(.bannerImage_XH4OpX)) {
+  > .animatedContainer_XH4OpX {
   order: 1 !important;
   position: relative !important;
   inset: auto !important;
@@ -4413,8 +4420,11 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
 
 html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
   display: block !important;
-  position: relative !important;
-  inset: auto !important;
+  position: absolute !important;
+  inset: 0 !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
@@ -4450,6 +4460,14 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
+  border: 0 !important;
+  box-shadow: none !important;
+  /* A shared viewport origin keeps the 5px grid continuous across columns. */
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-origin: border-box;
 }
 
 /* The banner now occupies layout space above the channel scroller.
