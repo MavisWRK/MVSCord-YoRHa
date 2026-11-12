@@ -4404,15 +4404,46 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   box-sizing: border-box;
 }
 
-/* Continue the header's left edge down the column without inset menu rails. */
-html body #app-mount .sidebarList_pog62O .container_H5ozaj:has(.hasBanner_XH4OpX)::after {
+/* One exterior frame spans the title, banner, channels, and user panel.
+   Named grid lines exclude the server icon rail from the frame. */
+html body #app-mount .base_pog62O .sidebar_pog62O {
+  position: relative;
+}
+
+html body #app-mount .base_pog62O .sidebar_pog62O::after {
+  content: "";
+  display: block !important;
+  position: absolute;
+  grid-column: sidebarStart / end;
+  grid-row: start / end;
+  inset: 0;
+  width: auto;
+  height: auto;
+  box-sizing: border-box;
+  border: 1px solid var(--yorha-line);
+  border-right: 0;
+  border-radius: 12px 0 0 0;
+  background: none;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+  z-index: 4;
+}
+
+/* Continue the same top/bottom edges around the chat and member area. */
+html body #app-mount .page_pog62O {
+  position: relative;
+}
+
+html body #app-mount .page_pog62O::before {
   content: "";
   position: absolute;
-  inset: var(--custom-channel-header-height, 48px) auto 0 0;
-  width: 1px;
-  background: var(--yorha-line);
+  inset: 0;
+  box-sizing: border-box;
+  border: 1px solid var(--yorha-line);
+  border-left: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 103;
 }
 
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
