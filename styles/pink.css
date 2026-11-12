@@ -4399,6 +4399,13 @@ html body #app-mount .sidebarList_pog62O {
   padding-left: 0 !important;
 }
 
+/* The guild rail's right-edge pseudo-element sits one column outside the
+   server header. Remove that parallel line on servers with a banner. */
+html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::after {
+  content: none !important;
+  display: none !important;
+}
+
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
   margin-inline: 0 !important;
@@ -4533,10 +4540,24 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   border: 0 !important;
 }
 
-/* Cancel the extra banner contour; the column already has an exterior edge. */
+/* Lower transition blends the artwork into the channel-list surface. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
-  content: none !important;
-  display: none !important;
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+  inset: auto 0 0;
+  width: auto;
+  height: 16px;
+  z-index: 2;
+  pointer-events: none;
+  background-color: color-mix(in srgb, var(--yorha-paper-deep) 65%, transparent);
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  backdrop-filter: blur(3px);
+  box-shadow: inset 0 -5px 8px rgb(0 0 0 / 30%);
+  mask-image: linear-gradient(to top, black, transparent);
 }
 
 /* A small textured veil connects the solid header to the image. The mask
