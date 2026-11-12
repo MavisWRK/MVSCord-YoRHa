@@ -200,6 +200,7 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
   content: "" !important;
   display: block !important;
+  opacity: 0.12;
   position: absolute;
   inset: auto 0 0;
   width: auto;
