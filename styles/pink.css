@@ -4395,6 +4395,8 @@ html body #app-mount .base_pog62O .sidebar_pog62O::after {
 /* Keep the channel tree inside the sidebar instead of extending it by 1px. */
 html body #app-mount .sidebarList_pog62O {
   border-top-left-radius: 12px !important;
+  border-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
@@ -4403,6 +4405,8 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   width: 100% !important;
   min-width: 0;
   box-sizing: border-box;
+  border: 0 !important;
+  padding-inline: 0 !important;
   border-top-left-radius: 12px !important;
 }
 
@@ -4423,6 +4427,7 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   height: auto !important;
   padding: 0 !important;
   gap: 0 !important;
+  border: 0 !important;
   box-sizing: border-box;
   flex-shrink: 0;
   border-radius: 12px 0 0 0 !important;
@@ -4493,6 +4498,7 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   box-sizing: border-box;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   border: 1px solid var(--yorha-topbar-stroke) !important;
+  border-bottom-color: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
   outline: none !important;
   box-shadow: var(--yorha-topbar-elevation, none) !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
@@ -4518,7 +4524,6 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
 /* A short blurred shadow joins the solid header to the artwork below it. */
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
   z-index: 2;
-  border-bottom: 1px solid var(--yorha-topbar-stroke) !important;
   --yorha-topbar-elevation: 0 5px 10px -4px rgb(0 0 0 / 40%);
 }
 
@@ -4528,16 +4533,10 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   border: 0 !important;
 }
 
-/* Continue the header's 1px left contour over the banner without shifting
-   or shrinking the image. Keep it above the transition veil. */
+/* Cancel the extra banner contour; the column already has an exterior edge. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
-  content: "";
-  position: absolute;
-  inset: 0 auto 0 0;
-  width: 1px;
-  background: var(--yorha-topbar-stroke);
-  pointer-events: none;
-  z-index: 3;
+  content: none !important;
+  display: none !important;
 }
 
 /* A small textured veil connects the solid header to the image. The mask
