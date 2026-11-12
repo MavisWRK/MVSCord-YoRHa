@@ -3009,11 +3009,13 @@ html.density-default .item_caf372 {
   --yorha-paper-light: #ded8c2;
   --yorha-paper-deep: #b9b39e;
   --yorha-ink: #4d493e;
+  --yorha-banner-shade: #4d493e;
   --yorha-ink-strong: #353228;
   --yorha-muted: #625e50;
   --yorha-line: rgba(77, 73, 62, 0.30);
   --yorha-texture: repeating-linear-gradient(0deg, rgba(77,73,62,.025) 0px, rgba(77,73,62,.025) 1px, transparent 1px, transparent 4px);
 }
+
 
 /* Both legacy tokens (oldcord) and the tokens used in the supplied refresh CSS.
    Repeated on theme boundaries so dialogs do not inherit Discord's dark colors. */
@@ -4353,4 +4355,20 @@ html
   .panels_pog62O:not(:has([class*="activityPanel_"]))
   #vc-spotify-player::before {
   content: none !important;
+}
+/* Keep the native banner behind the server name instead of painting over it.
+   Only the visible-banner state gets this overlay; scrolled headers stay solid. */
+html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--yorha-banner-shade) 78%, transparent),
+    color-mix(in srgb, var(--yorha-banner-shade) 24%, transparent)
+  ) !important;
+  box-shadow: none;
+  border-bottom-color: transparent;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 55%);
+}
+
+html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX .guildDropdown_XH4OpX {
+  background: transparent !important;
 }

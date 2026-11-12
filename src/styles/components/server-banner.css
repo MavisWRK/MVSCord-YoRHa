@@ -1,0 +1,16 @@
+/* Keep the native banner behind the server name instead of painting over it.
+   Only the visible-banner state gets this overlay; scrolled headers stay solid. */
+html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX {
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--yorha-banner-shade) 78%, transparent),
+    color-mix(in srgb, var(--yorha-banner-shade) 24%, transparent)
+  ) !important;
+  box-shadow: none;
+  border-bottom-color: transparent;
+  text-shadow: 0 1px 3px rgb(0 0 0 / 55%);
+}
+
+html body #app-mount .bannerVisible_XH4OpX .header_XH4OpX .guildDropdown_XH4OpX {
+  background: transparent !important;
+}
