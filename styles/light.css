@@ -4453,9 +4453,10 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
-  border: 0 !important;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
-  box-shadow: var(--yorha-topbar-outline), var(--yorha-topbar-elevation, 0 0 0 transparent) !important;
+  border: 1px solid var(--yorha-topbar-stroke) !important;
+  outline: none !important;
+  box-shadow: var(--yorha-topbar-elevation, none) !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
   background-size: 5px 5px;
@@ -4464,21 +4465,16 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   background-origin: border-box;
 }
 
-/* Trace the actual title edges. Omit the adjoining vertical sides so the
-   two rectangles read as one frame, without a line through either title. */
+/* A real border makes a single clean arc at the rounded corner.
+   Omit the adjoining sides to keep the two title bars visually continuous. */
 html body #app-mount .sidebarList_pog62O .header_XH4OpX {
-  border-top-left-radius: 12px;
-  --yorha-topbar-outline:
-    inset 0 1px 0 var(--yorha-topbar-stroke),
-    inset 0 -1px 0 var(--yorha-topbar-stroke),
-    inset 1px 0 0 var(--yorha-topbar-stroke);
+  border-right: 0 !important;
+  border-radius: 12px 0 0 0;
 }
 
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
-  --yorha-topbar-outline:
-    inset 0 1px 0 var(--yorha-topbar-stroke),
-    inset 0 -1px 0 var(--yorha-topbar-stroke),
-    inset -1px 0 0 var(--yorha-topbar-stroke);
+  border-left: 0 !important;
+  border-radius: 0;
 }
 
 /* A short blurred shadow joins the solid header to the artwork below it. */
