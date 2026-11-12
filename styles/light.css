@@ -4355,19 +4355,20 @@ html
   #vc-spotify-player::before {
   content: none !important;
 }
-/* Reserve the full 16:9 banner above the solid server header.
+/* Reserve the full 16:9 banner below the solid server header.
    Percentage padding follows the channel column width without fixed pixels. */
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   position: relative;
   height: auto !important;
-  padding-top: 56.25%;
+  padding-top: 0;
+  padding-bottom: 56.25%;
   box-sizing: content-box;
   flex-shrink: 0;
 }
 
 html body #app-mount .hasBanner_XH4OpX .animatedContainer_XH4OpX {
   position: absolute;
-  inset: 0 0 auto;
+  inset: auto 0 0;
   width: 100%;
   height: auto !important;
   aspect-ratio: 16 / 9;
