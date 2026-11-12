@@ -4534,6 +4534,10 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
   border: 0 !important;
+  /* The exterior ink-colored frame disappears against the dark header.
+     Use its local foreground for a visible inset contour on both title bars. */
+  outline: 1px solid color-mix(in srgb, var(--header-primary) 38%, transparent) !important;
+  outline-offset: -1px;
   box-shadow: none !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
