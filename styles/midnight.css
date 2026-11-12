@@ -4414,27 +4414,6 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   box-sizing: border-box;
 }
 
-/* One exterior outline encloses only the combined server/channel title row. */
-html body #app-mount .base_pog62O {
-  position: relative;
-}
-
-html body #app-mount .base_pog62O::before {
-  content: "";
-  position: absolute;
-  grid-column: channelsList-start / page-end;
-  grid-row: guildsList-start / guildsList-end;
-  inset: -1px -1px auto;
-  width: auto;
-  height: calc(var(--custom-channel-header-height, 48px) + 2px);
-  box-sizing: border-box;
-  border: 1px solid color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
-  border-radius: 12px 0 0 0;
-  background: none;
-  pointer-events: none;
-  z-index: 103;
-}
-
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
 }
@@ -4513,7 +4492,8 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
   border: 0 !important;
-  box-shadow: none !important;
+  --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
+  box-shadow: var(--yorha-topbar-outline), var(--yorha-topbar-elevation, 0 0 0 transparent) !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
   background-size: 5px 5px;
@@ -4522,10 +4502,27 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   background-origin: border-box;
 }
 
+/* Trace the actual title edges. Omit the adjoining vertical sides so the
+   two rectangles read as one frame, without a line through either title. */
+html body #app-mount .sidebarList_pog62O .header_XH4OpX {
+  border-top-left-radius: 12px;
+  --yorha-topbar-outline:
+    inset 0 1px 0 var(--yorha-topbar-stroke),
+    inset 0 -1px 0 var(--yorha-topbar-stroke),
+    inset 1px 0 0 var(--yorha-topbar-stroke);
+}
+
+html body #app-mount .chat_z_gUBg .container_ybUK7Z {
+  --yorha-topbar-outline:
+    inset 0 1px 0 var(--yorha-topbar-stroke),
+    inset 0 -1px 0 var(--yorha-topbar-stroke),
+    inset -1px 0 0 var(--yorha-topbar-stroke);
+}
+
 /* A short blurred shadow joins the solid header to the artwork below it. */
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
   z-index: 2;
-  box-shadow: 0 4px 8px -4px rgb(0 0 0 / 45%) !important;
+  --yorha-topbar-elevation: 0 4px 8px -4px rgb(0 0 0 / 45%);
 }
 
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
