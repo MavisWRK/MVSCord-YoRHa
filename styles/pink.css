@@ -4388,44 +4388,23 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   box-sizing: border-box;
 }
 
-/* One exterior frame spans the title, banner, channels, and user panel.
-   Named grid lines exclude the server icon rail from the frame. */
-html body #app-mount .base_pog62O .sidebar_pog62O {
+/* One exterior outline encloses only the combined server/channel title row. */
+html body #app-mount .base_pog62O {
   position: relative;
 }
 
-html body #app-mount .base_pog62O .sidebar_pog62O::after {
+html body #app-mount .base_pog62O::before {
   content: "";
-  display: block !important;
   position: absolute;
-  grid-column: sidebarStart / end;
-  grid-row: start / end;
-  inset: 0;
+  grid-column: channelsList-start / page-end;
+  grid-row: guildsList-start / guildsList-end;
+  inset: -1px -1px auto;
   width: auto;
-  height: auto;
+  height: calc(var(--custom-channel-header-height, 48px) + 2px);
   box-sizing: border-box;
-  border: 1px solid var(--yorha-line);
-  border-right: 0;
+  border: 1px solid color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   border-radius: 12px 0 0 0;
   background: none;
-  box-shadow: none;
-  transform: none;
-  pointer-events: none;
-  z-index: 4;
-}
-
-/* Continue the same top/bottom edges around the chat and member area. */
-html body #app-mount .page_pog62O {
-  position: relative;
-}
-
-html body #app-mount .page_pog62O::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  box-sizing: border-box;
-  border: 1px solid var(--yorha-line);
-  border-left: 0;
   pointer-events: none;
   z-index: 103;
 }
@@ -4508,10 +4487,6 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
   border: 0 !important;
-  /* The exterior ink-colored frame disappears against the dark header.
-     Use its local foreground for a visible inset contour on both title bars. */
-  outline: 1px solid color-mix(in srgb, var(--header-primary) 38%, transparent) !important;
-  outline-offset: -1px;
   box-shadow: none !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
