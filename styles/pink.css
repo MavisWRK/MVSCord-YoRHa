@@ -4413,6 +4413,11 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
 /* Put the header and banner in normal flow, in that order. */
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   position: relative;
+  --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
+  width: 100% !important;
+  min-width: 0;
+  margin: 0 !important;
+  align-items: stretch;
   display: flex !important;
   flex-direction: column !important;
   height: auto !important;
@@ -4453,6 +4458,8 @@ html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
   padding: 0 !important;
   box-sizing: border-box;
   transform: none !important;
+  border: 0 !important;
+  border-radius: 0 !important;
 }
 
 html body #app-mount .hasBanner_XH4OpX .bannerImg_XH4OpX {
@@ -4469,7 +4476,7 @@ html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
   order: -1 !important;
   position: relative !important;
   inset: auto !important;
-  width: 100%;
+  width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
   box-sizing: border-box;
@@ -4511,13 +4518,26 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
 /* A short blurred shadow joins the solid header to the artwork below it. */
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
   z-index: 2;
-  border-bottom: 0 !important;
+  border-bottom: 1px solid var(--yorha-topbar-stroke) !important;
   --yorha-topbar-elevation: 0 5px 10px -4px rgb(0 0 0 / 40%);
 }
 
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   z-index: 1;
   border-radius: 0 !important;
+  border: 0 !important;
+}
+
+/* Continue the header's 1px left contour over the banner without shifting
+   or shrinking the image. Keep it above the transition veil. */
+html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 1px;
+  background: var(--yorha-topbar-stroke);
+  pointer-events: none;
+  z-index: 3;
 }
 
 /* A small textured veil connects the solid header to the image. The mask
