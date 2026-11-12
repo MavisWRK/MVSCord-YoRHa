@@ -4357,10 +4357,26 @@ html
 }
 /* Keep the channel tree inside the sidebar instead of extending it by 1px. */
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
+  position: relative;
   margin-inline: 0 !important;
   width: 100% !important;
   min-width: 0;
   box-sizing: border-box;
+}
+
+/* Continue the header's left edge down the column without inset menu rails. */
+html body #app-mount .sidebarList_pog62O .container_H5ozaj:has(.hasBanner_XH4OpX)::after {
+  content: "";
+  position: absolute;
+  inset: var(--custom-channel-header-height, 48px) auto 0 0;
+  width: 1px;
+  background: var(--yorha-line);
+  pointer-events: none;
+  z-index: 3;
+}
+
+html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
+  background-image: none;
 }
 
 /* Put the header and banner in normal flow, in that order. */
@@ -4444,6 +4460,16 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   background-position: 0 0;
   background-attachment: fixed;
   background-origin: border-box;
+}
+
+/* A short blurred shadow joins the solid header to the artwork below it. */
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX {
+  z-index: 2;
+  box-shadow: 0 4px 8px -4px rgb(0 0 0 / 45%) !important;
+}
+
+html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
+  z-index: 1;
 }
 
 /* The banner now occupies layout space above the channel scroller.
