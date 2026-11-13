@@ -4519,11 +4519,18 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
   aspect-ratio: 16 / 9 !important;
   flex-shrink: 0;
   overflow: hidden;
-  /* Discord supplies transform/opacity for each scroll position. Interpolating
-     those updates makes the artwork lag behind its visibility threshold. */
-  transition: none !important;
+  /* Keep position synchronous with Discord's scroll updates. Only fade the
+     artwork; animating transform or dimensions would lag behind the list. */
+  transition: opacity 90ms linear !important;
   will-change: transform, opacity;
   isolation: isolate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
+    > .animatedContainer_XH4OpX {
+    transition: none !important;
+  }
 }
 
 html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
