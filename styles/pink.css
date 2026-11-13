@@ -4413,6 +4413,7 @@ html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::af
 
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
+  container-type: inline-size;
   --yorha-column-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   margin-inline: 0 !important;
   width: 100% !important;
@@ -4455,7 +4456,9 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
 }
 
-/* Put the header and banner in normal flow, in that order. */
+/* Discord reserves 84px for the banner inside its virtual list. Reserve only
+   the remaining artwork height here. This box must survive native banner
+   mounting/unmounting, so its height cannot depend on the animated child. */
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   position: relative;
   --yorha-banner-transition-height: 16px;
@@ -4466,7 +4469,7 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   align-items: stretch;
   display: flex !important;
   flex-direction: column !important;
-  height: auto !important;
+  height: calc(var(--custom-channel-header-height, 48px) + 56.25cqw - 84px) !important;
   padding: 0 !important;
   gap: 0 !important;
   border: 0 !important;
@@ -4477,11 +4480,9 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
 
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
   > .animatedContainer_XH4OpX {
-  /* Visibility changes during scrolling must not collapse this layout box. */
-  display: block !important;
   order: 1 !important;
-  position: relative !important;
-  inset: auto !important;
+  position: absolute !important;
+  inset: var(--custom-channel-header-height, 48px) 0 auto !important;
   width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -4492,15 +4493,6 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
   aspect-ratio: 16 / 9 !important;
   flex-shrink: 0;
   overflow: hidden;
-  transform: none !important;
-  opacity: 1 !important;
-}
-
-/* The channel virtualizer manages its own scroll position. Do not let browser
-   anchoring compensate again when the banner's visibility changes. */
-html body #app-mount .sidebarList_pog62O,
-html body #app-mount .sidebarList_pog62O * {
-  overflow-anchor: none !important;
 }
 
 html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
@@ -4625,11 +4617,4 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::after {
   backdrop-filter: blur(3px);
   box-shadow: inset 0 5px 8px rgb(0 0 0 / 30%);
   mask-image: linear-gradient(to bottom, black, transparent);
-}
-
-/* The banner now occupies layout space above the channel scroller.
-   Remove only the old leading reservation, not channel virtualization gaps. */
-html body #app-mount .sidebarList_pog62O:has(.hasBanner_XH4OpX)
-  .content_tqapBM > div[aria-hidden="true"]:first-child {
-  height: 0 !important;
 }
