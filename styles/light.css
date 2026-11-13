@@ -4434,12 +4434,11 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
 /* Put the header and banner in normal flow, in that order. */
 html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
   position: relative;
-  --yorha-native-banner-reservation: 84px;
   --yorha-banner-transition-height: 16px;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   width: 100% !important;
   min-width: 0;
-  margin: 0 0 calc(-1 * var(--yorha-native-banner-reservation)) !important;
+  margin: 0 !important;
   align-items: stretch;
   display: flex !important;
   flex-direction: column !important;
@@ -4595,9 +4594,8 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::after {
   mask-image: linear-gradient(to bottom, black, transparent);
 }
 
-/* Discord's channel virtualizer owns this leading spacer. Preserve its
-   inline height so expanding categories cannot desynchronize scroll offsets. */
+/* The banner already occupies layout space above the channel scroller. */
 html body #app-mount .sidebarList_pog62O:has(.hasBanner_XH4OpX)
   .content_tqapBM > div[aria-hidden="true"]:first-child {
-  height: var(--yorha-native-banner-reservation) !important;
+  height: 0 !important;
 }
