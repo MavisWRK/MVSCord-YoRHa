@@ -111,6 +111,11 @@ html body #app-mount .container_XH4OpX.hasBanner_XH4OpX
   aspect-ratio: 16 / 9 !important;
   flex-shrink: 0;
   overflow: hidden;
+  /* Discord supplies transform/opacity for each scroll position. Interpolating
+     those updates makes the artwork lag behind its visibility threshold. */
+  transition: none !important;
+  will-change: transform, opacity;
+  isolation: isolate;
 }
 
 html body #app-mount .hasBanner_XH4OpX .bannerImage_XH4OpX {
@@ -216,6 +221,8 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::before {
   backdrop-filter: none !important;
   box-shadow: none !important;
   mask-image: linear-gradient(to top, black, transparent);
+  /* This texture belongs to the moving banner, not the viewport. */
+  background-attachment: scroll;
 }
 
 /* A small textured veil connects the solid header to the image. The mask
@@ -235,4 +242,5 @@ html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX::after {
   backdrop-filter: blur(3px);
   box-shadow: inset 0 5px 8px rgb(0 0 0 / 30%);
   mask-image: linear-gradient(to bottom, black, transparent);
+  background-attachment: scroll;
 }
