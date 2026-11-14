@@ -4349,15 +4349,15 @@ html body #app-mount .sidebarList_pog62O {
   box-sizing: border-box;
   justify-self: stretch;
   border-top-left-radius: 12px !important;
-  border-left: 0 !important;
+  border-left: 1px solid var(--yorha-ink) !important;
   border-right: 0 !important;
   box-shadow: none !important;
   padding-left: 0 !important;
 }
 
 /* The guild rail's right-edge pseudo-element sits one column outside the
-   server header. Remove that parallel line on servers with a banner. */
-html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::after {
+   server header. The sidebar owns the continuous edge in every banner state. */
+html body #app-mount .sidebar_pog62O > .guilds_pog62O::after {
   content: none !important;
   display: none !important;
 }
@@ -4370,7 +4370,7 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   min-width: 0;
   box-sizing: border-box;
   border: 0 !important;
-  border-left: 1px solid var(--yorha-ink) !important;
+  border-left: 0 !important;
   padding-inline: 0 !important;
   border-top-left-radius: 12px !important;
 }
@@ -4402,7 +4402,7 @@ html body #app-mount .panels_pog62O [class*="activityPanel_"] {
   background-attachment: fixed !important;
 }
 
-html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
+html body #app-mount .container_H5ozaj .content_tqapBM {
   background-image: none;
 }
 
@@ -4435,6 +4435,14 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover
 
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
   background: transparent !important;
+}
+
+/* Native glass and header overlays must not draw a second divider on hover. */
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX,
+html body #app-mount .sidebarList_pog62O .header_XH4OpX::before,
+html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Fade the artwork's top edge without changing native banner dimensions. */
