@@ -21,6 +21,7 @@ html body #app-mount .sidebarList_pog62O {
   border-top-left-radius: 12px !important;
   border-left: 0 !important;
   border-right: 0 !important;
+  box-shadow: none !important;
   padding-left: 0 !important;
 }
 

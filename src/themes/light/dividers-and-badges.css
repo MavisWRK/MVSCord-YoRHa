@@ -3,9 +3,6 @@
 html body #app-mount .sidebar_pog62O > .guilds_pog62O {
   box-shadow: inset -1px 0 0 rgba(77, 73, 62, .60);
 }
-html body #app-mount .sidebarList_pog62O {
-  box-shadow: inset -2px 0 0 rgba(77, 73, 62, .50);
-}
 
 /* A call can keep a DM in this list after its messages have been read.
    Replace only an existing native notification counter. */
