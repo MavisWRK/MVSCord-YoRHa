@@ -1076,7 +1076,10 @@ html.visual-refresh {
   .base_pog62O .sidebar_pog62O {
     display: grid;
     grid-template-areas: "guilds sidebar" "guilds panels";
-    grid-template-columns: [start] min-content [sidebarStart] minmax(0, 1fr) [end];
+    grid-template-columns: [start] min-content [sidebarStart] minmax(
+        0,
+        1fr
+      ) [end];
     grid-template-rows: [start] 1fr [panelsStart] min-content [end];
     border-radius: 0;
   }
@@ -2971,7 +2974,6 @@ html.density-default .item_caf372 {
   }
 }
 
-
 /* ================= MVSCORD x YoRHa: CAMADA VISUAL =================
    Bege #f6e7ec e oliva #613c59 do YoRHa original.
    Sem os seletores .da- antigos, larguras, deslocamentos, filtros de imagens
@@ -2987,16 +2989,40 @@ html.density-default .item_caf372 {
   --yorha-ink: #613c59;
   --yorha-ink-strong: #412638;
   --yorha-muted: #705062;
-  --yorha-line: rgba(97,60,89,0.30);
-  --yorha-texture: repeating-linear-gradient(0deg, rgba(97,60,89,.025) 0px, rgba(97,60,89,.025) 1px, transparent 1px, transparent 4px);
+  --yorha-line: rgba(97, 60, 89, 0.3);
+  --yorha-texture: repeating-linear-gradient(
+    0deg,
+    rgba(97, 60, 89, 0.025) 0px,
+    rgba(97, 60, 89, 0.025) 1px,
+    transparent 1px,
+    transparent 4px
+  );
 }
-
 
 /* Both legacy tokens (oldcord) and the tokens used in the supplied refresh CSS.
    Repeated on theme boundaries so dialogs do not inherit Discord's dark colors. */
 html:root,
 html #app-mount,
-html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
+html
+  body
+  :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(
+    :is(
+      .custom-user-profile-theme,
+      [class*="user-profile"],
+      [class*="userProfile"],
+      [style*="--profile-gradient"],
+      [style*="--profile-theme"]
+    )
+  ):not(
+    :is(
+        .custom-user-profile-theme,
+        [class*="user-profile"],
+        [class*="userProfile"],
+        [style*="--profile-gradient"],
+        [style*="--profile-theme"]
+      )
+      *
+  ) {
   --background-primary: var(--yorha-paper);
   --background-base-low: var(--yorha-paper);
   --background-surface-high: var(--yorha-paper);
@@ -3071,21 +3097,21 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
   --button-brand-text: var(--yorha-paper-light);
   --button-filled-brand-text: var(--yorha-paper-light);
   --text-on-brand-primary: var(--yorha-paper-light);
-  --background-modifier-hover: rgba(97,60,89,.08);
-  --background-mod-subtle: rgba(97,60,89,.08);
-  --bg-mod-subtle: rgba(97,60,89,.08);
-  --background-message-hover: rgba(97,60,89,.08);
-  --interactive-background-hover: rgba(97,60,89,.08);
-  --background-modifier-active: rgba(97,60,89,.14);
-  --background-mod-muted: rgba(97,60,89,.14);
-  --bg-mod-strong: rgba(97,60,89,.14);
-  --interactive-background-active: rgba(97,60,89,.14);
-  --mention-background: rgba(97,60,89,.14);
-  --background-mentioned: rgba(97,60,89,.14);
-  --background-message-highlight: rgba(97,60,89,.14);
-  --background-modifier-selected: rgba(97,60,89,.21);
-  --background-mod-strong: rgba(97,60,89,.21);
-  --background-mentioned-hover: rgba(97,60,89,.21);
+  --background-modifier-hover: rgba(97, 60, 89, 0.08);
+  --background-mod-subtle: rgba(97, 60, 89, 0.08);
+  --bg-mod-subtle: rgba(97, 60, 89, 0.08);
+  --background-message-hover: rgba(97, 60, 89, 0.08);
+  --interactive-background-hover: rgba(97, 60, 89, 0.08);
+  --background-modifier-active: rgba(97, 60, 89, 0.14);
+  --background-mod-muted: rgba(97, 60, 89, 0.14);
+  --bg-mod-strong: rgba(97, 60, 89, 0.14);
+  --interactive-background-active: rgba(97, 60, 89, 0.14);
+  --mention-background: rgba(97, 60, 89, 0.14);
+  --background-mentioned: rgba(97, 60, 89, 0.14);
+  --background-message-highlight: rgba(97, 60, 89, 0.14);
+  --background-modifier-selected: rgba(97, 60, 89, 0.21);
+  --background-mod-strong: rgba(97, 60, 89, 0.21);
+  --background-mentioned-hover: rgba(97, 60, 89, 0.21);
   --background-modifier-accent: var(--yorha-line);
   --border-subtle: var(--yorha-line);
   --border-normal: var(--yorha-line);
@@ -3157,30 +3183,46 @@ html #app-mount .container_ybUK7Z .searchBar_i16Ad0 {
 }
 
 /* Selection stripes are inset shadows: they consume no layout space. */
-html #app-mount :is(.interactiveSelected_zln_tS, .selected_6zZYhF.item_6zZYhF, .active_ifLhOx) {
+html
+  #app-mount
+  :is(
+    .interactiveSelected_zln_tS,
+    .selected_6zZYhF.item_6zZYhF,
+    .active_ifLhOx
+  ) {
   box-shadow: inset 3px 0 0 var(--yorha-ink);
 }
 html #app-mount .folderIconWrapper_RTMSuZ {
-  --bg-mod-subtle: rgba(97,60,89,.22) !important;
+  --bg-mod-subtle: rgba(97, 60, 89, 0.22) !important;
 }
 html #app-mount .folderGroup_RTMSuZ {
   --custom-folder-color: var(--yorha-ink);
 }
 
 /* Paper-colored menus, inputs and attachment surfaces. Existing radii retained. */
-html #app-mount :is(.menu_M3qk4j, .root__KoJTP, .container_dvN-MP[data-mana-component="layer-modal"]) {
+html
+  #app-mount
+  :is(
+    .menu_M3qk4j,
+    .root__KoJTP,
+    .container_dvN-MP[data-mana-component="layer-modal"]
+  ) {
   background-color: var(--yorha-paper-light);
-  box-shadow: 0 8px 24px rgba(65,38,56,.22), inset 0 0 0 1px var(--yorha-line);
+  box-shadow:
+    0 8px 24px rgba(65, 38, 56, 0.22),
+    inset 0 0 0 1px var(--yorha-line);
 }
 html #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn) {
   background-color: var(--yorha-paper-light);
   box-shadow: inset 0 0 0 1px var(--yorha-line);
 }
-html #app-mount :is(.highlighted_SY_P2T, .replying_SY_P2T, .flash__03436[data-flash="true"]) {
-  background-color: rgba(97,60,89,.10);
+html
+  #app-mount
+  :is(.highlighted_SY_P2T, .replying_SY_P2T, .flash__03436[data-flash="true"]) {
+  background-color: rgba(97, 60, 89, 0.1);
 }
 html #app-mount :is(.highlighted_SY_P2T, .replying_SY_P2T):hover {
-  background-color: rgba(97,60,89,.16) !important;
+  background-color: rgba(97, 60, 89, 0.16) !important;
 }
 
 /* Keep syntax colors readable on the light palette even in Discord dark mode.
@@ -3189,24 +3231,85 @@ html #app-mount :is(code, pre, .hljs) {
   background-color: var(--yorha-paper-light);
   color: var(--yorha-ink-strong);
 }
-html #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #68624f; }
-html #app-mount :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) { color: #725035; }
-html #app-mount :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) { color: #3c6143; }
-html #app-mount :is(.hljs-title, .hljs-title.function_, .hljs-title.class_, .hljs-built_in, .hljs-symbol) { color: #70516b; }
-html #app-mount :is(.hljs-number, .hljs-attr, .hljs-attribute, .hljs-variable, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id) { color: #345e6b; }
-html #app-mount .hljs-addition { background-color: #c8d5b9; color: #304d32; }
-html #app-mount .hljs-deletion { background-color: #e3c6b9; color: #793c32; }
+html #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) {
+  color: #68624f;
+}
+html
+  #app-mount
+  :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) {
+  color: #725035;
+}
+html
+  #app-mount
+  :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) {
+  color: #3c6143;
+}
+html
+  #app-mount
+  :is(
+    .hljs-title,
+    .hljs-title.function_,
+    .hljs-title.class_,
+    .hljs-built_in,
+    .hljs-symbol
+  ) {
+  color: #70516b;
+}
+html
+  #app-mount
+  :is(
+    .hljs-number,
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-variable,
+    .hljs-operator,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id
+  ) {
+  color: #345e6b;
+}
+html #app-mount .hljs-addition {
+  background-color: #c8d5b9;
+  color: #304d32;
+}
+html #app-mount .hljs-deletion {
+  background-color: #e3c6b9;
+  color: #793c32;
+}
 /* ================= FIM DA CAMADA YoRHa ================= */
-
 
 /* ===== v1.1: surface and profile color coverage, based on supplied Catppuccin =====
    Paint-only corrections. Native profile art, role colors and layout retained.
    Priority is intentional: theme-local Discord/oldcord tokens can otherwise win.
 */
-html.visual-refresh:is(.theme-dark, .theme-light, .theme-darker, .theme-midnight),
+html.visual-refresh:is(
+    .theme-dark,
+    .theme-light,
+    .theme-darker,
+    .theme-midnight
+  ),
 html #app-mount,
-html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"])):not(:is(.custom-user-profile-theme, [class*="user-profile"], [class*="userProfile"], [style*="--profile-gradient"], [style*="--profile-theme"]) *) {
-
+html
+  body
+  :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(
+    :is(
+      .custom-user-profile-theme,
+      [class*="user-profile"],
+      [class*="userProfile"],
+      [style*="--profile-gradient"],
+      [style*="--profile-theme"]
+    )
+  ):not(
+    :is(
+        .custom-user-profile-theme,
+        [class*="user-profile"],
+        [class*="userProfile"],
+        [style*="--profile-gradient"],
+        [style*="--profile-theme"]
+      )
+      *
+  ) {
   --background-primary: var(--yorha-paper) !important;
   --background-base-low: var(--yorha-paper) !important;
   --background-surface-high: var(--yorha-paper) !important;
@@ -3233,7 +3336,9 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
   --deprecated-text-input-bg: var(--yorha-paper-light) !important;
   --deprecated-card-bg: var(--yorha-paper-light) !important;
   --deprecated-card-editable-bg: var(--yorha-paper-light) !important;
-  --deprecated-quickswitcher-input-background: var(--yorha-paper-light) !important;
+  --deprecated-quickswitcher-input-background: var(
+    --yorha-paper-light
+  ) !important;
   --primary-500: var(--yorha-paper-light) !important;
   --text-normal: var(--yorha-ink) !important;
   --text-default: var(--yorha-ink) !important;
@@ -3281,21 +3386,21 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
   --button-brand-text: var(--yorha-paper-light) !important;
   --button-filled-brand-text: var(--yorha-paper-light) !important;
   --text-on-brand-primary: var(--yorha-paper-light) !important;
-  --background-modifier-hover: rgba(97,60,89,.08) !important;
-  --background-mod-subtle: rgba(97,60,89,.08) !important;
-  --bg-mod-subtle: rgba(97,60,89,.08) !important;
-  --background-message-hover: rgba(97,60,89,.08) !important;
-  --interactive-background-hover: rgba(97,60,89,.08) !important;
-  --background-modifier-active: rgba(97,60,89,.14) !important;
-  --background-mod-muted: rgba(97,60,89,.14) !important;
-  --bg-mod-strong: rgba(97,60,89,.14) !important;
-  --interactive-background-active: rgba(97,60,89,.14) !important;
-  --mention-background: rgba(97,60,89,.14) !important;
-  --background-mentioned: rgba(97,60,89,.14) !important;
-  --background-message-highlight: rgba(97,60,89,.14) !important;
-  --background-modifier-selected: rgba(97,60,89,.21) !important;
-  --background-mod-strong: rgba(97,60,89,.21) !important;
-  --background-mentioned-hover: rgba(97,60,89,.21) !important;
+  --background-modifier-hover: rgba(97, 60, 89, 0.08) !important;
+  --background-mod-subtle: rgba(97, 60, 89, 0.08) !important;
+  --bg-mod-subtle: rgba(97, 60, 89, 0.08) !important;
+  --background-message-hover: rgba(97, 60, 89, 0.08) !important;
+  --interactive-background-hover: rgba(97, 60, 89, 0.08) !important;
+  --background-modifier-active: rgba(97, 60, 89, 0.14) !important;
+  --background-mod-muted: rgba(97, 60, 89, 0.14) !important;
+  --bg-mod-strong: rgba(97, 60, 89, 0.14) !important;
+  --interactive-background-active: rgba(97, 60, 89, 0.14) !important;
+  --mention-background: rgba(97, 60, 89, 0.14) !important;
+  --background-mentioned: rgba(97, 60, 89, 0.14) !important;
+  --background-message-highlight: rgba(97, 60, 89, 0.14) !important;
+  --background-modifier-selected: rgba(97, 60, 89, 0.21) !important;
+  --background-mod-strong: rgba(97, 60, 89, 0.21) !important;
+  --background-mentioned-hover: rgba(97, 60, 89, 0.21) !important;
   --background-modifier-accent: var(--yorha-line) !important;
   --border-subtle: var(--yorha-line) !important;
   --border-normal: var(--yorha-line) !important;
@@ -3365,14 +3470,14 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
   --input-border-default: var(--yorha-line) !important;
   --control-secondary-border-default: var(--yorha-line) !important;
   --spine-default: var(--yorha-line) !important;
-  --background-mod-normal: rgba(97,60,89,.14) !important;
-  --interactive-background-selected: rgba(97,60,89,.14) !important;
-  --message-background-hover: rgba(97,60,89,.14) !important;
-  --message-reacted-background-default: rgba(97,60,89,.14) !important;
-  --message-highlight-background-default: rgba(97,60,89,.14) !important;
-  --message-highlight-background-hover: rgba(97,60,89,.14) !important;
-  --message-mentioned-background-default: rgba(97,60,89,.14) !important;
-  --message-mentioned-background-hover: rgba(97,60,89,.14) !important;
+  --background-mod-normal: rgba(97, 60, 89, 0.14) !important;
+  --interactive-background-selected: rgba(97, 60, 89, 0.14) !important;
+  --message-background-hover: rgba(97, 60, 89, 0.14) !important;
+  --message-reacted-background-default: rgba(97, 60, 89, 0.14) !important;
+  --message-highlight-background-default: rgba(97, 60, 89, 0.14) !important;
+  --message-highlight-background-hover: rgba(97, 60, 89, 0.14) !important;
+  --message-mentioned-background-default: rgba(97, 60, 89, 0.14) !important;
+  --message-mentioned-background-hover: rgba(97, 60, 89, 0.14) !important;
   --message-reacted-text-default: var(--yorha-ink-strong) !important;
   --control-primary-background-hover: var(--yorha-ink-strong) !important;
   --control-primary-background-active: var(--yorha-ink-strong) !important;
@@ -3389,7 +3494,14 @@ html body :is(.theme-dark, .theme-light, .theme-darker, .theme-midnight):not(:is
 
 /* Actual painted containers, including descendants inside the channel sidebar.
    Background-color deliberately preserves background-image profile decorations. */
-html #app-mount :is(.sidebarList_pog62O, .sidebarList_pog62O > div, .sidebarList_pog62O nav, .sidebar_1d0xGU) {
+html
+  #app-mount
+  :is(
+    .sidebarList_pog62O,
+    .sidebarList_pog62O > div,
+    .sidebarList_pog62O nav,
+    .sidebar_1d0xGU
+  ) {
   background-color: var(--yorha-paper-deep) !important;
 }
 html #app-mount :is(.guilds_pog62O, .wrapper_5dqHTG, .scroller_5dqHTG) {
@@ -3401,11 +3513,22 @@ html #app-mount :is(.members_86es0b, .container_86es0b, .member_Iy0c7A) {
 html #app-mount .member_Iy0c7A:hover {
   background-color: var(--yorha-paper-light) !important;
 }
-html #app-mount :is(.childWrapper_JJ-hgR, .childWrapperNoHoverBg_JJ-hgR, .circleIconButton_g8YUxD) {
+html
+  #app-mount
+  :is(
+    .childWrapper_JJ-hgR,
+    .childWrapperNoHoverBg_JJ-hgR,
+    .circleIconButton_g8YUxD
+  ) {
   background-color: var(--yorha-paper-deep) !important;
   color: var(--yorha-ink) !important;
 }
-html #app-mount :is(.wrapper_JJ-hgR.selected_JJ-hgR .childWrapper_JJ-hgR, .circleIconButton_g8YUxD:hover) {
+html
+  #app-mount
+  :is(
+    .wrapper_JJ-hgR.selected_JJ-hgR .childWrapper_JJ-hgR,
+    .circleIconButton_g8YUxD:hover
+  ) {
   background-color: var(--yorha-ink) !important;
   color: var(--yorha-paper-light) !important;
 }
@@ -3430,12 +3553,13 @@ html #app-mount .container_ybUK7Z .searchBar_i16Ad0 {
 }
 /* ===== end v1.1 ===== */
 
-
 /* ===== v1.2: header contrast and unboxed member descriptions =====
    The trailing toolbar is positioned over the dark header by MVSCord but is
    outside that header in the DOM. Give it its own light foreground scope.
 */
-html #app-mount :is(.container_ybUK7Z, .header_XH4OpX, .panels_pog62O, .trailing_3zSH5d) {
+html
+  #app-mount
+  :is(.container_ybUK7Z, .header_XH4OpX, .panels_pog62O, .trailing_3zSH5d) {
   --header-primary: #fff3fa !important;
   --header-secondary: #fbeef2 !important;
   --text-normal: #fff3fa !important;
@@ -3466,17 +3590,32 @@ html #app-mount :is(.container_ybUK7Z, .header_XH4OpX, .panels_pog62O, .trailing
 
 /* Explicit foregrounds also cover nested theme scopes on header elements.
    Do not force SVG fills: outline icons, status dots and badges retain their art. */
-html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) :is(.icon_ybUK7Z, .iconWrapper_ybUK7Z),
+html
+  #app-mount
+  :is(.container_ybUK7Z, .trailing_3zSH5d)
+  :is(.icon_ybUK7Z, .iconWrapper_ybUK7Z),
 html #app-mount .trailing_3zSH5d .clickable_c99c29,
 html #app-mount .trailing_3zSH5d .clickable_c99c29 > svg {
   color: #fbeef2 !important;
 }
-html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) .clickable_ybUK7Z:hover .icon_ybUK7Z,
-html #app-mount :is(.container_ybUK7Z, .trailing_3zSH5d) .selected_ybUK7Z .icon_ybUK7Z {
+html
+  #app-mount
+  :is(.container_ybUK7Z, .trailing_3zSH5d)
+  .clickable_ybUK7Z:hover
+  .icon_ybUK7Z,
+html
+  #app-mount
+  :is(.container_ybUK7Z, .trailing_3zSH5d)
+  .selected_ybUK7Z
+  .icon_ybUK7Z {
   color: #fff8fc !important;
 }
 html #app-mount .container_ybUK7Z .titleWrapper_ybUK7Z,
-html #app-mount .container_ybUK7Z .titleWrapper_ybUK7Z > :is(h1, h2, div, span) {
+html
+  #app-mount
+  .container_ybUK7Z
+  .titleWrapper_ybUK7Z
+  > :is(h1, h2, div, span) {
   color: #fff3fa !important;
 }
 html #app-mount .container_ybUK7Z .topic_pVbL3l {
@@ -3504,15 +3643,26 @@ html #app-mount .member_Iy0c7A {
   --text-subtle: #412638 !important;
   --text-secondary: #412638 !important;
 }
-html #app-mount .member_Iy0c7A :is([class*="subText_"], [class*="subtext_"], [class*="activityText_"], [class*="customStatusText_"]) {
+html
+  #app-mount
+  .member_Iy0c7A
+  :is(
+    [class*="subText_"],
+    [class*="subtext_"],
+    [class*="activityText_"],
+    [class*="customStatusText_"]
+  ) {
   background-color: transparent !important;
   color: #412638 !important;
 }
-html #app-mount .member_Iy0c7A :is([class*="subText_"], [class*="subtext_"]) :is(span, a) {
+html
+  #app-mount
+  .member_Iy0c7A
+  :is([class*="subText_"], [class*="subtext_"])
+  :is(span, a) {
   color: #412638 !important;
 }
 /* ===== end v1.2 ===== */
-
 
 /* ===== v1.3: embedded YoRHA-UI assets / Oldcord layout retained =====
    Source: AccraZed/YoRHA-UI-BetterDiscord (assets supplied/referenced by user).
@@ -3562,13 +3712,24 @@ html #app-mount .tutorialContainer_1IyMuq .wrapper_JJ-hgR .childWrapper_JJ-hgR {
 
 /* Reuse the channel icon slot for the selector, with no extra pseudo-element.
    Voice/locked channel icons retain their functional meaning. */
-html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.modeLocked_TNyK-N) .iconContainer_TNyK-N {
+html
+  #app-mount
+  .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(
+    .modeLocked_TNyK-N
+  )
+  .iconContainer_TNyK-N {
   background-image: var(--yorha-asset-selector);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
 }
-html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.modeLocked_TNyK-N) .iconContainer_TNyK-N .icon_TNyK-N {
+html
+  #app-mount
+  .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(
+    .modeLocked_TNyK-N
+  )
+  .iconContainer_TNyK-N
+  .icon_TNyK-N {
   opacity: 0;
 }
 
@@ -3582,14 +3743,13 @@ html #app-mount .menu_M3qk4j {
 
 /* ===== end v1.3 ===== */
 
-
 /* ===== v1.4: menu texture, directional hover and native cursors =====
    Adapted from the supplied YoRHA-UI source and video.
    Oldcord dimensions, spacing, avatar shapes and panel positions stay intact.
    Texture strength and hover duration can be adjusted here.
 */
 :root {
-  --yorha-grid-ink: rgba(97,60,89,.045);
+  --yorha-grid-ink: rgba(97, 60, 89, 0.045);
   --yorha-hover-time: 320ms;
 }
 
@@ -3597,10 +3757,14 @@ html #app-mount .menu_M3qk4j {
 
 /* Channel menu rails are painted inside the existing channel tree. */
 html #app-mount .container_H5ozaj .content_tqapBM {
-  background-image: linear-gradient(to right,
-    transparent 0 2px, rgba(97,60,89,.32) 2px 4px,
-    transparent 4px 7px, rgba(97,60,89,.20) 7px 8px,
-    transparent 8px);
+  background-image: linear-gradient(
+    to right,
+    transparent 0 2px,
+    rgba(97, 60, 89, 0.32) 2px 4px,
+    transparent 4px 7px,
+    rgba(97, 60, 89, 0.2) 7px 8px,
+    transparent 8px
+  );
   background-repeat: no-repeat;
 }
 
@@ -3611,18 +3775,44 @@ html #app-mount .wrapper_TNyK-N .link_TNyK-N {
   background-repeat: no-repeat;
   background-position: left center;
   background-size: 0% 100%;
-  box-shadow: inset 0 1px transparent, inset 0 -1px transparent;
-  transition: background-size var(--yorha-hover-time) ease,
-              box-shadow var(--yorha-hover-time) ease;
+  box-shadow:
+    inset 0 1px transparent,
+    inset 0 -1px transparent;
+  transition:
+    background-size var(--yorha-hover-time) ease,
+    box-shadow var(--yorha-hover-time) ease;
 }
-html #app-mount .wrapper_TNyK-N:is(:hover, :focus-within, .modeSelected_TNyK-N, .modeConnected_TNyK-N) .link_TNyK-N {
+html
+  #app-mount
+  .wrapper_TNyK-N:is(
+    :hover,
+    :focus-within,
+    .modeSelected_TNyK-N,
+    .modeConnected_TNyK-N
+  )
+  .link_TNyK-N {
   background-size: 100% 100%;
-  box-shadow: inset 0 1px rgba(251,238,242,.6), inset 0 -1px rgba(251,238,242,.6);
+  box-shadow:
+    inset 0 1px rgba(251, 238, 242, 0.6),
+    inset 0 -1px rgba(251, 238, 242, 0.6);
 }
-html #app-mount .wrapper_TNyK-N:is(:hover, :focus-within, .modeSelected_TNyK-N, .modeConnected_TNyK-N) :is(.name_TNyK-N, .icon_TNyK-N, .actionIcon_Wx6SnQ) {
+html
+  #app-mount
+  .wrapper_TNyK-N:is(
+    :hover,
+    :focus-within,
+    .modeSelected_TNyK-N,
+    .modeConnected_TNyK-N
+  )
+  :is(.name_TNyK-N, .icon_TNyK-N, .actionIcon_Wx6SnQ) {
   color: #fff3fa !important;
 }
-html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.modeLocked_TNyK-N) .iconContainer_TNyK-N {
+html
+  #app-mount
+  .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(
+    .modeLocked_TNyK-N
+  )
+  .iconContainer_TNyK-N {
   background-image: var(--yorha-asset-selector-inverse);
 }
 
@@ -3630,17 +3820,32 @@ html #app-mount .wrapper_TNyK-N.modeSelected_TNyK-N:not(.typeVoice__2ea32):not(.
    so role colors, nameplate art and dark descriptions remain readable. */
 html #app-mount :is(.member_Iy0c7A, .member_86es0b) .childContainer_J1Adu_ {
   background-color: transparent !important;
-  background-image: linear-gradient(rgba(97,60,89,.18), rgba(97,60,89,.18));
+  background-image: linear-gradient(
+    rgba(97, 60, 89, 0.18),
+    rgba(97, 60, 89, 0.18)
+  );
   background-repeat: no-repeat;
   background-position: right center;
   background-size: 0% 100%;
-  box-shadow: inset 0 1px transparent, inset 0 -1px rgba(97,60,89,.16);
-  transition: background-size var(--yorha-hover-time) ease,
-              box-shadow var(--yorha-hover-time) ease;
+  box-shadow:
+    inset 0 1px transparent,
+    inset 0 -1px rgba(97, 60, 89, 0.16);
+  transition:
+    background-size var(--yorha-hover-time) ease,
+    box-shadow var(--yorha-hover-time) ease;
 }
-html #app-mount :is(.member_Iy0c7A, .member_86es0b):is(:hover, :focus-within, .selected_J1Adu_) .childContainer_J1Adu_ {
+html
+  #app-mount
+  :is(.member_Iy0c7A, .member_86es0b):is(
+    :hover,
+    :focus-within,
+    .selected_J1Adu_
+  )
+  .childContainer_J1Adu_ {
   background-size: 100% 100%;
-  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+  box-shadow:
+    inset 0 1px var(--yorha-line),
+    inset 0 -1px var(--yorha-line);
 }
 /* Avoid the previous instant whole-row hover paint competing with the sweep. */
 html #app-mount .member_Iy0c7A:hover {
@@ -3649,14 +3854,24 @@ html #app-mount .member_Iy0c7A:hover {
 
 /* Voice-panel decoration and button hover, within the existing dark panel. */
 html #app-mount .panels_pog62O {
-  box-shadow: inset 0 1px rgba(251,238,242,.45), inset 3px 0 rgba(251,238,242,.18);
+  box-shadow:
+    inset 0 1px rgba(251, 238, 242, 0.45),
+    inset 3px 0 rgba(251, 238, 242, 0.18);
 }
-html #app-mount .panels_pog62O button:not(:disabled):not([aria-disabled="true"]) {
-  transition: background-color 160ms ease, box-shadow 160ms ease;
+html
+  #app-mount
+  .panels_pog62O
+  button:not(:disabled):not([aria-disabled="true"]) {
+  transition:
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
-html #app-mount .panels_pog62O button:not(:disabled):not([aria-disabled="true"]):hover {
-  background-color: rgba(251,238,242,.14) !important;
-  box-shadow: inset 0 0 0 1px rgba(251,238,242,.35);
+html
+  #app-mount
+  .panels_pog62O
+  button:not(:disabled):not([aria-disabled="true"]):hover {
+  background-color: rgba(251, 238, 242, 0.14) !important;
+  box-shadow: inset 0 0 0 1px rgba(251, 238, 242, 0.35);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -3668,7 +3883,6 @@ html #app-mount .panels_pog62O button:not(:disabled):not([aria-disabled="true"])
 }
 /* ===== end v1.4 ===== */
 
-
 /* ===== v1.5: subtle YoRHa message nameplates within Oldcord spacing =====
    The reference uses 8px vertical padding and a 13px left offset. Neither is
    imported: original line height, margins, padding and avatar geometry remain.
@@ -3678,28 +3892,27 @@ html #app-mount .panels_pog62O button:not(:disabled):not([aria-disabled="true"])
 html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
   width: fit-content;
   max-width: 100%;
-  background-color: rgba(251,238,242,.92);
+  background-color: rgba(251, 238, 242, 0.92);
   border-radius: 2px;
   box-shadow:
-    0 1px 0 rgba(97,60,89,.30),
-    1px 0 0 rgba(97,60,89,.16),
-    inset 3px 0 0 rgba(97,60,89,.70);
+    0 1px 0 rgba(97, 60, 89, 0.3),
+    1px 0 0 rgba(97, 60, 89, 0.16),
+    inset 3px 0 0 rgba(97, 60, 89, 0.7);
 }
 /* Thin dark edge helps pale role colors on paper; no color or font override.
    Scope stays on message author names, not profile descriptions or role lists. */
 html #app-mount .message_SY_P2T .username_2i8Bfm {
   text-shadow:
-    -.35px 0 rgba(65,38,56,.60),
-     .35px 0 rgba(65,38,56,.60),
-     0 -.35px rgba(65,38,56,.50),
-     0 .65px rgba(65,38,56,.65);
+    -0.35px 0 rgba(65, 38, 56, 0.6),
+    0.35px 0 rgba(65, 38, 56, 0.6),
+    0 -0.35px rgba(65, 38, 56, 0.5),
+    0 0.65px rgba(65, 38, 56, 0.65);
 }
 html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm .timestamp_2i8Bfm {
   color: #613c59;
   text-shadow: none;
 }
 /* ===== end v1.5 ===== */
-
 
 /* ===== v1.6: nameplate breathing room and background-only grid ===== */
 html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
@@ -3708,28 +3921,53 @@ html #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
 }
 
 :root {
-  --yorha-grid-x: linear-gradient(90deg, transparent 4px, var(--yorha-grid-ink) 4px);
+  --yorha-grid-x: linear-gradient(
+    90deg,
+    transparent 4px,
+    var(--yorha-grid-ink) 4px
+  );
   --yorha-grid-y: linear-gradient(transparent 4px, var(--yorha-grid-ink) 4px);
 }
 
 /* Backgrounds are below descendants in the paint order. Images and videos,
    including the image viewer, no longer have a texture overlay above them. */
 html #app-mount .chatContent_z_gUBg .messagesWrapper_8AE1Qq {
-  background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper);
-  background-size: 5px 5px, 5px 5px, cover;
-  background-position: left top, left top, center;
+  background-image:
+    var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper);
+  background-size:
+    5px 5px,
+    5px 5px,
+    cover;
+  background-position:
+    left top,
+    left top,
+    center;
   background-repeat: repeat, repeat, no-repeat;
 }
 @media (orientation: portrait) {
   html #app-mount .chatContent_z_gUBg .messagesWrapper_8AE1Qq {
-    background-image: var(--yorha-grid-x), var(--yorha-grid-y), var(--yorha-asset-wallpaper-portrait);
+    background-image:
+      var(--yorha-grid-x), var(--yorha-grid-y),
+      var(--yorha-asset-wallpaper-portrait);
   }
 }
 
 /* Opaque interface surfaces only: no image wrappers, profile artwork, or modals. */
-html #app-mount :is(.container_H5ozaj, .members_86es0b, .scroller_5dqHTG, .container_ybUK7Z, .header_XH4OpX, .panels_pog62O, .scrollableContainer_2x8-Qn) {
+html
+  #app-mount
+  :is(
+    .container_H5ozaj,
+    .members_86es0b,
+    .scroller_5dqHTG,
+    .container_ybUK7Z,
+    .header_XH4OpX,
+    .panels_pog62O,
+    .scrollableContainer_2x8-Qn
+  ) {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
-  background-size: 5px 5px, 5px 5px;
+  background-size:
+    5px 5px,
+    5px 5px;
   background-position: left top;
   background-repeat: repeat;
 }
@@ -3758,9 +3996,13 @@ html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
 }
 /* ===== end v1.7 ===== */
 
-
 /* Keep the chat surface visible when the message scroller paints a background. */
-html body #app-mount [class*="chatContent_"] [class*="messagesWrapper_"] > [class*="scroller_"] {
+html
+  body
+  #app-mount
+  [class*="chatContent_"]
+  [class*="messagesWrapper_"]
+  > [class*="scroller_"] {
   background-color: transparent;
 }
 
@@ -3768,22 +4010,41 @@ html body #app-mount [class*="chatContent_"] [class*="messagesWrapper_"] > [clas
 html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] {
   --custom-channel-textarea-text-area-height: 44px;
 }
-html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] [class*="textArea_"] {
+html
+  body
+  #app-mount
+  [class*="chatContent_"]
+  [class*="channelTextArea_"]
+  [class*="textArea_"] {
   min-height: 44px;
 }
-html body #app-mount [class*="chatContent_"] [class*="channelTextArea_"] [class*="slateTextArea_"] {
+html
+  body
+  #app-mount
+  [class*="chatContent_"]
+  [class*="channelTextArea_"]
+  [class*="slateTextArea_"] {
   padding-top: 11px;
   padding-bottom: 11px;
   line-height: 22px;
 }
 
-
 /* Attachment and action controls must fit the compact editor row. */
-html body #app-mount .chatContent_z_gUBg .channelTextArea_2x8-Qn .buttons_2x8-Qn {
+html
+  body
+  #app-mount
+  .chatContent_z_gUBg
+  .channelTextArea_2x8-Qn
+  .buttons_2x8-Qn {
   height: 44px;
   align-items: center;
 }
-html body #app-mount .chatContent_z_gUBg .channelTextArea_2x8-Qn .attachWrapper_7TM4SO {
+html
+  body
+  #app-mount
+  .chatContent_z_gUBg
+  .channelTextArea_2x8-Qn
+  .attachWrapper_7TM4SO {
   padding-top: 6px;
   padding-bottom: 6px;
   box-sizing: border-box;
@@ -3799,13 +4060,18 @@ html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
    contents and reserve space before the attachment button. */
 html body #app-mount .channelTextArea_z_gUBg .scrollableContainer_2x8-Qn {
   background-image:
-    linear-gradient(to right,
+    linear-gradient(
+      to right,
       var(--yorha-ink) 0 12px,
       var(--yorha-paper-light) 12px 17px,
       var(--yorha-ink) 17px 20px,
-      transparent 20px),
+      transparent 20px
+    ),
     var(--yorha-grid-x), var(--yorha-grid-y);
-  background-size: 100% 100%, 5px 5px, 5px 5px;
+  background-size:
+    100% 100%,
+    5px 5px,
+    5px 5px;
   background-position: left top;
   background-repeat: no-repeat, repeat, repeat;
   padding-inline-start: 22px;
@@ -3819,7 +4085,9 @@ html body #app-mount .sidebar_pog62O > .guilds_pog62O,
 html body #app-mount .sidebar_pog62O > .wrapper_5dqHTG,
 html body #app-mount .formWithLoadedChatInput_z_gUBg {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
-  background-size: 5px 5px, 5px 5px !important;
+  background-size:
+    5px 5px,
+    5px 5px !important;
   background-position: left top !important;
   background-repeat: repeat !important;
 }
@@ -3839,15 +4107,15 @@ html body #app-mount [class*="toolsContainer_"] [class*="keybind_"] {
   color: #613c59 !important;
 }
 html body #app-mount [class*="toolsContainer_"] [class*="closeButton_"]:hover {
-  background-color: rgba(97,60,89,.12) !important;
+  background-color: rgba(97, 60, 89, 0.12) !important;
 }
 
 /* SpotifyControls: paper surface, local grid, and contained panel edges.
    Plugin selectors checked against its spotifyStyles.css. */
 html body #app-mount #vc-spotify-player {
   --vc-spotify-green: var(--yorha-ink);
-  --vc-spotify-green-90: rgba(97,60,89,.10);
-  --vc-spotify-green-80: rgba(97,60,89,.20);
+  --vc-spotify-green-90: rgba(97, 60, 89, 0.1);
+  --vc-spotify-green-80: rgba(97, 60, 89, 0.2);
   --text-strong: var(--yorha-ink);
   --text-default: var(--yorha-ink);
   --text-normal: var(--yorha-ink);
@@ -3855,7 +4123,7 @@ html body #app-mount #vc-spotify-player {
   --interactive-icon-default: var(--yorha-ink);
   --interactive-icon-hover: #412638;
   --interactive-icon-active: var(--yorha-ink);
-  --background-mod-strong: rgba(97,60,89,.12);
+  --background-mod-strong: rgba(97, 60, 89, 0.12);
   background-color: var(--yorha-paper) !important;
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
   background-size: 5px 5px;
@@ -3867,11 +4135,21 @@ html body #app-mount #vc-spotify-player {
   min-width: 0;
   max-width: 100%;
   margin: 0 4px !important;
-  border: 1px solid rgba(97,60,89,.25);
+  border: 1px solid rgba(97, 60, 89, 0.25);
   border-radius: 2px;
   box-shadow: none;
 }
-html body #app-mount #vc-spotify-player :is(#vc-spotify-song-title, .vc-spotify-artist, .vc-spotify-album, .vc-spotify-comma, .vc-spotify-progress-time) {
+html
+  body
+  #app-mount
+  #vc-spotify-player
+  :is(
+    #vc-spotify-song-title,
+    .vc-spotify-artist,
+    .vc-spotify-album,
+    .vc-spotify-comma,
+    .vc-spotify-progress-time
+  ) {
   color: var(--yorha-ink) !important;
   text-shadow: none;
 }
@@ -3880,14 +4158,22 @@ html body #app-mount #vc-spotify-player .vc-spotify-button {
   border-radius: 2px;
 }
 html body #app-mount #vc-spotify-player .vc-spotify-button:hover {
-  background-color: rgba(97,60,89,.14);
+  background-color: rgba(97, 60, 89, 0.14);
 }
-html body #app-mount #vc-spotify-player :is(.vc-spotify-repeat-context, .vc-spotify-repeat-track, .vc-spotify-shuffle-on) {
+html
+  body
+  #app-mount
+  #vc-spotify-player
+  :is(
+    .vc-spotify-repeat-context,
+    .vc-spotify-repeat-track,
+    .vc-spotify-shuffle-on
+  ) {
   background-color: var(--yorha-ink) !important;
   color: var(--yorha-paper-light) !important;
 }
 html body #app-mount #vc-spotify-progress-bar [class*="bar_"] {
-  background-color: rgba(97,60,89,.22) !important;
+  background-color: rgba(97, 60, 89, 0.22) !important;
 }
 html body #app-mount #vc-spotify-progress-bar [class*="barFill"] {
   background-color: var(--yorha-ink) !important;
@@ -3900,18 +4186,44 @@ html body #app-mount #vc-spotify-progress-bar [class*="grabber"] {
 
 /* Settings X: cover the newer modal layout as well as the classic tools column.
    Apply only at rest so the existing hover appearance is preserved. */
-html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) {
+html
+  body
+  #app-mount
+  :is(
+    [class*="toolsContainer_"],
+    [class*="standardSidebarView_"],
+    [role="dialog"]
+  )
+  [class*="closeButton_"]:not(:hover) {
   color: #412638 !important;
   --interactive-normal: #412638;
   --interactive-icon-default: #412638;
   --icon-primary: #412638;
 }
-html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) :is(svg, path:not([fill="none"])) {
+html
+  body
+  #app-mount
+  :is(
+    [class*="toolsContainer_"],
+    [class*="standardSidebarView_"],
+    [role="dialog"]
+  )
+  [class*="closeButton_"]:not(:hover)
+  :is(svg, path:not([fill="none"])) {
   color: #412638 !important;
   fill: #412638 !important;
   opacity: 1 !important;
 }
-html body #app-mount :is([class*="toolsContainer_"], [class*="standardSidebarView_"], [role="dialog"]) [class*="closeButton_"]:not(:hover) [stroke]:not([stroke="none"]) {
+html
+  body
+  #app-mount
+  :is(
+    [class*="toolsContainer_"],
+    [class*="standardSidebarView_"],
+    [role="dialog"]
+  )
+  [class*="closeButton_"]:not(:hover)
+  [stroke]:not([stroke="none"]) {
   stroke: #412638 !important;
 }
 
@@ -3924,13 +4236,27 @@ html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm {
   background-size: 0% 100%;
   transition: background-size var(--yorha-hover-time) ease;
 }
-html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm:has(.username_2i8Bfm:is(:hover, :focus-visible)) {
+html
+  body
+  #app-mount
+  .cozyMessage_SY_P2T
+  .header_2i8Bfm:has(.username_2i8Bfm:is(:hover, :focus-visible)) {
   background-size: 100% 100%;
 }
-html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm .username_2i8Bfm:is(:hover, :focus-visible) {
+html
+  body
+  #app-mount
+  .cozyMessage_SY_P2T
+  .header_2i8Bfm
+  .username_2i8Bfm:is(:hover, :focus-visible) {
   text-decoration: none !important;
 }
-html body #app-mount .cozyMessage_SY_P2T .header_2i8Bfm:has(.username_2i8Bfm:is(:hover, :focus-visible)) :is(.username_2i8Bfm, .timestamp_2i8Bfm) {
+html
+  body
+  #app-mount
+  .cozyMessage_SY_P2T
+  .header_2i8Bfm:has(.username_2i8Bfm:is(:hover, :focus-visible))
+  :is(.username_2i8Bfm, .timestamp_2i8Bfm) {
   color: #fff3fa !important;
   text-shadow: none !important;
 }
@@ -3948,33 +4274,54 @@ html body #app-mount :is(.top_6zZYhF, .topPill_6zZYhF) .item_6zZYhF {
 /* Fine but visible boundaries between servers, channel list, and chat.
    Inset shadows preserve the Oldcord column widths. */
 html body #app-mount .sidebar_pog62O > .guilds_pog62O {
-  box-shadow: inset -1px 0 0 rgba(97,60,89,.60);
+  box-shadow: inset -1px 0 0 rgba(97, 60, 89, 0.6);
 }
 html body #app-mount .sidebarList_pog62O {
-  box-shadow: inset -2px 0 0 rgba(97,60,89,.50);
+  box-shadow: inset -2px 0 0 rgba(97, 60, 89, 0.5);
 }
 
 /* A call can keep a DM in this list after its messages have been read.
    Replace only an existing native notification counter. */
-html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"]:has([class*="numberBadge_"]) {
+html
+  body
+  #app-mount
+  #guild-list-unread-dms
+  [class*="lowerBadge_"]:has([class*="numberBadge_"]) {
   border: 0 !important;
   margin: 0 !important;
   width: 20px;
   height: 20px;
   pointer-events: none;
 }
-html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"]:has([class*="numberBadge_"])::after {
+html
+  body
+  #app-mount
+  #guild-list-unread-dms
+  [class*="lowerBadge_"]:has([class*="numberBadge_"])::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-14.svg") center / contain no-repeat;
+  background: url("https://raw.githubusercontent.com/MavisWRK/MVSCord-YoRHa/main/assets/icons/legacy-icon-14.svg")
+    center / contain no-repeat;
 }
-html body #app-mount #guild-list-unread-dms [class*="lowerBadge_"] [class*="numberBadge_"] {
+html
+  body
+  #app-mount
+  #guild-list-unread-dms
+  [class*="lowerBadge_"]
+  [class*="numberBadge_"] {
   opacity: 0 !important;
 }
 
 /* DM sidebar: texture on painted background surfaces, below profile artwork. */
-html body #app-mount .sidebarList_pog62O :is([class*="privateChannels_"], [class*="privateChannels_"] > [class*="scroller_"]) {
+html
+  body
+  #app-mount
+  .sidebarList_pog62O
+  :is(
+    [class*="privateChannels_"],
+    [class*="privateChannels_"] > [class*="scroller_"]
+  ) {
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
   background-size: 5px 5px !important;
   background-position: left top;
@@ -3983,16 +4330,26 @@ html body #app-mount .sidebarList_pog62O :is([class*="privateChannels_"], [class
 /* Match the server member sweep on DM entries. Keep custom profile art intact. */
 html body #app-mount .sidebarList_pog62O .interactive_zln_tS {
   background-color: transparent !important;
-  background-image: linear-gradient(rgba(97,60,89,.18), rgba(97,60,89,.18)) !important;
+  background-image: linear-gradient(
+    rgba(97, 60, 89, 0.18),
+    rgba(97, 60, 89, 0.18)
+  ) !important;
   background-repeat: no-repeat !important;
   background-position: right center !important;
   background-size: 0% 100% !important;
-  transition: background-size var(--yorha-hover-time) ease,
-              box-shadow var(--yorha-hover-time) ease;
+  transition:
+    background-size var(--yorha-hover-time) ease,
+    box-shadow var(--yorha-hover-time) ease;
 }
-html body #app-mount .sidebarList_pog62O .interactive_zln_tS:is(:hover, :focus-within, .interactiveSelected_zln_tS) {
+html
+  body
+  #app-mount
+  .sidebarList_pog62O
+  .interactive_zln_tS:is(:hover, :focus-within, .interactiveSelected_zln_tS) {
   background-size: 100% 100% !important;
-  box-shadow: inset 0 1px var(--yorha-line), inset 0 -1px var(--yorha-line);
+  box-shadow:
+    inset 0 1px var(--yorha-line),
+    inset 0 -1px var(--yorha-line);
 }
 @media (prefers-reduced-motion: reduce) {
   html body #app-mount .sidebarList_pog62O .interactive_zln_tS {
@@ -4014,7 +4371,7 @@ html body #app-mount .sidebar_pog62O > .guilds_pog62O::after {
   bottom: 12px;
   right: 0;
   width: 1px;
-  background-color: rgba(97,60,89,.60);
+  background-color: rgba(97, 60, 89, 0.6);
   z-index: 2;
   pointer-events: none;
 }
@@ -4063,61 +4420,104 @@ html body #app-mount .panels_pog62O [class*="activityPanel_"] {
   min-width: 0;
   max-width: 100%;
   margin: 4px 4px 0 !important;
-  border: 1px solid rgba(97,60,89,.25) !important;
+  border: 1px solid rgba(97, 60, 89, 0.25) !important;
   border-radius: 0 !important;
   box-shadow: none;
 }
-html body #app-mount .panels_pog62O [class*="activityPanel_"] :is([class*="title_"], [class*="activityName_"]) {
+html
+  body
+  #app-mount
+  .panels_pog62O
+  [class*="activityPanel_"]
+  :is([class*="title_"], [class*="activityName_"]) {
   color: #412638 !important;
 }
-html body #app-mount .panels_pog62O [class*="activityPanel_"] :is([class*="subtext_"], [class*="subText_"]) {
+html
+  body
+  #app-mount
+  .panels_pog62O
+  [class*="activityPanel_"]
+  :is([class*="subtext_"], [class*="subText_"]) {
   color: #705062 !important;
 }
 html body #app-mount .panels_pog62O [class*="activityPanel_"] button {
   color: #613c59 !important;
 }
 html body #app-mount .panels_pog62O [class*="activityPanel_"] button:hover {
-  background-color: rgba(97,60,89,.14) !important;
+  background-color: rgba(97, 60, 89, 0.14) !important;
 }
 
 /* Voice action buttons: readable surfaces on the dark connection panel. */
-html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not([aria-pressed="true"]) {
+html
+  body
+  #app-mount
+  .panels_pog62O
+  .container_9U6LUN
+  .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not([aria-pressed="true"]) {
   background: var(--yorha-paper) !important;
   color: #412638 !important;
   --interactive-normal: #412638;
   --interactive-icon-default: #412638;
   --icon-primary: #412638;
-  box-shadow: inset 0 0 0 1px rgba(251,238,242,.50) !important;
+  box-shadow: inset 0 0 0 1px rgba(251, 238, 242, 0.5) !important;
 }
-html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not([aria-pressed="true"]):hover:not(:disabled):not([aria-disabled="true"]) {
+html
+  body
+  #app-mount
+  .panels_pog62O
+  .container_9U6LUN
+  .buttonColor_9U6LUN:not(.buttonActive_9U6LUN):not(
+    [aria-pressed="true"]
+  ):hover:not(:disabled):not([aria-disabled="true"]) {
   background: var(--yorha-paper-light) !important;
   color: #412638 !important;
 }
 html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN svg {
   color: inherit !important;
 }
-html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN svg path:not([fill="none"]) {
+html
+  body
+  #app-mount
+  .panels_pog62O
+  .container_9U6LUN
+  .buttonColor_9U6LUN
+  svg
+  path:not([fill="none"]) {
   fill: currentColor !important;
 }
-html body #app-mount .panels_pog62O .container_9U6LUN .buttonColor_9U6LUN:is(:disabled, [aria-disabled="true"]) {
-  opacity: .45 !important;
+html
+  body
+  #app-mount
+  .panels_pog62O
+  .container_9U6LUN
+  .buttonColor_9U6LUN:is(:disabled, [aria-disabled="true"]) {
+  opacity: 0.45 !important;
 }
 
 /* Profile dialogs: let the profile surface own its rounded outline.
    The generic modal paper/shadow otherwise peeks out behind its corners. */
-html body #app-mount :is(.root__KoJTP, [data-mana-component="modal"], [data-mana-component="layer-modal"]):is(
-  .user-profile-modal,
-  .user-profile-modal-v2,
-  :has(.user-profile-modal, .user-profile-modal-v2, [class*="profileCustomization_"])
-) {
+html
+  body
+  #app-mount
+  :is(
+    .root__KoJTP,
+    [data-mana-component="modal"],
+    [data-mana-component="layer-modal"]
+  ):is(
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    :has(
+      .user-profile-modal,
+      .user-profile-modal-v2,
+      [class*="profileCustomization_"]
+    )
+  ) {
   background-color: transparent !important;
   background-image: none !important;
   border: 0 !important;
   outline: none !important;
   box-shadow: none !important;
 }
-
-
 
 /* Pink edition — blush surfaces, plum text, vivid pink/lilac details.
    Wallpaper blending affects only the chat background, never media or profiles. */
@@ -4129,16 +4529,34 @@ html body #app-mount .messagesWrapper_8AE1Qq {
   background-color: #f6e7ec !important;
   background-blend-mode: normal, normal, luminosity;
 }
-html body #app-mount :is(.interactiveSelected_zln_tS, .selected_6zZYhF.item_6zZYhF, .active_ifLhOx) {
+html
+  body
+  #app-mount
+  :is(
+    .interactiveSelected_zln_tS,
+    .selected_6zZYhF.item_6zZYhF,
+    .active_ifLhOx
+  ) {
   box-shadow: inset 3px 0 0 var(--mvscord-pink-accent);
 }
-html body #app-mount .wrapper_TNyK-N:is(:hover, :focus-within, .modeSelected_TNyK-N, .modeConnected_TNyK-N) .link_TNyK-N {
-  box-shadow: inset 0 1px rgba(239,98,187,.7), inset 0 -1px rgba(239,98,187,.7);
+html
+  body
+  #app-mount
+  .wrapper_TNyK-N:is(
+    :hover,
+    :focus-within,
+    .modeSelected_TNyK-N,
+    .modeConnected_TNyK-N
+  )
+  .link_TNyK-N {
+  box-shadow:
+    inset 0 1px rgba(239, 98, 187, 0.7),
+    inset 0 -1px rgba(239, 98, 187, 0.7);
 }
 html body #app-mount #vc-spotify-player {
   --vc-spotify-green: #9462d9;
-  --vc-spotify-green-90: rgba(148,98,217,.12);
-  --vc-spotify-green-80: rgba(148,98,217,.24);
+  --vc-spotify-green-90: rgba(148, 98, 217, 0.12);
+  --vc-spotify-green-80: rgba(148, 98, 217, 0.24);
 }
 
 /* Palette coverage includes nested application themes, except custom profile
@@ -4148,7 +4566,11 @@ html body #app-mount #vc-spotify-player {
    This is local to settings; Nitro profile theme boundaries stay native. */
 html body #app-mount .sidebar_1d0xGU .fixedContent__409aa::after,
 html body #app-mount .fixedContent__409aa::after {
-  background: linear-gradient(to bottom, var(--yorha-paper-deep), transparent) !important;
+  background: linear-gradient(
+    to bottom,
+    var(--yorha-paper-deep),
+    transparent
+  ) !important;
   box-shadow: none !important;
   pointer-events: none;
 }
@@ -4172,21 +4594,42 @@ html body #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn) {
   color: var(--yorha-ink) !important;
   caret-color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn)
-:is([role="textbox"], [contenteditable="true"], textarea) {
+html
+  body
+  #app-mount
+  :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn)
+  :is([role="textbox"], [contenteditable="true"], textarea) {
   color: var(--yorha-ink) !important;
   caret-color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn)
-:is([class*="placeholder_"], [data-slate-placeholder="true"]),
-html body #app-mount :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn) textarea::placeholder {
+html
+  body
+  #app-mount
+  :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn)
+  :is([class*="placeholder_"], [data-slate-placeholder="true"]),
+html
+  body
+  #app-mount
+  :is(.channelTextArea_2x8-Qn, .scrollableContainer_2x8-Qn)
+  textarea::placeholder {
   color: var(--yorha-muted) !important;
   opacity: 1;
 }
 
 /* Profile message composer: one painted surface and one rounded outline.
    No clipping on the profile itself: decorations and effects remain intact. */
-html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer_NOlkhE) .channelTextArea_2x8-Qn {
+html
+  body
+  #app-mount
+  :is(
+    .user-profile-popout,
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    .custom-user-profile-theme,
+    [class*="userProfile"],
+    .footer_NOlkhE
+  )
+  .channelTextArea_2x8-Qn {
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -4196,7 +4639,19 @@ html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profil
   height: auto !important;
   min-height: 0;
 }
-html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer_NOlkhE) .channelTextArea_2x8-Qn .scrollableContainer_2x8-Qn {
+html
+  body
+  #app-mount
+  :is(
+    .user-profile-popout,
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    .custom-user-profile-theme,
+    [class*="userProfile"],
+    .footer_NOlkhE
+  )
+  .channelTextArea_2x8-Qn
+  .scrollableContainer_2x8-Qn {
   box-sizing: border-box;
   max-width: 100%;
   min-width: 0;
@@ -4207,15 +4662,53 @@ html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profil
   box-shadow: inset 0 0 0 1px var(--yorha-line) !important;
   background-clip: padding-box;
 }
-html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer_NOlkhE) .channelTextArea_2x8-Qn [class*="emojiButton_"] {
+html
+  body
+  #app-mount
+  :is(
+    .user-profile-popout,
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    .custom-user-profile-theme,
+    [class*="userProfile"],
+    .footer_NOlkhE
+  )
+  .channelTextArea_2x8-Qn
+  [class*="emojiButton_"] {
   color: var(--yorha-ink-strong) !important;
   opacity: 1 !important;
 }
-html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer_NOlkhE) .channelTextArea_2x8-Qn [class*="emojiButton_"] .spriteContainer_SjG8Ug {
+html
+  body
+  #app-mount
+  :is(
+    .user-profile-popout,
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    .custom-user-profile-theme,
+    [class*="userProfile"],
+    .footer_NOlkhE
+  )
+  .channelTextArea_2x8-Qn
+  [class*="emojiButton_"]
+  .spriteContainer_SjG8Ug {
   opacity: 1 !important;
-  filter: grayscale(1) brightness(.42) !important;
+  filter: grayscale(1) brightness(0.42) !important;
 }
-html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profile-modal-v2, .custom-user-profile-theme, [class*="userProfile"], .footer_NOlkhE) .channelTextArea_2x8-Qn [class*="emojiButton_"]:hover .spriteContainer_SjG8Ug {
+html
+  body
+  #app-mount
+  :is(
+    .user-profile-popout,
+    .user-profile-modal,
+    .user-profile-modal-v2,
+    .custom-user-profile-theme,
+    [class*="userProfile"],
+    .footer_NOlkhE
+  )
+  .channelTextArea_2x8-Qn
+  [class*="emojiButton_"]:hover
+  .spriteContainer_SjG8Ug {
   filter: none !important;
 }
 
@@ -4224,7 +4717,14 @@ html body #app-mount :is(.user-profile-popout, .user-profile-modal, .user-profil
 html body #app-mount .messageContent_2i8Bfm {
   color: var(--yorha-ink) !important;
 }
-html body #app-mount :is(.textContainer_BOOBu-, [class*="textContainer_"]:has(code), [class*="codeView_"]) {
+html
+  body
+  #app-mount
+  :is(
+    .textContainer_BOOBu-,
+    [class*="textContainer_"]:has(code),
+    [class*="codeView_"]
+  ) {
   --text-normal: var(--yorha-ink-strong) !important;
   --text-default: var(--yorha-ink-strong) !important;
   --text-primary: var(--yorha-ink-strong) !important;
@@ -4237,94 +4737,364 @@ html body #app-mount :is(code, pre, .hljs) {
   background-color: var(--yorha-paper-light) !important;
   color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.textContainer_BOOBu-, [class*="codeView_"]) :is(td, [class*="text_"]) {
+html
+  body
+  #app-mount
+  :is(.textContainer_BOOBu-, [class*="codeView_"])
+  :is(td, [class*="text_"]) {
   color: var(--yorha-ink-strong) !important;
 }
-html body #app-mount :is(.textContainer_BOOBu-, [class*="codeView_"]) :is([class*="lineNumber"], [class*="lineNumbers"]) {
+html
+  body
+  #app-mount
+  :is(.textContainer_BOOBu-, [class*="codeView_"])
+  :is([class*="lineNumber"], [class*="lineNumbers"]) {
   color: var(--yorha-muted) !important;
 }
-html body #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) { color: #625747 !important; }
-html body #app-mount :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) { color: #725035 !important; }
-html body #app-mount :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) { color: #3c6143 !important; }
-html body #app-mount :is(.hljs-title, .hljs-built_in, .hljs-symbol) { color: #70516b !important; }
-html body #app-mount :is(.hljs-number, .hljs-attr, .hljs-attribute, .hljs-variable, .hljs-operator, .hljs-selector-attr, .hljs-selector-class, .hljs-selector-id) { color: #345e6b !important; }
+html body #app-mount :is(.hljs-comment, .hljs-quote, .hljs-formula) {
+  color: #625747 !important;
+}
+html
+  body
+  #app-mount
+  :is(.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-meta) {
+  color: #725035 !important;
+}
+html
+  body
+  #app-mount
+  :is(.hljs-string, .hljs-regexp, .hljs-name, .hljs-selector-pseudo) {
+  color: #3c6143 !important;
+}
+html body #app-mount :is(.hljs-title, .hljs-built_in, .hljs-symbol) {
+  color: #70516b !important;
+}
+html
+  body
+  #app-mount
+  :is(
+    .hljs-number,
+    .hljs-attr,
+    .hljs-attribute,
+    .hljs-variable,
+    .hljs-operator,
+    .hljs-selector-attr,
+    .hljs-selector-class,
+    .hljs-selector-id
+  ) {
+  color: #345e6b !important;
+}
 
 /* Syntax highlighting: retain token-level colors, including inline colors in
    attachment previews. Never force every span to inherit the base foreground. */
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attr,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-attribute,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.property,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.attr-name,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#9cdcfe" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156, 220, 254)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(156,220,254)" i] { color: #145b80 !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .hljs-attribute,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .token.property,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .token.attr-name,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#9cdcfe" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(156, 220, 254)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(156,220,254)" i] {
+  color: #145b80 !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-string,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-regexp,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.string,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#ce9178" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206, 145, 120)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(206,145,120)" i] { color: #913c26 !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#ce9178" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(206, 145, 120)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(206,145,120)" i] {
+  color: #913c26 !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-keyword,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-literal,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.keyword,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.boolean,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#569cd6" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86, 156, 214)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(86,156,214)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#c586c0" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197, 134, 192)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(197,134,192)" i] { color: #7040a0 !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#569cd6" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(86, 156, 214)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(86,156,214)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#c586c0" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(197, 134, 192)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(197,134,192)" i] {
+  color: #7040a0 !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-number,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.number,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#b5cea8" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181, 206, 168)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(181,206,168)" i] { color: #37613b !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#b5cea8" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(181, 206, 168)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(181,206,168)" i] {
+  color: #37613b !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-title,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-built_in,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.function,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#dcdcaa" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220, 220, 170)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220,220,170)" i] { color: #76550b !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .token.function,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#dcdcaa" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(220, 220, 170)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(220,220,170)" i] {
+  color: #76550b !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-comment,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-quote,
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.comment,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#6a9955" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106, 153, 85)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(106,153,85)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#608b4e" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96, 139, 78)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(96,139,78)" i] { color: #5d6550 !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#6a9955" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(106, 153, 85)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(106,153,85)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#608b4e" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(96, 139, 78)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(96,139,78)" i] {
+  color: #5d6550 !important;
+}
 html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-type,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.class-name,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#4ec9b0" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78, 201, 176)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(78,201,176)" i] { color: #21645f !important; }
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .token.class-name,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#4ec9b0" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(78, 201, 176)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(78,201,176)" i] {
+  color: #21645f !important;
+}
 
 /* Light surfaces: remap only neutral highlighter foregrounds. Keep colored
    syntax spans intact, including JSON keys, strings, booleans and numbers. */
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .hljs-punctuation,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) .token.punctuation,
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#d4d4d4" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(212, 212, 212)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(212,212,212)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#dcdcdc" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220, 220, 220)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(220,220,220)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#cccccc" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(204, 204, 204)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(204,204,204)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#d6deeb" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(214, 222, 235)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(214,222,235)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#c9d1d9" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(201, 209, 217)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(201,209,217)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#abb2bf" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(171, 178, 191)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(171,178,191)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="#ffffff" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255, 255, 255)" i],
-html body #app-mount :is(code, pre, .hljs, [class*="codeView_"]) span[style*="rgb(255,255,255)" i] {
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .hljs-punctuation,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  .token.punctuation,
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#d4d4d4" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(212, 212, 212)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(212,212,212)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#dcdcdc" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(220, 220, 220)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(220,220,220)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#cccccc" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(204, 204, 204)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(204,204,204)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#d6deeb" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(214, 222, 235)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(214,222,235)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#c9d1d9" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(201, 209, 217)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(201,209,217)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#abb2bf" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(171, 178, 191)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(171,178,191)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="#ffffff" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(255, 255, 255)" i],
+html
+  body
+  #app-mount
+  :is(code, pre, .hljs, [class*="codeView_"])
+  span[style*="rgb(255,255,255)" i] {
   color: var(--yorha-ink-strong) !important;
 }
 /* Draw the top edge inside the panel itself, rather than extending a
@@ -4381,14 +5151,22 @@ html body #app-mount .sidebarList_pog62O {
 
 /* The guild rail's right-edge pseudo-element sits one column outside the
    server header. Remove that parallel line on servers with a banner. */
-html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::after {
+html
+  body
+  #app-mount
+  .sidebar_pog62O:has(.hasBanner_XH4OpX)
+  > .guilds_pog62O::after {
   content: none !important;
   display: none !important;
 }
 
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
-  --yorha-column-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
+  --yorha-column-stroke: color-mix(
+    in srgb,
+    var(--yorha-ink),
+    var(--yorha-paper-light)
+  );
   margin-inline: 0 !important;
   width: 100% !important;
   min-width: 0;
@@ -4438,13 +5216,7 @@ html body #app-mount .bannerImg_XH4OpX {
 }
 
 html body #app-mount .bannerImg_XH4OpX {
-  /* Fit below the overlaid title inside the existing native banner box.
-     Padding belongs to the image's border box, so list geometry stays native. */
-  height: 100% !important;
-  box-sizing: border-box;
-  padding-top: var(--custom-channel-header-height, 48px);
-  object-fit: contain;
-  object-position: center bottom;
+  object-fit: cover;
 }
 
 /* Theme frame for the channel toolbar. */
@@ -4453,9 +5225,17 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
-  --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
+  --yorha-topbar-stroke: color-mix(
+    in srgb,
+    var(--yorha-ink),
+    var(--yorha-paper-light)
+  );
   border: 1px solid var(--yorha-topbar-stroke) !important;
-  border-bottom-color: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
+  border-bottom-color: color-mix(
+    in srgb,
+    var(--yorha-topbar-stroke) 80%,
+    black
+  ) !important;
   outline: none !important;
   box-shadow: var(--yorha-topbar-elevation, none) !important;
   /* A shared viewport origin keeps the 5px grid continuous across columns. */
