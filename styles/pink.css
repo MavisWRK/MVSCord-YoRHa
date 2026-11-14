@@ -4478,6 +4478,17 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
   box-shadow: none !important;
 }
 
+/* Cover the bright artwork seam with the toolbar's divider on hover. The
+   overlay straddles the edge without changing banner or channel-list height. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::after {
+  content: "" !important;
+  position: absolute;
+  inset: auto 0 -1px;
+  height: 2px;
+  background: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
+  pointer-events: none;
+}
+
 /* Fade the artwork's top edge without changing native banner dimensions. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   mask-image: linear-gradient(to bottom, transparent 1px, black 4px);
