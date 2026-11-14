@@ -4429,17 +4429,14 @@ html body #app-mount .sidebar_pog62O > .panels_pog62O {
   box-shadow: inset 0 1px var(--yorha-line) !important;
 }
 
-/* Voice status must stay readable on the dark panel before hover. */
-html body #app-mount .panels_pog62O .container_9U6LUN :is(.rtcConnectionStatus_4LJE6I, .rtcConnectionStatusWrapper_4LJE6I, .connection_9U6LUN) {
+/* The voice channel's activity line (e.g. the current song under Lounge)
+   uses muted text outside hover. Keep it legible on selected dark rows. */
+html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus_"], [class*="voiceChannelStatusText_"], [class*="channelStatus_"], [class*="channelStatusText_"]) {
+  color: var(--yorha-ink) !important;
   opacity: 1 !important;
 }
-html body #app-mount .panels_pog62O .container_9U6LUN .rtcConnectionStatusConnected_4LJE6I {
-  color: #a6d6a2 !important;
-}
-html body #app-mount .panels_pog62O .container_9U6LUN .rtcConnectionStatusWrapper_4LJE6I .text-sm\/medium_cf4812.lineClamp1_MMUIw6,
-html body #app-mount .panels_pog62O .container_9U6LUN .subtext_yc3axZ {
+html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus_"], [class*="voiceChannelStatusText_"], [class*="channelStatus_"], [class*="channelStatusText_"]) {
   color: var(--yorha-paper-light) !important;
-  opacity: 1 !important;
 }
 
 /* Keep the shared column from growing to the intrinsic width of song titles. */
