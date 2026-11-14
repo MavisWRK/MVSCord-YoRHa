@@ -4470,7 +4470,7 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
 
 /* Theme only the server's translucent glass. A transparent palette tint
    replaces native gray without an opaque surface over the banner. */
-html body #app-mount .sidebarList_pog62O .hasBanner_XH4OpX .headerGlass_XH4OpX {
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
   background-color: color-mix(in srgb, var(--yorha-banner-transition) 65%, transparent) !important;
   background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
   background-size: 5px 5px !important;
