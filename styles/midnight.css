@@ -4464,7 +4464,7 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
   border-top-left-radius: 11px;
-  background-clip: padding-box;
+  background-clip: border-box;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
   background-size: 5px 5px;
@@ -4491,6 +4491,7 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover
   background-size: 5px 5px !important;
   background-position: 0 0 !important;
   background-attachment: fixed !important;
+  background-clip: border-box !important;
   box-shadow: none !important;
 }
 
@@ -4519,8 +4520,15 @@ html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
   border-top-left-radius: inherit;
 }
 
-/* A visible banner has no separator, including during header hover. */
-html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::after {
+/* Paint through transparent border pixels so the artwork cannot show as a
+   bright seam below the hover surface. Native scroll geometry stays intact. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .headerGlass_XH4OpX {
+  background-clip: border-box !important;
+}
+
+/* A visible banner has no separator throughout hover and scrolling. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::before,
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::after {
   content: none !important;
 }
 
