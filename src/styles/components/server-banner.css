@@ -42,7 +42,7 @@ html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   border: 0 !important;
   border-left: 0 !important;
   padding-inline: 0 !important;
-  border-top-left-radius: 12px !important;
+  border-top-left-radius: 11px !important;
 }
 
 /* Continue the same column edge through the sibling voice/user panel. */
@@ -83,6 +83,8 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
+  border-top-left-radius: 11px;
+  background-clip: padding-box;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
   background-size: 5px 5px;
@@ -124,13 +126,25 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
   box-shadow: none !important;
 }
 
-/* Cover the bright artwork seam with the toolbar's divider on hover. The
-   overlay straddles the edge without changing banner or channel-list height. */
+/* Tint Discord's animated glass with the palette instead of native gray. */
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
+  background-color: transparent !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y),
+    linear-gradient(to bottom,
+      color-mix(in srgb, var(--yorha-banner-transition) 75%, transparent),
+      color-mix(in srgb, var(--yorha-banner-transition) 35%, transparent)) !important;
+  background-size: 5px 5px, 5px 5px, 100% 100% !important;
+  background-position: 0 0 !important;
+  background-attachment: fixed !important;
+  border-top-left-radius: inherit;
+}
+
+/* Draw one pixel inside the header without changing the banner layout. */
 html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::after {
   content: "" !important;
   position: absolute;
-  inset: auto 0 -1px;
-  height: 2px;
+  inset: auto 0 0;
+  height: 1px;
   background: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
   pointer-events: none;
 }
