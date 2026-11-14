@@ -326,20 +326,14 @@ html.visual-refresh {
     border: unset;
     box-shadow: var(--shadow-ledge);
   }
-  .header_XH4OpX {
+  .container_XH4OpX:not(.hasBanner_XH4OpX) .header_XH4OpX {
     padding: unset;
-  }
-  .bannerVisible_XH4OpX .header_XH4OpX {
-    border-bottom-color: transparent;
-  }
-  .headerGlass_XH4OpX {
-    display: none;
   }
   .container_ybUK7Z {
     border: unset;
     box-shadow: var(--shadow-ledge);
   }
-  .headerContent_XH4OpX {
+  .container_XH4OpX:not(.hasBanner_XH4OpX) .headerContent_XH4OpX {
     gap: unset;
     justify-content: unset;
     height: 100%;
@@ -2185,25 +2179,6 @@ html.visual-refresh {
       color: #dcddde;
       opacity: 0.5;
     }
-  }
-
-  /* Keep server banners proportional to the resizable channel sidebar. */
-  .bannerImage_XH4OpX {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    max-height: none !important;
-    aspect-ratio: 16 / 9 !important;
-    flex-shrink: 0;
-  }
-  .bannerImg_XH4OpX {
-    width: 100% !important;
-    min-width: 100% !important;
-    max-width: none !important;
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover;
   }
 
   /* tooltips */
