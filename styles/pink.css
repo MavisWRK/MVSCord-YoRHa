@@ -4438,7 +4438,13 @@ html body #app-mount .bannerImg_XH4OpX {
 }
 
 html body #app-mount .bannerImg_XH4OpX {
-  object-fit: cover;
+  /* Fit below the overlaid title inside the existing native banner box.
+     Padding belongs to the image's border box, so list geometry stays native. */
+  height: 100% !important;
+  box-sizing: border-box;
+  padding-top: var(--custom-channel-header-height, 48px);
+  object-fit: contain;
+  object-position: center bottom;
 }
 
 /* Theme frame for the channel toolbar. */
