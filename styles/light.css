@@ -4445,8 +4445,18 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover
   box-shadow: none !important;
 }
 
+/* Paint the hover once on the outer header. Native inner surfaces otherwise
+   leave an inset gray rectangle and expose the artwork along its edges. */
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover > *,
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
   background: transparent !important;
+  box-shadow: none !important;
+  border-color: transparent !important;
+}
+
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::before,
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::after {
+  content: none !important;
 }
 
 /* Native glass and header overlays must not draw a second divider on hover. */
