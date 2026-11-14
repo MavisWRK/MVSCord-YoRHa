@@ -20,6 +20,7 @@ html body #app-mount .sidebarList_pog62O {
   justify-self: stretch;
   border-top-left-radius: 12px !important;
   border-left: 0 !important;
+  border-right: 0 !important;
   padding-left: 0 !important;
 }
 
@@ -92,10 +93,9 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX {
   box-shadow: none !important;
 }
 
-/* Match the transparent 1px top border of the adjacent toolbar. Mask the
-   artwork itself so the native banner dimensions and scroll offsets stay intact. */
+/* Fade the artwork's top edge without changing native banner dimensions. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
-  mask-image: linear-gradient(to bottom, transparent 1px, black 1px);
+  mask-image: linear-gradient(to bottom, transparent 1px, black 4px);
 }
 
 /* Theme frame for the channel toolbar. */
@@ -121,5 +121,6 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
 /* The channel toolbar keeps the theme frame. */
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   border-left: 0 !important;
+  border-right: 0 !important;
   border-radius: 0;
 }
