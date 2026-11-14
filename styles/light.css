@@ -4469,14 +4469,9 @@ html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
   border-top-left-radius: inherit;
 }
 
-/* Draw one pixel inside the header without changing the banner layout. */
+/* A visible banner has no separator, including during header hover. */
 html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::after {
-  content: "" !important;
-  position: absolute;
-  inset: auto 0 0;
-  height: 1px;
-  background: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
-  pointer-events: none;
+  content: none !important;
 }
 
 /* Fade the artwork's top edge without changing native banner dimensions. */
