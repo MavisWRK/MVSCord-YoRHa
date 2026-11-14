@@ -74,9 +74,12 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
 }
 
-/* Match the sidebar edge without changing the native header height. */
+/* Use the same border-box height as the adjacent channel toolbar. */
 html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   width: 100%;
+  height: var(--custom-channel-header-height, 48px) !important;
+  min-height: var(--custom-channel-header-height, 48px) !important;
+  max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
 }
 
@@ -85,6 +88,8 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX {
    glass layer provides the title contrast while the banner is visible. */
 html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX {
   background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Theme frame for the channel toolbar. */
