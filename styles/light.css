@@ -4468,8 +4468,14 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
   box-shadow: none !important;
 }
 
-/* Leave Discord's glass paint, opacity and geometry native. This layer also
-   covers the banner area; an opaque theme background here hides the artwork. */
+/* Add only the transparent grid to native glass. Keep its background color,
+   opacity and geometry untouched so the banner remains visible underneath. */
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px !important;
+  background-position: 0 0 !important;
+  background-attachment: fixed !important;
+}
 
 /* A visible banner has no separator throughout hover and scrolling. */
 html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::before,
