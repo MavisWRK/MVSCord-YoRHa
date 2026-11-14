@@ -4468,37 +4468,8 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
   box-shadow: none !important;
 }
 
-/* Native opacity supplies the scroll transparency. Use the final toolbar
-   surface underneath it, so the animation converges to the same color/grid
-   instead of retaining a second, vertically graded transparency. */
-html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
-  background-color: var(--yorha-banner-transition) !important;
-  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
-  background-size: 5px 5px !important;
-  background-position: 0 0 !important;
-  background-attachment: fixed !important;
-  /* Keep Discord's native position and dimensions: this layer's containing
-     block changes with the banner state. Only customize its paint. */
-  border-color: transparent !important;
-  outline: none !important;
-  background-origin: border-box !important;
-  background-clip: border-box !important;
-  /* Only native opacity should blend the palette with the banner. */
-  filter: none !important;
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-}
-
-html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX::before,
-html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX::after {
-  content: none !important;
-}
-
-/* Paint through transparent border pixels so the artwork cannot show as a
-   bright seam below the hover surface. Native scroll geometry stays intact. */
-html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .headerGlass_XH4OpX {
-  background-clip: border-box !important;
-}
+/* Leave Discord's glass paint, opacity and geometry native. This layer also
+   covers the banner area; an opaque theme background here hides the artwork. */
 
 /* A visible banner has no separator throughout hover and scrolling. */
 html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::before,
