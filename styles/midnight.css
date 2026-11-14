@@ -4527,17 +4527,10 @@ html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
   background-size: 5px 5px !important;
   background-position: 0 0 !important;
   background-attachment: fixed !important;
-  /* The glass is an absolute paint layer, not part of the scroll layout.
-     Its native overscan must not extend below or inset from the header. */
-  inset: 0 0 auto 0 !important;
-  width: 100% !important;
-  height: var(--custom-channel-header-height, 48px) !important;
-  box-sizing: border-box !important;
-  margin: 0 !important;
-  border: 0 !important;
+  /* Keep Discord's native position and dimensions: this layer's containing
+     block changes with the banner state. Only customize its paint. */
+  border-color: transparent !important;
   outline: none !important;
-  border-radius: 11px 0 0 0 !important;
-  overflow: clip;
   background-origin: border-box !important;
   background-clip: border-box !important;
   /* Only native opacity should blend the palette with the banner. */
