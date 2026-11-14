@@ -4425,6 +4425,12 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX {
   box-shadow: none !important;
 }
 
+/* Match the transparent 1px top border of the adjacent toolbar. Mask the
+   artwork itself so the native banner dimensions and scroll offsets stay intact. */
+html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
+  mask-image: linear-gradient(to bottom, transparent 1px, black 1px);
+}
+
 /* Theme frame for the channel toolbar. */
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   height: var(--custom-channel-header-height, 48px) !important;
