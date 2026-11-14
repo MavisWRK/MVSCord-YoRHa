@@ -4453,6 +4453,14 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
+  --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  background-origin: border-box;
+  /* An inset line matches the toolbar without changing header geometry. */
+  box-shadow: inset 0 -1px color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
 }
 
 /* The native banner extends behind the server title. Opaque theme surfaces
@@ -4471,6 +4479,7 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover
   background-size: 5px 5px !important;
   background-position: 0 0 !important;
   background-attachment: fixed !important;
+  box-shadow: none !important;
 }
 
 html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
