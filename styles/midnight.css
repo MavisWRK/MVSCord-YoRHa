@@ -4474,6 +4474,19 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX {
   box-shadow: none !important;
 }
 
+/* Hover paints the same themed surface as the channel toolbar. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover {
+  background-color: var(--yorha-banner-transition) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px !important;
+  background-position: 0 0 !important;
+  background-attachment: fixed !important;
+}
+
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
+  background: transparent !important;
+}
+
 /* Fade the artwork's top edge without changing native banner dimensions. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   mask-image: linear-gradient(to bottom, transparent 1px, black 4px);
