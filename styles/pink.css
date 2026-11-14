@@ -4516,6 +4516,27 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::afte
   content: none !important;
 }
 
+/* Fill the native header's border pixels on hover. A paint-only extension
+   closes the left/bottom seams and follows the sidebar's outer corner. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover {
+  isolation: isolate;
+}
+
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::before {
+  content: "" !important;
+  position: absolute;
+  inset: 0 0 -1px -1px;
+  z-index: -1;
+  border: 0 !important;
+  border-radius: 12px 0 0 0;
+  background-color: var(--yorha-banner-transition);
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
+  background-size: 5px 5px;
+  background-position: 0 0;
+  background-attachment: fixed;
+  pointer-events: none;
+}
+
 /* Fade the artwork's top edge without changing native banner dimensions. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
   mask-image: linear-gradient(to bottom, transparent 1px, black 4px);
