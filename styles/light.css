@@ -4469,14 +4469,13 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX::after {
   box-shadow: none !important;
 }
 
-/* Tint Discord's animated glass with the palette instead of native gray. */
+/* Native opacity supplies the scroll transparency. Use the final toolbar
+   surface underneath it, so the animation converges to the same color/grid
+   instead of retaining a second, vertically graded transparency. */
 html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
-  background-color: transparent !important;
-  background-image: var(--yorha-grid-x), var(--yorha-grid-y),
-    linear-gradient(to bottom,
-      color-mix(in srgb, var(--yorha-banner-transition) 75%, transparent),
-      color-mix(in srgb, var(--yorha-banner-transition) 35%, transparent)) !important;
-  background-size: 5px 5px, 5px 5px, 100% 100% !important;
+  background-color: var(--yorha-banner-transition) !important;
+  background-image: var(--yorha-grid-x), var(--yorha-grid-y) !important;
+  background-size: 5px 5px !important;
   background-position: 0 0 !important;
   background-attachment: fixed !important;
   border-top-left-radius: inherit;
