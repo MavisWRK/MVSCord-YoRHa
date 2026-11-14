@@ -4413,13 +4413,17 @@ html body #app-mount .sidebar_pog62O > .panels_pog62O {
   box-shadow: inset 0 1px var(--yorha-line) !important;
 }
 
-/* The voice channel's activity line (e.g. the current song under Lounge)
-   uses muted text outside hover. Keep it legible on selected dark rows. */
-html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus_"], [class*="voiceChannelStatusText_"], [class*="channelStatus_"], [class*="channelStatusText_"]) {
-  color: var(--yorha-ink) !important;
+/* Keep the voice channel status text beside its music icon visible in the
+   compact channel row, including when the row is not hovered. */
+html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus"], [class*="channelStatus"]),
+html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus"], [class*="channelStatus"]) :is(span, div, [data-text-variant]) {
   opacity: 1 !important;
+  visibility: visible !important;
+  color: var(--yorha-ink) !important;
+  font-size: 12px !important;
 }
-html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus_"], [class*="voiceChannelStatusText_"], [class*="channelStatus_"], [class*="channelStatusText_"]) {
+html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus"], [class*="channelStatus"]),
+html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus"], [class*="channelStatus"]) :is(span, div, [data-text-variant]) {
   color: var(--yorha-paper-light) !important;
 }
 
