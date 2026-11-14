@@ -4457,6 +4457,7 @@ html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   box-sizing: border-box;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   border: 1px solid var(--yorha-topbar-stroke) !important;
+  border-top-color: transparent !important;
   border-bottom-color: color-mix(in srgb, var(--yorha-topbar-stroke) 80%, black) !important;
   outline: none !important;
   box-shadow: var(--yorha-topbar-elevation, none) !important;
