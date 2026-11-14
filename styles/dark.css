@@ -4453,7 +4453,9 @@ html body #app-mount .sidebarList_pog62O .header_XH4OpX {
   min-height: var(--custom-channel-header-height, 48px) !important;
   max-height: var(--custom-channel-header-height, 48px) !important;
   box-sizing: border-box;
-  border-top-left-radius: 11px;
+  border: 0 !important;
+  outline: none !important;
+  border-radius: 11px 0 0 0 !important;
   background-clip: border-box;
   --yorha-topbar-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   background-image: var(--yorha-grid-x), var(--yorha-grid-y);
@@ -4532,30 +4534,23 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX::afte
   content: none !important;
 }
 
-/* Fill the native header's border pixels on hover. A paint-only extension
-   closes the left/bottom seams and follows the sidebar's outer corner. */
-html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover {
-  isolation: isolate;
-}
-
-html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover::before {
-  content: "" !important;
-  position: absolute;
-  inset: 0 0 -1px -1px;
-  z-index: -1;
+/* Use the header's own border box as the only hover surface. Extending a
+   pseudo-element by -1px created a second edge below the adjacent toolbar.
+   The native glass must not tint or blur this opaque surface a second time. */
+html body #app-mount .hasBanner_XH4OpX:has(.header_XH4OpX:hover) .headerGlass_XH4OpX {
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
   border: 0 !important;
-  border-radius: 12px 0 0 0;
-  background-color: var(--yorha-banner-transition);
-  background-image: var(--yorha-grid-x), var(--yorha-grid-y);
-  background-size: 5px 5px;
-  background-position: 0 0;
-  background-attachment: fixed;
-  pointer-events: none;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-/* Fade the artwork's top edge without changing native banner dimensions. */
+/* One corner silhouette for the artwork and title. Do not fade the top row:
+   that mask exposed the sidebar background as pinholes around the curve. */
 html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
-  mask-image: linear-gradient(to bottom, transparent 1px, black 4px);
+  border-top-left-radius: 11px !important;
+  mask-image: none !important;
 }
 
 /* Theme frame for the channel toolbar. */
