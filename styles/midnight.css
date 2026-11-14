@@ -4457,6 +4457,19 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
 }
 
+/* Match the sidebar edge without changing the native header height. */
+html body #app-mount .sidebarList_pog62O .header_XH4OpX {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* The native banner extends behind the server title. Opaque theme surfaces
+   hid that part of the artwork, making the banner look cropped. Discord's
+   glass layer provides the title contrast while the banner is visible. */
+html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX {
+  background: transparent !important;
+}
+
 /* Theme frame for the channel toolbar. */
 html body #app-mount .chat_z_gUBg .container_ybUK7Z {
   height: var(--custom-channel-header-height, 48px) !important;
