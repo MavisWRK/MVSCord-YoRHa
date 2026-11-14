@@ -59,18 +59,17 @@ html body #app-mount .sidebar_pog62O > .panels_pog62O {
   box-shadow: inset 0 1px var(--yorha-line) !important;
 }
 
-/* Keep the voice channel status text beside its music icon visible in the
-   compact channel row, including when the row is not hovered. */
-html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus"], [class*="channelStatus"]),
-html body #app-mount .sidebarList_pog62O :is([class*="voiceChannelStatus"], [class*="channelStatus"]) :is(span, div, [data-text-variant]) {
+/* Verified DOM: selectedChannel_Wx6SnQ > linkBottom_TNyK-N >
+   subtitle_TNyK-N > statusText_UqhBJC. Keep the whole status readable,
+   including Chromium text-fill and the clipped inner text wrapper. */
+html body #app-mount .sidebarList_pog62O .selectedChannel_Wx6SnQ :is(.linkBottom_TNyK-N, .subtitle_TNyK-N, .statusDiv_UqhBJC, .statusText_UqhBJC, .statusText_UqhBJC .overflow__WDjet) {
   opacity: 1 !important;
   visibility: visible !important;
-  color: var(--yorha-ink) !important;
-  font-size: 12px !important;
-}
-html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus"], [class*="channelStatus"]),
-html body #app-mount .sidebarList_pog62O :is([class*="selected_"], [aria-selected="true"]) :is([class*="voiceChannelStatus"], [class*="channelStatus"]) :is(span, div, [data-text-variant]) {
   color: var(--yorha-paper-light) !important;
+  -webkit-text-fill-color: var(--yorha-paper-light) !important;
+}
+html body #app-mount .sidebarList_pog62O .selectedChannel_Wx6SnQ .statusText_UqhBJC {
+  text-shadow: 0 1px 2px var(--yorha-ink);
 }
 
 /* Keep the shared column from growing to the intrinsic width of song titles. */
