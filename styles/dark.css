@@ -4489,15 +4489,14 @@ html body #app-mount .hasBanner_XH4OpX.bannerVisible_XH4OpX .header_XH4OpX:hover
 
 /* Paint the hover once on the outer header. Native inner surfaces otherwise
    leave an inset gray rectangle and expose the artwork along its edges. */
-html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover > *,
-html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX) {
   background: transparent !important;
   box-shadow: none !important;
   border-color: transparent !important;
 }
 
-html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::before,
-html body #app-mount .hasBanner_XH4OpX .header_XH4OpX:hover :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::after {
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::before,
+html body #app-mount .hasBanner_XH4OpX .header_XH4OpX :is(.headerContent_XH4OpX, .guildDropdown_XH4OpX)::after {
   content: none !important;
 }
 
@@ -4518,7 +4517,28 @@ html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX {
   background-size: 5px 5px !important;
   background-position: 0 0 !important;
   background-attachment: fixed !important;
-  border-top-left-radius: inherit;
+  /* The glass is an absolute paint layer, not part of the scroll layout.
+     Its native overscan must not extend below or inset from the header. */
+  inset: 0 0 auto 0 !important;
+  width: 100% !important;
+  height: var(--custom-channel-header-height, 48px) !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  border: 0 !important;
+  outline: none !important;
+  border-radius: 11px 0 0 0 !important;
+  overflow: clip;
+  background-origin: border-box !important;
+  background-clip: border-box !important;
+  /* Only native opacity should blend the palette with the banner. */
+  filter: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX::before,
+html body #app-mount .sidebarList_pog62O .headerGlass_XH4OpX::after {
+  content: none !important;
 }
 
 /* Paint through transparent border pixels so the artwork cannot show as a
