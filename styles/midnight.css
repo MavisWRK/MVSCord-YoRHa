@@ -4414,7 +4414,6 @@ html body #app-mount .sidebar_pog62O:has(.hasBanner_XH4OpX) > .guilds_pog62O::af
 
 html body #app-mount .sidebarList_pog62O .container_H5ozaj {
   position: relative;
-  container-type: inline-size;
   --yorha-column-stroke: color-mix(in srgb, var(--yorha-ink), var(--yorha-paper-light));
   margin-inline: 0 !important;
   width: 100% !important;
@@ -4457,37 +4456,20 @@ html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
 }
 
-/* Discord already reserves 84px inside the channel list. Add only the
-   remaining height outside that virtualized list, keeping its spacer intact.
-   Keep this reservation stable when Discord unmounts the animated artwork. */
-html body #app-mount .container_XH4OpX.hasBanner_XH4OpX {
-  --yorha-banner-height: max(84px, 56.25cqw);
-  position: relative;
-  height: calc(var(--custom-channel-header-height, 48px) + var(--yorha-banner-height) - 84px) !important;
-  flex-shrink: 0;
-}
-
-html body #app-mount .hasBanner_XH4OpX > .animatedContainer_XH4OpX {
-  position: absolute !important;
-  top: var(--custom-channel-header-height, 48px) !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: var(--yorha-banner-height) !important;
-  overflow: hidden;
-}
-
+/* Fill the sidebar while preserving Discord's native height and animation. */
 html body #app-mount .bannerImage_XH4OpX,
 html body #app-mount .bannerImg_XH4OpX {
   width: 100% !important;
   max-width: none !important;
-  height: 100% !important;
 }
 
 html body #app-mount .bannerImg_XH4OpX {
+  /* Fit the artwork below the title without changing the native layout box. */
+  height: 100% !important;
   box-sizing: border-box;
-  padding: 0;
+  padding-top: var(--custom-channel-header-height, 48px);
   object-fit: contain;
-  object-position: center;
+  object-position: center bottom;
 }
 
 /* Theme frame for the channel toolbar. */
