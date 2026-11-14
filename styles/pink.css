@@ -1077,7 +1077,7 @@ html.visual-refresh {
     display: grid;
     grid-template-areas: "guilds sidebar" "guilds panels";
     grid-template-columns: [start] min-content [sidebarStart] minmax(0, 1fr) [end];
-    grid-template-rows: [start] 1fr [panelsStart] min-content [end];
+    grid-template-rows: [start] minmax(0, 1fr) [panelsStart] min-content [end];
     border-radius: 0;
   }
   &:not(.theme-midnight) .chat_z_gUBg,
@@ -4371,6 +4371,7 @@ html body #app-mount .base_pog62O .sidebar_pog62O::after {
 html body #app-mount .sidebarList_pog62O {
   width: 100% !important;
   min-width: 0 !important;
+  min-height: 0;
   max-width: none !important;
   box-sizing: border-box;
   justify-self: stretch;
@@ -4428,22 +4429,6 @@ html body #app-mount .panels_pog62O [class*="activityPanel_"] {
 
 html body #app-mount .container_H5ozaj:has(.hasBanner_XH4OpX) .content_tqapBM {
   background-image: none;
-}
-
-/* Fill the sidebar while preserving Discord's native height and animation. */
-html body #app-mount .bannerImage_XH4OpX,
-html body #app-mount .bannerImg_XH4OpX {
-  width: 100% !important;
-  max-width: none !important;
-}
-
-html body #app-mount .bannerImg_XH4OpX {
-  /* Fit the artwork below the title without changing the native layout box. */
-  height: 100% !important;
-  box-sizing: border-box;
-  padding-top: var(--custom-channel-header-height, 48px);
-  object-fit: contain;
-  object-position: center bottom;
 }
 
 /* Theme frame for the channel toolbar. */
